@@ -1,0 +1,15 @@
+.*/build/.*
+.*/dist/.*
+.*/private/.*
+.*desktop.ini
+.*\.diff
+.*\.directory
+.*\.log
+.*\.patch
+.*~$
+\.chg\..*$
+\.conflict\~$
+\.fuse.*
+\.orig$
+\.orig\..*$
+\.rej$
