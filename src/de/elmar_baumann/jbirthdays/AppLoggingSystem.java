@@ -25,8 +25,8 @@ public final class AppLoggingSystem {
     private static volatile boolean init;
 
     static {
-        LOGFILE = new File(System.getProperty("user.home") + File.separator + "de.elmar_baumann.jbirthdays" +
-                File.separator + "JBirthdays-Log.txt");
+        LOGFILE = new File(System.getProperty("user.home") + File.separator + ".de.elmar_baumann" +
+                File.separator + "jbirthdays" + File.separator + "JBirthdays-Log.txt");
     }
 
     public static void init() {

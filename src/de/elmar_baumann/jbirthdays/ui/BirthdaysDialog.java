@@ -38,6 +38,7 @@ public class BirthdaysDialog extends Dialog {
     private static final long serialVersionUID = 1L;
     private static final int[] COL_WIDTH_BIRTHDAY_TABLES = new int[]{150,200,75,150,200};
     private final PreferencesPanel panelPreferences = new PreferencesPanel();
+    private final ToolsPanel panelTools = new ToolsPanel();
     private final List<Person> allPersons = new ArrayList<>();
     private final PersonTableModel allPersonsTableModel = new PersonTableModel(false);
     private final PersonTableModel birthdayTodayTableModel = new PersonTableModel(true);
@@ -56,6 +57,7 @@ public class BirthdaysDialog extends Dialog {
     private void postInitComponents() {
         // Matisse throws java.lang.ClassNotFoundException: de.elmar_baumann.jbirthdays.ui.PreferencesPanel,
         // INFO [org.netbeans.modules.form.MetaComponentCreator]: Cannot load component class de.elmar_baumann.jbirthdays.ui.PreferencesPanel from project <path>JBirthdays.
+        tabbedPane.addTab(Bundle.getString(BirthdaysDialog.class, "BirthdaysDialog.TabTitle.Tools"), panelTools);
         tabbedPane.addTab(Bundle.getString(BirthdaysDialog.class, "BirthdaysDialog.TabTitle.Preferences"), panelPreferences);
         tableAllPersons.setModel(allPersonsTableModel);
         tableAllPersons.setRowSorter(allPersonsRowSorter);
@@ -73,6 +75,7 @@ public class BirthdaysDialog extends Dialog {
         tableAllPersons.addMouseListener(editPersonMouseListener);
         tableAllPersons.addKeyListener(personsTableKeyListener);
         textFieldFilterPerson.getDocument().addDocumentListener(filterPersonListener);
+        panelTools.addPropertyChangeListener(ToolsPanel.PROPERTY_IMPORTED, personImportListener);
     }
 
 
@@ -258,6 +261,14 @@ public class BirthdaysDialog extends Dialog {
 
         private void updateSearchFilter() {
             allPersonsRowSorter.setRowFilter(new PersonNameRowFilter(textFieldFilterPerson.getText()));
+        }
+    };
+
+    private final PropertyChangeListener personImportListener = new PropertyChangeListener() {
+        @Override
+        public void propertyChange(PropertyChangeEvent evt) {
+            loadPersons();
+            updateBirthdayTables();
         }
     };
 

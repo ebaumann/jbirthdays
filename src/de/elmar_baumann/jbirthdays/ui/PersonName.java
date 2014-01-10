@@ -2,14 +2,12 @@ package de.elmar_baumann.jbirthdays.ui;
 
 import de.elmar_baumann.jbirthdays.api.Person;
 import de.elmar_baumann.jbirthdays.util.StringUtil;
-import java.text.Collator;
 
 /**
  * @author Elmar Baumann
  */
 public final class PersonName implements Comparable<PersonName> {
 
-    private final Collator collator = Collator.getInstance();
     private final Person person;
 
     public PersonName(Person person) {
@@ -21,9 +19,7 @@ public final class PersonName implements Comparable<PersonName> {
 
     @Override
     public int compareTo(PersonName o) {
-        String thisLastName = StringUtil.nullToEmptyString(person.getLastName());
-        String otherLastName = StringUtil.nullToEmptyString(o.person.getLastName());
-        return collator.compare(thisLastName, otherLastName);
+        return Person.CMP_ASC_BY_LAST_NAME.compare(person, o.person);
     }
 
     @Override

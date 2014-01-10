@@ -148,9 +148,15 @@ public final class Person {
 
         @Override
         public int compare(Person person1, Person person2) {
-            String lastName1 = StringUtil.nullToEmptyString(person1.lastName);
-            String lastName2 = StringUtil.nullToEmptyString(person2.lastName);
-            return collator.compare(lastName1, lastName2);
+            String person1LastName = StringUtil.nullToEmptyString(person1.getLastName());
+            String person2LastName = StringUtil.nullToEmptyString(person2.getLastName());
+            int result = collator.compare(person1LastName, person2LastName);
+            if (result == 0) {
+                String person1FirstName = StringUtil.nullToEmptyString(person1.getFirstName());
+                String person2FirstName = StringUtil.nullToEmptyString(person2.getFirstName());
+                return collator.compare(person1FirstName, person2FirstName);
+            }
+            return result;
         }
     };
 }
