@@ -6,6 +6,7 @@ import de.elmar_baumann.jbirthdays.api.Person;
 import de.elmar_baumann.jbirthdays.util.Bundle;
 import de.elmar_baumann.jbirthdays.util.IconUtil;
 import de.elmar_baumann.jbirthdays.util.TableUtil;
+import java.awt.Color;
 import java.awt.Component;
 import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
@@ -46,6 +47,8 @@ import javax.swing.event.DocumentEvent;
 import javax.swing.event.DocumentListener;
 import javax.swing.event.ListSelectionEvent;
 import javax.swing.event.ListSelectionListener;
+import javax.swing.table.DefaultTableCellRenderer;
+import javax.swing.table.TableCellRenderer;
 import javax.swing.table.TableRowSorter;
 import org.openide.awt.Mnemonics;
 
@@ -99,6 +102,10 @@ public class BirthdaysDialog extends Dialog {
         tableBirthdayAfter.addKeyListener(personsTableKeyListener);
         textFieldFilterPerson.getDocument().addDocumentListener(filterPersonListener);
         panelTools.addPropertyChangeListener(ToolsPanel.PROPERTY_IMPORTED, personImportListener);
+        tableAllPersons.setDefaultRenderer(Object.class, TABLE_CELL_RENDERER);
+        tableBirthdayToday.setDefaultRenderer(Object.class, TABLE_CELL_RENDERER);
+        tableBirthdayBefore.setDefaultRenderer(Object.class, TABLE_CELL_RENDERER);
+        tableBirthdayAfter.setDefaultRenderer(Object.class, TABLE_CELL_RENDERER);
     }
 
 
@@ -311,6 +318,26 @@ public class BirthdaysDialog extends Dialog {
         panel.add(new JPanel(), gbc);
         return panel;
     }
+
+    private static final TableCellRenderer TABLE_CELL_RENDERER = new DefaultTableCellRenderer() {
+
+        private static final long serialVersionUID = 1L;
+        private final Color alternateBackground = new Color(0xdfdfdf);
+        private final Color defaultBackground;
+
+        {
+            defaultBackground = getBackground();
+        }
+
+        @Override
+        public Component getTableCellRendererComponent(JTable table, Object value, boolean isSelected, boolean hasFocus, int row, int column) {
+            JLabel label = (JLabel) super.getTableCellRendererComponent(table, value, isSelected, hasFocus, row, column);
+            if (!isSelected) {
+                setBackground(row % 2 == 0 ? defaultBackground : alternateBackground);
+            }
+            return label;
+        }
+    };
 
     /** This method is called from within the constructor to
      * initialize the form.
