@@ -6,6 +6,10 @@ import de.elmar_baumann.jbirthdays.api.Person;
 import de.elmar_baumann.jbirthdays.util.Bundle;
 import de.elmar_baumann.jbirthdays.util.IconUtil;
 import de.elmar_baumann.jbirthdays.util.TableUtil;
+import java.awt.Component;
+import java.awt.GridBagConstraints;
+import java.awt.GridBagLayout;
+import java.awt.Insets;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.KeyAdapter;
@@ -74,6 +78,7 @@ public class BirthdaysDialog extends Dialog {
         // INFO [org.netbeans.modules.form.MetaComponentCreator]: Cannot load component class de.elmar_baumann.jbirthdays.ui.PreferencesPanel from project <path>JBirthdays.
         tabbedPane.addTab(Bundle.getString(BirthdaysDialog.class, "BirthdaysDialog.TabTitle.Tools"), panelTools);
         tabbedPane.addTab(Bundle.getString(BirthdaysDialog.class, "BirthdaysDialog.TabTitle.Preferences"), panelPreferences);
+        tabbedPane.addTab(Bundle.getString(BirthdaysDialog.class, "BirthdaysDialog.TabTitle.About"), createAboutPanel());
         tableAllPersons.setModel(allPersonsTableModel);
         tableAllPersons.setRowSorter(allPersonsRowSorter);
         tableBirthdayToday.setModel(birthdayTodayTableModel);
@@ -286,6 +291,22 @@ public class BirthdaysDialog extends Dialog {
             updateBirthdayTables();
         }
     };
+
+    private Component createAboutPanel() {
+        JPanel panel = new JPanel(new GridBagLayout());
+        GridBagConstraints gbc = new GridBagConstraints();
+        gbc.anchor = GridBagConstraints.WEST;
+        gbc.gridwidth = GridBagConstraints.REMAINDER;
+        gbc.weightx = 1.0;
+        gbc.insets = new Insets(10, 10, 0, 0);
+        JLabel labelInfo = new JLabel(Bundle.getString(BirthdaysDialog.class, "About.Text", AppVersion.VERSION, AppVersion.DATE));
+        panel.add(labelInfo, gbc);
+        gbc.gridheight = GridBagConstraints.REMAINDER;
+        gbc.fill = GridBagConstraints.VERTICAL;
+        gbc.weighty = 1.0;
+        panel.add(new JPanel(), gbc);
+        return panel;
+    }
 
     /** This method is called from within the constructor to
      * initialize the form.
