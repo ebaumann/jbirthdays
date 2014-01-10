@@ -64,9 +64,6 @@ public class BirthdaysDialog extends Dialog {
     private final PersonTableModel birthdayBeforeTableModel = new PersonTableModel(true);
     private final PersonTableModel birthdayAfterTableModel = new PersonTableModel(true);
     private final TableRowSorter<PersonTableModel> allPersonsRowSorter = new TableRowSorter<>(allPersonsTableModel);
-    private final TableRowSorter<PersonTableModel> birthdayTodayRowSorter = new TableRowSorter<>(allPersonsTableModel);
-    private final TableRowSorter<PersonTableModel> birthdayBeforeRowSorter = new TableRowSorter<>(allPersonsTableModel);
-    private final TableRowSorter<PersonTableModel> birthdayAfterSorter = new TableRowSorter<>(allPersonsTableModel);
 
     public BirthdaysDialog() {
         initComponents();
@@ -93,7 +90,13 @@ public class BirthdaysDialog extends Dialog {
         panelPreferences.addPropertyChangeListener(PreferencesPanel.PROPERTY_DAYS_AFTER, preferencesChangedListener);
         tableAllPersons.getSelectionModel().addListSelectionListener(enableEditRemoveButtonListener);
         tableAllPersons.addMouseListener(editPersonMouseListener);
+        tableBirthdayToday.addMouseListener(editPersonMouseListener);
+        tableBirthdayBefore.addMouseListener(editPersonMouseListener);
+        tableBirthdayAfter.addMouseListener(editPersonMouseListener);
         tableAllPersons.addKeyListener(personsTableKeyListener);
+        tableBirthdayToday.addKeyListener(personsTableKeyListener);
+        tableBirthdayBefore.addKeyListener(personsTableKeyListener);
+        tableBirthdayAfter.addKeyListener(personsTableKeyListener);
         textFieldFilterPerson.getDocument().addDocumentListener(filterPersonListener);
         panelTools.addPropertyChangeListener(ToolsPanel.PROPERTY_IMPORTED, personImportListener);
     }
@@ -175,10 +178,11 @@ public class BirthdaysDialog extends Dialog {
         }
     }
 
-    private void editSelectedPersons() {
+    private void editSelectedPersons(JTable table) {
         boolean edited = false;
-        for (int selRow : tableAllPersons.getSelectedRows()) {
-            Person person = allPersonsTableModel.getPerson(tableAllPersons.convertRowIndexToModel(selRow));
+        for (int selRow : table.getSelectedRows()) {
+            PersonTableModel model = (PersonTableModel) table.getModel();
+            Person person = model.getPerson(table.convertRowIndexToModel(selRow));
             EditPersonDialog dlg = new EditPersonDialog(this, person);
             dlg.setVisible(true);
             if (dlg.isAccepted()) {
@@ -188,7 +192,6 @@ public class BirthdaysDialog extends Dialog {
         }
         if (edited) {
             savePersonsAndUpdateTables();
-
         }
     }
 
@@ -242,8 +245,9 @@ public class BirthdaysDialog extends Dialog {
     private final MouseListener editPersonMouseListener = new MouseAdapter() {
         @Override
         public void mouseClicked(MouseEvent e) {
+            Object source = e.getSource();
             if (e.getClickCount() > 1) {
-                editSelectedPersons();
+                editSelectedPersons((JTable) source);
             }
         }
     };
@@ -253,7 +257,7 @@ public class BirthdaysDialog extends Dialog {
         public void keyPressed(KeyEvent e) {
             switch (e.getKeyCode()) {
                 case KeyEvent.VK_ENTER:
-                    editSelectedPersons();
+                    editSelectedPersons((JTable) e.getSource());
                     break;
                 case KeyEvent.VK_DELETE:
                     removeSelectedPersons();
@@ -324,6 +328,7 @@ public class BirthdaysDialog extends Dialog {
         tableBirthdayBefore = new JTable();
         scrollPaneBirthdayAfter = new JScrollPane();
         tableBirthdayAfter = new JTable();
+        labelHintDoubleclick = new JLabel();
         panelPersons = new JPanel();
         scrollPaneAllPersons = new JScrollPane();
         tableAllPersons = new JTable();
@@ -352,6 +357,9 @@ public class BirthdaysDialog extends Dialog {
         tableBirthdayAfter.setAutoResizeMode(JTable.AUTO_RESIZE_OFF);
         scrollPaneBirthdayAfter.setViewportView(tableBirthdayAfter);
 
+        ResourceBundle bundle = ResourceBundle.getBundle("de/elmar_baumann/jbirthdays/ui/Bundle"); // NOI18N
+        Mnemonics.setLocalizedText(labelHintDoubleclick, bundle.getString("BirthdaysDialog.labelHintDoubleclick.text")); // NOI18N
+
         GroupLayout panelDatesLayout = new GroupLayout(panelDates);
         panelDates.setLayout(panelDatesLayout);
         panelDatesLayout.setHorizontalGroup(
@@ -361,22 +369,26 @@ public class BirthdaysDialog extends Dialog {
                 .addGroup(panelDatesLayout.createParallelGroup(GroupLayout.Alignment.LEADING)
                     .addComponent(scrollPaneBirthdayToday)
                     .addComponent(scrollPaneBirthdayAfter, GroupLayout.Alignment.TRAILING, GroupLayout.DEFAULT_SIZE, 707, Short.MAX_VALUE)
-                    .addComponent(scrollPaneBirthdayBefore, GroupLayout.DEFAULT_SIZE, 707, Short.MAX_VALUE))
+                    .addComponent(scrollPaneBirthdayBefore, GroupLayout.DEFAULT_SIZE, 707, Short.MAX_VALUE)
+                    .addGroup(panelDatesLayout.createSequentialGroup()
+                        .addComponent(labelHintDoubleclick)
+                        .addGap(0, 0, Short.MAX_VALUE)))
                 .addContainerGap())
         );
         panelDatesLayout.setVerticalGroup(
             panelDatesLayout.createParallelGroup(GroupLayout.Alignment.LEADING)
             .addGroup(panelDatesLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(scrollPaneBirthdayToday, GroupLayout.DEFAULT_SIZE, 155, Short.MAX_VALUE)
+                .addComponent(scrollPaneBirthdayToday, GroupLayout.DEFAULT_SIZE, 149, Short.MAX_VALUE)
                 .addGap(11, 11, 11)
-                .addComponent(scrollPaneBirthdayBefore, GroupLayout.DEFAULT_SIZE, 155, Short.MAX_VALUE)
+                .addComponent(scrollPaneBirthdayBefore, GroupLayout.DEFAULT_SIZE, 149, Short.MAX_VALUE)
                 .addPreferredGap(LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(scrollPaneBirthdayAfter, GroupLayout.DEFAULT_SIZE, 155, Short.MAX_VALUE)
+                .addComponent(scrollPaneBirthdayAfter, GroupLayout.DEFAULT_SIZE, 147, Short.MAX_VALUE)
+                .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(labelHintDoubleclick)
                 .addContainerGap())
         );
 
-        ResourceBundle bundle = ResourceBundle.getBundle("de/elmar_baumann/jbirthdays/ui/Bundle"); // NOI18N
         tabbedPane.addTab(bundle.getString("BirthdaysDialog.panelDates.TabConstraints.tabTitle"), panelDates); // NOI18N
 
         scrollPaneAllPersons.setViewportView(tableAllPersons);
@@ -471,7 +483,7 @@ public class BirthdaysDialog extends Dialog {
     }//GEN-LAST:event_buttonAddPersonActionPerformed
 
     private void buttonEditPersonActionPerformed(ActionEvent evt) {//GEN-FIRST:event_buttonEditPersonActionPerformed
-        editSelectedPersons();
+        editSelectedPersons(tableAllPersons);
     }//GEN-LAST:event_buttonEditPersonActionPerformed
 
     private void buttonRemovePersonActionPerformed(ActionEvent evt) {//GEN-FIRST:event_buttonRemovePersonActionPerformed
@@ -519,6 +531,7 @@ public class BirthdaysDialog extends Dialog {
     private JButton buttonEditPerson;
     private JButton buttonRemovePerson;
     private JLabel labelFilterPerson;
+    private JLabel labelHintDoubleclick;
     private JPanel panelDates;
     private JPanel panelPersons;
     private JScrollPane scrollPaneAllPersons;
