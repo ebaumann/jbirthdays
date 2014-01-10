@@ -2,12 +2,8 @@ package de.elmar_baumann.jbirthdays.ui;
 
 import de.elmar_baumann.jbirthdays.api.Person;
 import de.elmar_baumann.jbirthdays.util.Bundle;
-import de.elmar_baumann.jbirthdays.util.DateUtil;
 import de.elmar_baumann.jbirthdays.util.StringUtil;
-import java.text.DateFormat;
-import java.text.SimpleDateFormat;
 import java.util.ArrayList;
-import java.util.Calendar;
 import java.util.Collection;
 import java.util.Collections;
 import java.util.List;
@@ -41,18 +37,17 @@ public class PersonTableModel implements TableModel {
     };
 
     private static final Class<?>[] COLUMN_CLASSES_WITH_BIRTHDAY = new Class<?>[] {
-        String.class,
-        PersonNameForSort.class,
-        String.class,
-        String.class,
+        BirthdayDate.class,
+        PersonName.class,
+        Age.class,
+        Born.class,
         String.class,
     };
 
     private static final Class<?>[] COLUMN_CLASSES_NO_BIRTHDAY = new Class<?>[] {
-        PersonNameForSort.class,
-        String.class,
-        String.class,
-        String.class,
+        PersonName.class,
+        Age.class,
+        Born.class,
         String.class,
     };
 
@@ -123,13 +118,21 @@ public class PersonTableModel implements TableModel {
         Person person = getPerson(rowIndex);
         switch (columnIndex) {
             case 0:
-                return withBirthdayColumn ? formatBirthday(person) : new PersonNameForSort(person);
+                return withBirthdayColumn
+                        ? new BirthdayDate(person)
+                        : new PersonName(person);
             case 1:
-                return withBirthdayColumn ? new PersonNameForSort(person) : formatAge(person);
+                return withBirthdayColumn
+                        ? new PersonName(person)
+                        : new Age(person);
             case 2:
-                return withBirthdayColumn ? formatAge(person) : formatBorn(person);
+                return withBirthdayColumn
+                        ? new Age(person)
+                        : new Born(person);
             case 3:
-                return withBirthdayColumn ? formatBorn(person) : StringUtil.nullToEmptyString(person.getNotes());
+                return withBirthdayColumn
+                        ? new Born(person)
+                        : StringUtil.nullToEmptyString(person.getNotes());
             case 4:
                 if (withBirthdayColumn) {
                     return StringUtil.nullToEmptyString(person.getNotes());
@@ -139,86 +142,6 @@ public class PersonTableModel implements TableModel {
             default:
                 throw new IllegalArgumentException("Invalid column index " + columnIndex);
         }
-    }
-
-    private String formatBirthdaysWeekday(Person person, boolean current) {
-        if (!person.isBirthdayDateValid()) {
-            return getInvalidDateString(person);
-        }
-        int birthdayMonth = person.getBirthdayMonth();
-        int birthdayDay = person.getBirthdayDay();
-        Calendar todayCal = Calendar.getInstance();
-        Calendar birthdayCal = Calendar.getInstance();
-        if (current) {
-            boolean inThisYear = DateUtil.isBefore(
-                    todayCal.get(Calendar.MONTH) + 1, todayCal.get(Calendar.DAY_OF_MONTH),
-                    birthdayMonth, birthdayDay);
-            int thisYear = todayCal.get(Calendar.YEAR);
-            birthdayCal.set(Calendar.YEAR, inThisYear ? thisYear : thisYear + 1);
-        } else {
-            if (person.getBirthdayYear() > 0) {
-                birthdayCal.set(Calendar.YEAR, person.getBirthdayYear());
-            } else {
-                return "?";
-            }
-        }
-        birthdayCal.set(Calendar.MONTH, birthdayMonth - 1);
-        birthdayCal.set(Calendar.DAY_OF_MONTH, birthdayDay);
-        SimpleDateFormat dateFormat = new SimpleDateFormat("EEEE");
-        return dateFormat.format(birthdayCal.getTime());
-    }
-
-    private String getInvalidDateString(Person person) {
-        return Bundle.getString(PersonTableModel.class, "PersonTableModel.InvalidDate", person.getBirthdayMonth(), person.getBirthdayDay());
-    }
-
-    private String formatName(Person person) {
-        return StringUtil.nullToEmptyString(person.getFirstName())
-                + " "
-                + StringUtil.nullToEmptyString(person.getLastName());
-    }
-
-    private String formatAge(Person person) {
-        if (!person.isBirthdayDateValid() || person.getBirthdayYear() <= 0) {
-            return "?";
-        }
-        Calendar todayCal = Calendar.getInstance();
-        int thisYear = todayCal.get(Calendar.YEAR);
-        int age = thisYear - person.getBirthdayYear();
-        return Bundle.getString(PersonTableModel.class, "PersonTableModel.Age", age);
-    }
-
-    private String formatBirthday(Person person) {
-        if (!person.isBirthdayDateValid()) {
-            return getInvalidDateString(person);
-        }
-        Calendar cal = Calendar.getInstance();
-        if (DateUtil.isBefore(
-                cal.get(Calendar.MONTH) + 1, cal.get(Calendar.DAY_OF_MONTH),
-                person.getBirthdayMonth(), person.getBirthdayDay())) {
-            cal.set(Calendar.YEAR, cal.get(Calendar.YEAR) - 1);
-        }
-        cal.set(Calendar.MONTH, person.getBirthdayMonth() - 1);
-        cal.set(Calendar.DAY_OF_MONTH, person.getBirthdayDay());
-        String weekday = formatBirthdaysWeekday(person, false);
-        DateFormat df = DateFormat.getDateInstance(DateFormat.MEDIUM);
-        return weekday + ", " + df.format(cal.getTime());
-    }
-
-    private String formatBorn(Person person) {
-        if (!person.isBirthdayDateValid()) {
-            return getInvalidDateString(person);
-        }
-        if (person.getBirthdayYear() <= 0) {
-            return person.getBirthdayMonth() + " - " + person.getBirthdayDay();
-        }
-        Calendar birthdayCal = Calendar.getInstance();
-        birthdayCal.set(Calendar.YEAR, person.getBirthdayYear());
-        birthdayCal.set(Calendar.MONTH, person.getBirthdayMonth() - 1);
-        birthdayCal.set(Calendar.DAY_OF_MONTH, person.getBirthdayDay());
-        String weekday = formatBirthdaysWeekday(person, false);
-        DateFormat df = DateFormat.getDateInstance(DateFormat.MEDIUM);
-        return weekday + ", " + df.format(birthdayCal.getTime());
     }
 
     @Override

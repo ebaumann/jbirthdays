@@ -5,11 +5,14 @@ import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Collection;
 import java.util.Date;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import org.openide.util.Lookup;
 
 /**
  * @author Elmar Baumann
  */
-public final class Birthdays {
+public final class BirthdaysUtil {
 
     /**
      * @param persons
@@ -92,6 +95,16 @@ public final class Birthdays {
                 && person.getBirthdayDay() == cal.get(Calendar.DAY_OF_MONTH);
     }
 
-    private Birthdays() {
+    public static PersonRepository findPreferredRepository() {
+        for(PersonRepository repo : Lookup.getDefault().lookupAll(PersonRepository.class)) {
+            if (repo.isPreferred()) {
+                Logger.getLogger(BirthdaysUtil.class.getName()).log(Level.INFO, "Using repository: {0}", repo.getDisplayName());
+                return repo;
+            }
+        }
+        throw new IllegalStateException("No preferred repository implemented!");
+    }
+
+    private BirthdaysUtil() {
     }
 }

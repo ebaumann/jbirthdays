@@ -98,6 +98,11 @@ public final class Person {
         return firstName + " " + lastName + " " + birthdayYear + "-" + birthdayMonth + "-" + birthdayDay;
     }
 
+    /**
+     * @param obj
+     * @return true if UUIDs equals
+     * @see #isSamePerson(de.elmar_baumann.jbirthdays.api.Person)
+     */
     @Override
     public boolean equals(Object obj) {
         if (obj == this) {
@@ -117,17 +122,25 @@ public final class Person {
         return hash;
     }
 
-    public static final Comparator<Person> CMP_ASC_BY_FIRST_NAME = new Comparator<Person>() {
-
-        private final Collator collator = Collator.getInstance();
-
-        @Override
-        public int compare(Person person1, Person person2) {
-            String lastName1 = StringUtil.nullToEmptyString(person1.firstName);
-            String lastName2 = StringUtil.nullToEmptyString(person2.firstName);
-            return collator.compare(lastName1, lastName2);
+    /**
+     * @param other
+     * @return true if names and birthdays equals (not UUID comparison)
+     */
+    public boolean isSamePerson(Person other) {
+        if (other == null) {
+            throw new NullPointerException("other == null");
         }
-    };
+        String thisFirstName = StringUtil.nullToEmptyString(firstName).trim();
+        String otherFirstName = StringUtil.nullToEmptyString(other.getFirstName()).trim();
+        String thisLastName = StringUtil.nullToEmptyString(lastName).trim();
+        String otherLastName = StringUtil.nullToEmptyString(other.getLastName()).trim();
+        boolean namesEquals = thisFirstName.equalsIgnoreCase(otherFirstName)
+                && thisLastName.equalsIgnoreCase(otherLastName);
+        boolean birthdaysEquals = this.birthdayYear == other.birthdayYear
+                && this.birthdayMonth == other.birthdayMonth
+                && this.birthdayDay == other.birthdayDay;
+        return namesEquals && birthdaysEquals;
+    }
 
     public static final Comparator<Person> CMP_ASC_BY_LAST_NAME = new Comparator<Person>() {
 
@@ -138,18 +151,6 @@ public final class Person {
             String lastName1 = StringUtil.nullToEmptyString(person1.lastName);
             String lastName2 = StringUtil.nullToEmptyString(person2.lastName);
             return collator.compare(lastName1, lastName2);
-        }
-    };
-
-    public static final Comparator<Person> CMP_ASC_BY_BIRTHDAY_MONTH_AND_DAY = new Comparator<Person>() {
-
-        @Override
-        public int compare(Person o1, Person o2) {
-            return o1.birthdayDay == o2.birthdayDay && o1.birthdayMonth == o2.birthdayMonth
-                    ? 0
-                    : DateUtil.isBefore(o1.birthdayMonth, o1.birthdayDay, o2.birthdayMonth, o2.birthdayDay)
-                    ? 1
-                    : -1;
         }
     };
 }

@@ -1,8 +1,7 @@
 package de.elmar_baumann.jbirthdays.ui;
 
-import de.elmar_baumann.jbirthdays.api.Birthdays;
+import de.elmar_baumann.jbirthdays.api.BirthdaysUtil;
 import de.elmar_baumann.jbirthdays.api.Person;
-import de.elmar_baumann.jbirthdays.api.PersonRepository;
 import de.elmar_baumann.jbirthdays.util.Bundle;
 import de.elmar_baumann.jbirthdays.util.IconUtil;
 import de.elmar_baumann.jbirthdays.util.TableUtil;
@@ -30,7 +29,6 @@ import javax.swing.event.DocumentListener;
 import javax.swing.event.ListSelectionEvent;
 import javax.swing.event.ListSelectionListener;
 import javax.swing.table.TableRowSorter;
-import org.openide.util.Lookup;
 
 /**
  * @author Elmar Baumann
@@ -111,7 +109,7 @@ public class BirthdaysDialog extends Dialog {
 
     private void loadPersons() {
         try {
-            Collection<? extends Person> loadedPersons = findPreferredRepository().findAll();
+            Collection<? extends Person> loadedPersons = BirthdaysUtil.findPreferredRepository().findAll();
             allPersons.clear();
             allPersons.addAll(loadedPersons);
             Collections.sort(allPersons, Person.CMP_ASC_BY_LAST_NAME);
@@ -124,7 +122,7 @@ public class BirthdaysDialog extends Dialog {
 
     private void savePersons() {
         try {
-            findPreferredRepository().save(allPersons);
+            BirthdaysUtil.findPreferredRepository().save(allPersons);
         } catch (Throwable t) {
             Logger.getLogger(BirthdaysDialog.class.getName()).log(Level.SEVERE, null, t);
             showErrorMessage(Bundle.getString(BirthdaysDialog.class, "BirthdaysDialog.ErrorMessage.SavePersons", t.getLocalizedMessage()));
@@ -133,19 +131,9 @@ public class BirthdaysDialog extends Dialog {
 
     private void updateBirthdayTables() {
         Date today = new Date();
-        birthdayTodayTableModel.setPersons(Birthdays.findWithBirthdayAt(allPersons, today));
-        birthdayBeforeTableModel.setPersons(Birthdays.findWithBirthdayInNdays(allPersons, today, panelPreferences.getDaysBefore()));
-        birthdayAfterTableModel.setPersons(Birthdays.findWithBirthdayBeforeNdays(allPersons, today, panelPreferences.getDaysAfter()));
-    }
-
-    private PersonRepository findPreferredRepository() {
-        for(PersonRepository repo : Lookup.getDefault().lookupAll(PersonRepository.class)) {
-            if (repo.isPreferred()) {
-                Logger.getLogger(BirthdaysDialog.class.getName()).log(Level.INFO, "Using repository: {0}", repo.getDisplayName());
-                return repo;
-            }
-        }
-        throw new IllegalStateException("No preferred repository implemented!");
+        birthdayTodayTableModel.setPersons(BirthdaysUtil.findWithBirthdayAt(allPersons, today));
+        birthdayBeforeTableModel.setPersons(BirthdaysUtil.findWithBirthdayInNdays(allPersons, today, panelPreferences.getDaysBefore()));
+        birthdayAfterTableModel.setPersons(BirthdaysUtil.findWithBirthdayBeforeNdays(allPersons, today, panelPreferences.getDaysAfter()));
     }
 
     private void showErrorMessage(String message) {

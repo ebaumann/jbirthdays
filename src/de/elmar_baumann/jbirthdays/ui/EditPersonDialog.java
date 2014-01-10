@@ -52,8 +52,8 @@ public class EditPersonDialog extends Dialog {
 
     public Person save() {
         if (inputsValid(false)) {
-            person.setFirstName(textFieldFirstName.getText());
-            person.setLastName(textFieldLastName.getText());
+            person.setFirstName(textFieldFirstName.getText().trim());
+            person.setLastName(textFieldLastName.getText().trim());
             person.setBirthdayYear(toInt(textFieldBirthdayYear));
             person.setBirthdayMonth(toInt(textFieldBirthdayMonth));
             person.setBirthdayDay(toInt(textFieldBirthdayDay));
