@@ -13,7 +13,9 @@ import javax.swing.UnsupportedLookAndFeelException;
 public class Main {
 
     public static void main(String[] args) {
+        AppLoggingSystem.init();
         EventQueue.invokeLater(new Runnable() {
+
             @Override
             public void run() {
                 setLookAndFeel();
