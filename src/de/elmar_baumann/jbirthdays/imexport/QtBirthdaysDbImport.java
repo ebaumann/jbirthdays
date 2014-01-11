@@ -15,6 +15,7 @@ import java.util.Collection;
 import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import java.util.prefs.Preferences;
 import javax.swing.JFileChooser;
 import javax.swing.JOptionPane;
 
@@ -22,6 +23,8 @@ import javax.swing.JOptionPane;
  * @author Elmar Baumann
  */
 public final class QtBirthdaysDbImport {
+
+    private static final String KEY_DB_DIR = "QtBirthdaysDbImport.DbDir";
 
     /**
      * @param parent
@@ -57,13 +60,26 @@ public final class QtBirthdaysDbImport {
     }
 
     private static File chooseQtDb(Component parent) {
-        JFileChooser fc = new JFileChooser();
+        JFileChooser fc = new JFileChooser(readCurrentDirPath());
         fc.setFileSelectionMode(JFileChooser.FILES_ONLY);
         fc.setMultiSelectionEnabled(false);
+        fc.setDialogTitle(Bundle.getString(QtBirthdaysDbImport.class, "QtBirthdaysDbImport.ChooseQtDb.Title"));
         if (fc.showOpenDialog(parent) == JFileChooser.APPROVE_OPTION) {
-            return fc.getSelectedFile();
+            File selectedFile = fc.getSelectedFile();
+            persistCurrentDirPath(selectedFile.getParent());
+            return selectedFile;
         }
         return null;
+    }
+
+    private static void persistCurrentDirPath(String path) {
+        Preferences prefs = Preferences.userNodeForPackage(QtBirthdaysDbImport.class);
+        prefs.put(KEY_DB_DIR, path);
+    }
+
+    private static String readCurrentDirPath() {
+        Preferences prefs = Preferences.userNodeForPackage(QtBirthdaysDbImport.class);
+        return prefs.get(KEY_DB_DIR, System.getProperty("user.home"));
     }
 
     private static Collection<? extends Person> importPersons(File qtBirthddaysDb, Charset charset, Collection<? extends Person> existingPersons) throws Throwable {

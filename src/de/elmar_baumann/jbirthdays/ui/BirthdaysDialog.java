@@ -7,8 +7,6 @@ import de.elmar_baumann.jbirthdays.util.Bundle;
 import de.elmar_baumann.jbirthdays.util.IconUtil;
 import de.elmar_baumann.jbirthdays.util.Mnemonics;
 import de.elmar_baumann.jbirthdays.util.TableUtil;
-import java.awt.Color;
-import java.awt.Component;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.KeyAdapter;
@@ -17,6 +15,9 @@ import java.awt.event.KeyListener;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
+import java.awt.event.WindowAdapter;
+import java.awt.event.WindowEvent;
+import java.awt.event.WindowListener;
 import java.beans.PropertyChangeEvent;
 import java.beans.PropertyChangeListener;
 import java.util.ArrayList;
@@ -41,13 +42,9 @@ import javax.swing.JTextField;
 import javax.swing.LayoutStyle;
 import javax.swing.WindowConstants;
 import javax.swing.border.TitledBorder;
-import javax.swing.event.DocumentEvent;
-import javax.swing.event.DocumentListener;
 import javax.swing.event.ListSelectionEvent;
 import javax.swing.event.ListSelectionListener;
-import javax.swing.table.DefaultTableCellRenderer;
 import javax.swing.table.TableCellRenderer;
-import javax.swing.table.TableRowSorter;
 
 /**
  * @author Elmar Baumann
@@ -55,13 +52,13 @@ import javax.swing.table.TableRowSorter;
 public class BirthdaysDialog extends Dialog {
 
     private static final long serialVersionUID = 1L;
-    private static final int[] COL_WIDTH_BIRTHDAY_TABLES = new int[]{150,200,75,150,200};
+    private static final TableCellRenderer TABLE_CELL_RENDERER = new PersonsTableCellRenderer();
     private final List<Person> allPersons = new ArrayList<>();
     private final PersonTableModel allPersonsTableModel = new PersonTableModel(false);
     private final PersonTableModel birthdayTodayTableModel = new PersonTableModel(true);
     private final PersonTableModel birthdayBeforeTableModel = new PersonTableModel(true);
     private final PersonTableModel birthdayAfterTableModel = new PersonTableModel(true);
-    private final TableRowSorter<PersonTableModel> allPersonsRowSorter = new TableRowSorter<>(allPersonsTableModel);
+    private final PersonSearchFilter allPersonsSearchFilter = new PersonSearchFilter(allPersonsTableModel);
 
     public BirthdaysDialog() {
         initComponents();
@@ -73,13 +70,14 @@ public class BirthdaysDialog extends Dialog {
         setIconImages();
         setTableTitles();
         tableAllPersons.setModel(allPersonsTableModel);
-        tableAllPersons.setRowSorter(allPersonsRowSorter);
+        tableAllPersons.setRowSorter(allPersonsSearchFilter.getRowSorter());
         tableBirthdayToday.setModel(birthdayTodayTableModel);
         tableBirthdayBefore.setModel(birthdayBeforeTableModel);
         tableBirthdayAfter.setModel(birthdayAfterTableModel);
-        TableUtil.setColumnWidths(tableBirthdayToday, COL_WIDTH_BIRTHDAY_TABLES);
-        TableUtil.setColumnWidths(tableBirthdayBefore, COL_WIDTH_BIRTHDAY_TABLES);
-        TableUtil.setColumnWidths(tableBirthdayAfter, COL_WIDTH_BIRTHDAY_TABLES);
+        TableUtil.restoreColumnWidths("BirthdaysDialog.tableBirthdayToday", tableBirthdayToday, birthdayTodayTableModel.getDefaultColumnWidths());
+        TableUtil.restoreColumnWidths("BirthdaysDialog.tableBirthdayBefore", tableBirthdayBefore, birthdayBeforeTableModel.getDefaultColumnWidths());
+        TableUtil.restoreColumnWidths("BirthdaysDialog.tableBirthdayAfter", tableBirthdayAfter, birthdayAfterTableModel.getDefaultColumnWidths());
+        TableUtil.restoreColumnWidths("BirthdaysDialog.tableAllPersons", tableAllPersons, allPersonsTableModel.getDefaultColumnWidths());
         panelPreferences.addPropertyChangeListener(PreferencesPanel.PROPERTY_DAYS_BEFORE, preferencesChangedListener);
         panelPreferences.addPropertyChangeListener(PreferencesPanel.PROPERTY_DAYS_AFTER, preferencesChangedListener);
         tableAllPersons.getSelectionModel().addListSelectionListener(enableEditRemoveButtonListener);
@@ -91,15 +89,14 @@ public class BirthdaysDialog extends Dialog {
         tableBirthdayToday.addKeyListener(personsTableKeyListener);
         tableBirthdayBefore.addKeyListener(personsTableKeyListener);
         tableBirthdayAfter.addKeyListener(personsTableKeyListener);
-        textFieldFilterPerson.getDocument().addDocumentListener(filterPersonListener);
+        textFieldFilterPerson.getDocument().addDocumentListener(allPersonsSearchFilter);
         panelTools.addPropertyChangeListener(ToolsPanel.PROPERTY_IMPORTED, personImportListener);
         tableAllPersons.setDefaultRenderer(Object.class, TABLE_CELL_RENDERER);
         tableBirthdayToday.setDefaultRenderer(Object.class, TABLE_CELL_RENDERER);
         tableBirthdayBefore.setDefaultRenderer(Object.class, TABLE_CELL_RENDERER);
         tableBirthdayAfter.setDefaultRenderer(Object.class, TABLE_CELL_RENDERER);
+        addWindowListener(closeListener);
     }
-
-
 
     private void setIconImages() {
         String iconFolder = "/de/elmar_baumann/jbirthdays/icons/";
@@ -230,7 +227,6 @@ public class BirthdaysDialog extends Dialog {
     }
 
     private final ListSelectionListener enableEditRemoveButtonListener = new ListSelectionListener() {
-
         @Override
         public void valueChanged(ListSelectionEvent e) {
             if (!e.getValueIsAdjusting()) {
@@ -265,27 +261,6 @@ public class BirthdaysDialog extends Dialog {
         }
     };
 
-    private final DocumentListener filterPersonListener = new DocumentListener() {
-        @Override
-        public void insertUpdate(DocumentEvent e) {
-            updateSearchFilter();
-        }
-
-        @Override
-        public void removeUpdate(DocumentEvent e) {
-            updateSearchFilter();
-        }
-
-        @Override
-        public void changedUpdate(DocumentEvent e) {
-            updateSearchFilter();
-        }
-
-        private void updateSearchFilter() {
-            allPersonsRowSorter.setRowFilter(new PersonNameRowFilter(textFieldFilterPerson.getText()));
-        }
-    };
-
     private final PropertyChangeListener personImportListener = new PropertyChangeListener() {
         @Override
         public void propertyChange(PropertyChangeEvent evt) {
@@ -294,23 +269,13 @@ public class BirthdaysDialog extends Dialog {
         }
     };
 
-    private static final TableCellRenderer TABLE_CELL_RENDERER = new DefaultTableCellRenderer() {
-
-        private static final long serialVersionUID = 1L;
-        private final Color alternateBackground = new Color(0xdfdfdf);
-        private final Color defaultBackground;
-
-        {
-            defaultBackground = getBackground();
-        }
-
+    private final WindowListener closeListener = new WindowAdapter() {
         @Override
-        public Component getTableCellRendererComponent(JTable table, Object value, boolean isSelected, boolean hasFocus, int row, int column) {
-            JLabel label = (JLabel) super.getTableCellRendererComponent(table, value, isSelected, hasFocus, row, column);
-            if (!isSelected) {
-                setBackground(row % 2 == 0 ? defaultBackground : alternateBackground);
-            }
-            return label;
+        public void windowClosing(WindowEvent e) {
+            TableUtil.persistColumnWidths("BirthdaysDialog.tableBirthdayToday", tableBirthdayToday);
+            TableUtil.persistColumnWidths("BirthdaysDialog.tableBirthdayBefore", tableBirthdayBefore);
+            TableUtil.persistColumnWidths("BirthdaysDialog.tableBirthdayAfter", tableBirthdayAfter);
+            TableUtil.persistColumnWidths("BirthdaysDialog.tableAllPersons", tableAllPersons);
         }
     };
 
@@ -397,6 +362,7 @@ public class BirthdaysDialog extends Dialog {
 
         tabbedPane.addTab(bundle.getString("BirthdaysDialog.panelDates.TabConstraints.tabTitle"), panelDates); // NOI18N
 
+        tableAllPersons.setAutoResizeMode(JTable.AUTO_RESIZE_OFF);
         scrollPaneAllPersons.setViewportView(tableAllPersons);
 
         labelFilterPerson.setLabelFor(textFieldFilterPerson);

@@ -50,6 +50,18 @@ public final class DateUtil {
         return year % 4 == 0 && year % 100 != 0 || year % 400 == 0;
     }
 
+    /**
+     * @param relYear
+     * @return relYear if relYear is a leap year, else next leap year related to rel year
+     */
+    public static int getLeapYearNextTo(int relYear) {
+        int year = relYear;
+        while (!isLeapYear(year)) {
+            year++;
+        }
+        return year;
+    }
+
     private DateUtil() {
     }
 }

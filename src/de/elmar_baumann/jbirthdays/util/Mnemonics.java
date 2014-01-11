@@ -128,7 +128,7 @@ public final class Mnemonics {
         return noMnemonicIndexString;
     }
 
-    public static boolean isInRange(char c) {
+    private static boolean isInRange(char c) {
         return MNEMONIC_OF_CHAR.containsKey(c);
     }
 

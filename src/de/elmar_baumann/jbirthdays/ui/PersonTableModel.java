@@ -17,6 +17,8 @@ import javax.swing.table.TableModel;
  */
 public class PersonTableModel implements TableModel {
 
+    private static final int[] COL_WIDTHS_BIRTHDAY = new int[]{150,250,75,150,200};
+    private static final int[] COL_WIDTHS_NO_BIRTHDAY = new int[]{250,75,150,200};
     private final Collection<TableModelListener> listeners;
     private final List<Person> persons;
     private final boolean withBirthdayColumn;
@@ -77,6 +79,12 @@ public class PersonTableModel implements TableModel {
         for (TableModelListener listener : listeners) {
             listener.tableChanged(new TableModelEvent(this));
         }
+    }
+
+    public int[] getDefaultColumnWidths() {
+        return withBirthdayColumn
+                ? COL_WIDTHS_BIRTHDAY
+                : COL_WIDTHS_NO_BIRTHDAY;
     }
 
     @Override

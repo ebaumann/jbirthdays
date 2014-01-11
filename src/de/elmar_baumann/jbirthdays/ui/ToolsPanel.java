@@ -1,5 +1,6 @@
 package de.elmar_baumann.jbirthdays.ui;
 
+import de.elmar_baumann.jbirthdays.ical.ExportToIcalAction;
 import de.elmar_baumann.jbirthdays.imexport.QtBirthdaysDbImport;
 import de.elmar_baumann.jbirthdays.util.Bundle;
 import de.elmar_baumann.jbirthdays.util.Mnemonics;
@@ -53,12 +54,21 @@ public class ToolsPanel extends javax.swing.JPanel {
     @SuppressWarnings("unchecked")
     private void initComponents() {//GEN-BEGIN:initComponents
 
+        panelImport = new javax.swing.JPanel();
+        panelOldQtBirthdayApp = new javax.swing.JPanel();
         buttonImportQtDb = new javax.swing.JButton();
         labelImportCharset = new javax.swing.JLabel();
         comboBoxImportCharsets = new javax.swing.JComboBox<>();
         labelCharsetsInfo = new javax.swing.JLabel();
+        panelExport = new javax.swing.JPanel();
+        buttonExportToIcal = new javax.swing.JButton();
+        labelIcalInfo = new javax.swing.JLabel();
 
         java.util.ResourceBundle bundle = java.util.ResourceBundle.getBundle("de/elmar_baumann/jbirthdays/ui/Bundle"); // NOI18N
+        panelImport.setBorder(javax.swing.BorderFactory.createTitledBorder(bundle.getString("ToolsPanel.panelImport.border.title"))); // NOI18N
+
+        panelOldQtBirthdayApp.setBorder(javax.swing.BorderFactory.createTitledBorder(bundle.getString("ToolsPanel.panelOldQtBirthdayApp.border.title"))); // NOI18N
+
         buttonImportQtDb.setText(bundle.getString("ToolsPanel.buttonImportQtDb.text")); // NOI18N
         buttonImportQtDb.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -68,33 +78,101 @@ public class ToolsPanel extends javax.swing.JPanel {
 
         labelImportCharset.setText(bundle.getString("ToolsPanel.labelImportCharset.text")); // NOI18N
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
-        this.setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
+        labelCharsetsInfo.setText("Will be set programatically"); // NOI18N
+
+        javax.swing.GroupLayout panelOldQtBirthdayAppLayout = new javax.swing.GroupLayout(panelOldQtBirthdayApp);
+        panelOldQtBirthdayApp.setLayout(panelOldQtBirthdayAppLayout);
+        panelOldQtBirthdayAppLayout.setHorizontalGroup(
+            panelOldQtBirthdayAppLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(panelOldQtBirthdayAppLayout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
+                .addGroup(panelOldQtBirthdayAppLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(panelOldQtBirthdayAppLayout.createSequentialGroup()
                         .addComponent(buttonImportQtDb)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(labelImportCharset)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(comboBoxImportCharsets, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addComponent(labelCharsetsInfo))
+                .addContainerGap(44, Short.MAX_VALUE))
+        );
+        panelOldQtBirthdayAppLayout.setVerticalGroup(
+            panelOldQtBirthdayAppLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(panelOldQtBirthdayAppLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(panelOldQtBirthdayAppLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(buttonImportQtDb)
+                    .addComponent(labelImportCharset)
+                    .addComponent(comboBoxImportCharsets, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(labelCharsetsInfo)
+                .addContainerGap(13, Short.MAX_VALUE))
+        );
+
+        javax.swing.GroupLayout panelImportLayout = new javax.swing.GroupLayout(panelImport);
+        panelImport.setLayout(panelImportLayout);
+        panelImportLayout.setHorizontalGroup(
+            panelImportLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(panelImportLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(panelOldQtBirthdayApp, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(215, Short.MAX_VALUE))
+        );
+        panelImportLayout.setVerticalGroup(
+            panelImportLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelImportLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(panelOldQtBirthdayApp, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
+        );
+
+        panelExport.setBorder(javax.swing.BorderFactory.createTitledBorder(bundle.getString("ToolsPanel.panelExport.border.title"))); // NOI18N
+
+        buttonExportToIcal.setAction(new ExportToIcalAction(this));
+        buttonExportToIcal.setText(bundle.getString("ToolsPanel.buttonExportToIcal.text")); // NOI18N
+
+        labelIcalInfo.setText(bundle.getString("ToolsPanel.labelIcalInfo.text")); // NOI18N
+
+        javax.swing.GroupLayout panelExportLayout = new javax.swing.GroupLayout(panelExport);
+        panelExport.setLayout(panelExportLayout);
+        panelExportLayout.setHorizontalGroup(
+            panelExportLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(panelExportLayout.createSequentialGroup()
+                .addGap(22, 22, 22)
+                .addComponent(buttonExportToIcal)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(labelIcalInfo)
+                .addContainerGap(22, Short.MAX_VALUE))
+        );
+        panelExportLayout.setVerticalGroup(
+            panelExportLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(panelExportLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(panelExportLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(buttonExportToIcal)
+                    .addComponent(labelIcalInfo))
+                .addContainerGap(15, Short.MAX_VALUE))
+        );
+
+        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
+        this.setLayout(layout);
+        layout.setHorizontalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(12, 12, 12)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(panelExport, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(panelImport, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(buttonImportQtDb)
-                    .addComponent(labelImportCharset)
-                    .addComponent(comboBoxImportCharsets, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addComponent(panelImport, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(labelCharsetsInfo)
-                .addContainerGap(145, Short.MAX_VALUE))
+                .addComponent(panelExport, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
     }//GEN-END:initComponents
 
@@ -104,9 +182,14 @@ public class ToolsPanel extends javax.swing.JPanel {
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton buttonExportToIcal;
     private javax.swing.JButton buttonImportQtDb;
     private javax.swing.JComboBox<Charset> comboBoxImportCharsets;
     private javax.swing.JLabel labelCharsetsInfo;
+    private javax.swing.JLabel labelIcalInfo;
     private javax.swing.JLabel labelImportCharset;
+    private javax.swing.JPanel panelExport;
+    private javax.swing.JPanel panelImport;
+    private javax.swing.JPanel panelOldQtBirthdayApp;
     // End of variables declaration//GEN-END:variables
 }

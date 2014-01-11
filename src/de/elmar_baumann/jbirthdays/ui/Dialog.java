@@ -23,7 +23,7 @@ public class Dialog extends JDialog {
         this(null, true);
     }
 
-    public Dialog(JDialog owner, boolean modal) {
+    public Dialog(java.awt.Dialog owner, boolean modal) {
         super(owner, modal);
         init();
     }
