@@ -1,9 +1,7 @@
-.*/build/.*
-.*/dist/.*
+build/.*
+dist/.*
 .*/private/.*
-.*desktop.ini
 .*\.diff
-.*\.directory
 .*\.log
 .*\.patch
 .*~$

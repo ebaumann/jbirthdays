@@ -3,6 +3,7 @@ package de.elmar_baumann.jbirthdays.ui;
 import de.elmar_baumann.jbirthdays.api.Person;
 import de.elmar_baumann.jbirthdays.util.Bundle;
 import de.elmar_baumann.jbirthdays.util.DateUtil;
+import de.elmar_baumann.jbirthdays.util.Mnemonics;
 import de.elmar_baumann.jbirthdays.util.StringUtil;
 import java.util.Calendar;
 import javax.swing.JOptionPane;
@@ -34,6 +35,7 @@ public class EditPersonDialog extends Dialog {
     }
 
     private void postInitComponents() {
+        Mnemonics.setMnemonics(this);
         Calendar todayCal = Calendar.getInstance();
         textFieldBirthdayYear.setInputVerifier(new NumberRangeInputVerifier(1800, todayCal.get(Calendar.YEAR)));
         textFieldBirthdayMonth.setInputVerifier(new NumberRangeInputVerifier(1, 12));
@@ -133,29 +135,29 @@ public class EditPersonDialog extends Dialog {
         setTitle(bundle.getString("EditPersonDialog.title")); // NOI18N
 
         labelFirstName.setLabelFor(textFieldFirstName);
-        org.openide.awt.Mnemonics.setLocalizedText(labelFirstName, bundle.getString("EditPersonDialog.labelFirstName.text")); // NOI18N
+        labelFirstName.setText(bundle.getString("EditPersonDialog.labelFirstName.text")); // NOI18N
 
         textFieldFirstName.setColumns(30);
 
         labelLastName.setLabelFor(textFieldLastName);
-        org.openide.awt.Mnemonics.setLocalizedText(labelLastName, bundle.getString("EditPersonDialog.labelLastName.text")); // NOI18N
+        labelLastName.setText(bundle.getString("EditPersonDialog.labelLastName.text")); // NOI18N
 
         textFieldLastName.setColumns(30);
 
         panelDateOfBirth.setBorder(javax.swing.BorderFactory.createTitledBorder(bundle.getString("EditPersonDialog.panelDateOfBirth.border.title"))); // NOI18N
 
         labelBirthdayYear.setLabelFor(textFieldBirthdayYear);
-        org.openide.awt.Mnemonics.setLocalizedText(labelBirthdayYear, bundle.getString("EditPersonDialog.labelBirthdayYear.text")); // NOI18N
+        labelBirthdayYear.setText(bundle.getString("EditPersonDialog.labelBirthdayYear.text")); // NOI18N
 
         textFieldBirthdayYear.setColumns(4);
 
         labelBirthdayMonth.setLabelFor(textFieldBirthdayMonth);
-        org.openide.awt.Mnemonics.setLocalizedText(labelBirthdayMonth, bundle.getString("EditPersonDialog.labelBirthdayMonth.text")); // NOI18N
+        labelBirthdayMonth.setText(bundle.getString("EditPersonDialog.labelBirthdayMonth.text")); // NOI18N
 
         textFieldBirthdayMonth.setColumns(2);
 
         labelBirthdayDay.setLabelFor(textFieldBirthdayDay);
-        org.openide.awt.Mnemonics.setLocalizedText(labelBirthdayDay, bundle.getString("EditPersonDialog.labelBirthdayDay.text")); // NOI18N
+        labelBirthdayDay.setText(bundle.getString("EditPersonDialog.labelBirthdayDay.text")); // NOI18N
 
         textFieldBirthdayDay.setColumns(2);
 
@@ -193,7 +195,7 @@ public class EditPersonDialog extends Dialog {
         );
 
         labelNotes.setLabelFor(textAreaNotes);
-        org.openide.awt.Mnemonics.setLocalizedText(labelNotes, bundle.getString("EditPersonDialog.labelNotes.text")); // NOI18N
+        labelNotes.setText(bundle.getString("EditPersonDialog.labelNotes.text")); // NOI18N
 
         textAreaNotes.setColumns(20);
         textAreaNotes.setLineWrap(true);
@@ -201,14 +203,14 @@ public class EditPersonDialog extends Dialog {
         textAreaNotes.setWrapStyleWord(true);
         scrollPaneNotes.setViewportView(textAreaNotes);
 
-        org.openide.awt.Mnemonics.setLocalizedText(buttonOk, bundle.getString("EditPersonDialog.buttonOk.text")); // NOI18N
+        buttonOk.setText(bundle.getString("EditPersonDialog.buttonOk.text")); // NOI18N
         buttonOk.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 buttonOkActionPerformed(evt);
             }
         });
 
-        org.openide.awt.Mnemonics.setLocalizedText(buttonCancel, bundle.getString("EditPersonDialog.buttonCancel.text")); // NOI18N
+        buttonCancel.setText(bundle.getString("EditPersonDialog.buttonCancel.text")); // NOI18N
         buttonCancel.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 buttonCancelActionPerformed(evt);

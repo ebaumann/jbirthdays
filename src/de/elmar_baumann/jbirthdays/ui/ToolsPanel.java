@@ -2,6 +2,7 @@ package de.elmar_baumann.jbirthdays.ui;
 
 import de.elmar_baumann.jbirthdays.imexport.QtBirthdaysDbImport;
 import de.elmar_baumann.jbirthdays.util.Bundle;
+import de.elmar_baumann.jbirthdays.util.Mnemonics;
 import java.nio.charset.Charset;
 import java.util.Collection;
 import javax.swing.DefaultComboBoxModel;
@@ -21,6 +22,7 @@ public class ToolsPanel extends javax.swing.JPanel {
     }
 
     private void postInitComponents() {
+        Mnemonics.setMnemonics(this);
         Collection<Charset> charsets = Charset.availableCharsets().values();
         comboBoxImportCharsets.setModel(new DefaultComboBoxModel<>(charsets.toArray(new Charset[charsets.size()])));
         comboBoxImportCharsets.setSelectedItem(Charset.defaultCharset());
@@ -57,14 +59,14 @@ public class ToolsPanel extends javax.swing.JPanel {
         labelCharsetsInfo = new javax.swing.JLabel();
 
         java.util.ResourceBundle bundle = java.util.ResourceBundle.getBundle("de/elmar_baumann/jbirthdays/ui/Bundle"); // NOI18N
-        org.openide.awt.Mnemonics.setLocalizedText(buttonImportQtDb, bundle.getString("ToolsPanel.buttonImportQtDb.text")); // NOI18N
+        buttonImportQtDb.setText(bundle.getString("ToolsPanel.buttonImportQtDb.text")); // NOI18N
         buttonImportQtDb.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 buttonImportQtDbActionPerformed(evt);
             }
         });
 
-        org.openide.awt.Mnemonics.setLocalizedText(labelImportCharset, bundle.getString("ToolsPanel.labelImportCharset.text")); // NOI18N
+        labelImportCharset.setText(bundle.getString("ToolsPanel.labelImportCharset.text")); // NOI18N
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);

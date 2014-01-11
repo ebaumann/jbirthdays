@@ -5,12 +5,10 @@ import de.elmar_baumann.jbirthdays.api.BirthdaysUtil;
 import de.elmar_baumann.jbirthdays.api.Person;
 import de.elmar_baumann.jbirthdays.util.Bundle;
 import de.elmar_baumann.jbirthdays.util.IconUtil;
+import de.elmar_baumann.jbirthdays.util.Mnemonics;
 import de.elmar_baumann.jbirthdays.util.TableUtil;
 import java.awt.Color;
 import java.awt.Component;
-import java.awt.GridBagConstraints;
-import java.awt.GridBagLayout;
-import java.awt.Insets;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.KeyAdapter;
@@ -50,7 +48,6 @@ import javax.swing.event.ListSelectionListener;
 import javax.swing.table.DefaultTableCellRenderer;
 import javax.swing.table.TableCellRenderer;
 import javax.swing.table.TableRowSorter;
-import org.openide.awt.Mnemonics;
 
 /**
  * @author Elmar Baumann
@@ -59,8 +56,6 @@ public class BirthdaysDialog extends Dialog {
 
     private static final long serialVersionUID = 1L;
     private static final int[] COL_WIDTH_BIRTHDAY_TABLES = new int[]{150,200,75,150,200};
-    private final PreferencesPanel panelPreferences = new PreferencesPanel();
-    private final ToolsPanel panelTools = new ToolsPanel();
     private final List<Person> allPersons = new ArrayList<>();
     private final PersonTableModel allPersonsTableModel = new PersonTableModel(false);
     private final PersonTableModel birthdayTodayTableModel = new PersonTableModel(true);
@@ -74,11 +69,9 @@ public class BirthdaysDialog extends Dialog {
     }
 
     private void postInitComponents() {
-        // Matisse throws java.lang.ClassNotFoundException: de.elmar_baumann.jbirthdays.ui.PreferencesPanel,
-        // INFO [org.netbeans.modules.form.MetaComponentCreator]: Cannot load component class de.elmar_baumann.jbirthdays.ui.PreferencesPanel from project <path>JBirthdays.
-        tabbedPane.addTab(Bundle.getString(BirthdaysDialog.class, "BirthdaysDialog.TabTitle.Tools"), panelTools);
-        tabbedPane.addTab(Bundle.getString(BirthdaysDialog.class, "BirthdaysDialog.TabTitle.Preferences"), panelPreferences);
-        tabbedPane.addTab(Bundle.getString(BirthdaysDialog.class, "BirthdaysDialog.TabTitle.About"), createAboutPanel());
+        Mnemonics.setMnemonics(this);
+        setIconImages();
+        setTableTitles();
         tableAllPersons.setModel(allPersonsTableModel);
         tableAllPersons.setRowSorter(allPersonsRowSorter);
         tableBirthdayToday.setModel(birthdayTodayTableModel);
@@ -87,8 +80,6 @@ public class BirthdaysDialog extends Dialog {
         TableUtil.setColumnWidths(tableBirthdayToday, COL_WIDTH_BIRTHDAY_TABLES);
         TableUtil.setColumnWidths(tableBirthdayBefore, COL_WIDTH_BIRTHDAY_TABLES);
         TableUtil.setColumnWidths(tableBirthdayAfter, COL_WIDTH_BIRTHDAY_TABLES);
-        setIconImages();
-        setTableTitles();
         panelPreferences.addPropertyChangeListener(PreferencesPanel.PROPERTY_DAYS_BEFORE, preferencesChangedListener);
         panelPreferences.addPropertyChangeListener(PreferencesPanel.PROPERTY_DAYS_AFTER, preferencesChangedListener);
         tableAllPersons.getSelectionModel().addListSelectionListener(enableEditRemoveButtonListener);
@@ -303,22 +294,6 @@ public class BirthdaysDialog extends Dialog {
         }
     };
 
-    private Component createAboutPanel() {
-        JPanel panel = new JPanel(new GridBagLayout());
-        GridBagConstraints gbc = new GridBagConstraints();
-        gbc.anchor = GridBagConstraints.WEST;
-        gbc.gridwidth = GridBagConstraints.REMAINDER;
-        gbc.weightx = 1.0;
-        gbc.insets = new Insets(10, 10, 0, 0);
-        JLabel labelInfo = new JLabel(Bundle.getString(BirthdaysDialog.class, "About.Text", AppVersion.VERSION, AppVersion.DATE));
-        panel.add(labelInfo, gbc);
-        gbc.gridheight = GridBagConstraints.REMAINDER;
-        gbc.fill = GridBagConstraints.VERTICAL;
-        gbc.weighty = 1.0;
-        panel.add(new JPanel(), gbc);
-        return panel;
-    }
-
     private static final TableCellRenderer TABLE_CELL_RENDERER = new DefaultTableCellRenderer() {
 
         private static final long serialVersionUID = 1L;
@@ -364,6 +339,10 @@ public class BirthdaysDialog extends Dialog {
         buttonAddPerson = new JButton();
         buttonRemovePerson = new JButton();
         buttonEditPerson = new JButton();
+        panelTools = new ToolsPanel();
+        panelPreferences = new PreferencesPanel();
+        jPanel1 = new JPanel();
+        jLabel1 = new JLabel();
 
         setDefaultCloseOperation(WindowConstants.DISPOSE_ON_CLOSE);
         setTitle(Bundle.getString(BirthdaysDialog.class, "BirthdaysDialog.Title", AppVersion.VERSION)
@@ -385,7 +364,7 @@ public class BirthdaysDialog extends Dialog {
         scrollPaneBirthdayAfter.setViewportView(tableBirthdayAfter);
 
         ResourceBundle bundle = ResourceBundle.getBundle("de/elmar_baumann/jbirthdays/ui/Bundle"); // NOI18N
-        Mnemonics.setLocalizedText(labelHintDoubleclick, bundle.getString("BirthdaysDialog.labelHintDoubleclick.text")); // NOI18N
+        labelHintDoubleclick.setText(bundle.getString("BirthdaysDialog.labelHintDoubleclick.text")); // NOI18N
 
         GroupLayout panelDatesLayout = new GroupLayout(panelDates);
         panelDates.setLayout(panelDatesLayout);
@@ -421,18 +400,18 @@ public class BirthdaysDialog extends Dialog {
         scrollPaneAllPersons.setViewportView(tableAllPersons);
 
         labelFilterPerson.setLabelFor(textFieldFilterPerson);
-        Mnemonics.setLocalizedText(labelFilterPerson, bundle.getString("BirthdaysDialog.labelFilterPerson.text")); // NOI18N
+        labelFilterPerson.setText(bundle.getString("BirthdaysDialog.labelFilterPerson.text")); // NOI18N
 
         textFieldFilterPerson.setColumns(20);
 
-        Mnemonics.setLocalizedText(buttonAddPerson, bundle.getString("BirthdaysDialog.buttonAddPerson.text")); // NOI18N
+        buttonAddPerson.setText(bundle.getString("BirthdaysDialog.buttonAddPerson.text")); // NOI18N
         buttonAddPerson.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent evt) {
                 buttonAddPersonActionPerformed(evt);
             }
         });
 
-        Mnemonics.setLocalizedText(buttonRemovePerson, bundle.getString("BirthdaysDialog.buttonRemovePerson.text")); // NOI18N
+        buttonRemovePerson.setText(bundle.getString("BirthdaysDialog.buttonRemovePerson.text")); // NOI18N
         buttonRemovePerson.setEnabled(false);
         buttonRemovePerson.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent evt) {
@@ -440,7 +419,7 @@ public class BirthdaysDialog extends Dialog {
             }
         });
 
-        Mnemonics.setLocalizedText(buttonEditPerson, bundle.getString("BirthdaysDialog.buttonEditPerson.text")); // NOI18N
+        buttonEditPerson.setText(bundle.getString("BirthdaysDialog.buttonEditPerson.text")); // NOI18N
         buttonEditPerson.setEnabled(false);
         buttonEditPerson.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent evt) {
@@ -484,6 +463,29 @@ public class BirthdaysDialog extends Dialog {
         );
 
         tabbedPane.addTab(bundle.getString("BirthdaysDialog.panelPersons.TabConstraints.tabTitle"), panelPersons); // NOI18N
+        tabbedPane.addTab(bundle.getString("BirthdaysDialog.panelTools.TabConstraints.tabTitle"), panelTools); // NOI18N
+        tabbedPane.addTab(bundle.getString("BirthdaysDialog.panelPreferences.TabConstraints.tabTitle"), panelPreferences); // NOI18N
+
+        jLabel1.setText(Bundle.getString(BirthdaysDialog.class, "BirthdaysDialog.About.Text", AppVersion.VERSION, AppVersion.DATE));
+
+        GroupLayout jPanel1Layout = new GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel1)
+                .addContainerGap(651, Short.MAX_VALUE))
+        );
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel1)
+                .addContainerGap(484, Short.MAX_VALUE))
+        );
+
+        tabbedPane.addTab(bundle.getString("BirthdaysDialog.jPanel1.TabConstraints.tabTitle"), jPanel1); // NOI18N
 
         GroupLayout layout = new GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -557,10 +559,14 @@ public class BirthdaysDialog extends Dialog {
     private JButton buttonAddPerson;
     private JButton buttonEditPerson;
     private JButton buttonRemovePerson;
+    private JLabel jLabel1;
+    private JPanel jPanel1;
     private JLabel labelFilterPerson;
     private JLabel labelHintDoubleclick;
     private JPanel panelDates;
     private JPanel panelPersons;
+    private PreferencesPanel panelPreferences;
+    private ToolsPanel panelTools;
     private JScrollPane scrollPaneAllPersons;
     private JScrollPane scrollPaneBirthdayAfter;
     private JScrollPane scrollPaneBirthdayBefore;
