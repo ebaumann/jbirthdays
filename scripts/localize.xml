@@ -36,6 +36,7 @@
                 <include name="**/*.properties"/>
                 <exclude name="**/build/**"/>
                 <exclude name="**/nbproject/**"/>
+                <exclude name="**/AppVersion.properties"/>
                 <exclude name="DeveloperSupport/**"/>
                 <exclude name="dist_files/**"/>
                 <exclude name="lib/**"/>

@@ -11,6 +11,10 @@ dist/.*
 \.orig$
 \.orig\..*$
 \.rej$
+^dist_files/upload/.*
+^scripts/conf/innosetup.properties
+^scripts/conf/sourceforge.properties
+^scripts/conf/website.properties
 ^OmegaT/.*\.bak$
 ^OmegaT/.*/source/.*
 ^OmegaT/.*/target/.*
