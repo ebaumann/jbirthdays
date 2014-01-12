@@ -7,6 +7,7 @@ import de.elmar_baumann.jbirthdays.util.Bundle;
 import de.elmar_baumann.jbirthdays.util.IconUtil;
 import de.elmar_baumann.jbirthdays.util.Mnemonics;
 import de.elmar_baumann.jbirthdays.util.TableUtil;
+import java.awt.Component;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.KeyAdapter;
@@ -66,7 +67,9 @@ public class BirthdaysDialog extends Dialog {
     }
 
     private void postInitComponents() {
-        Mnemonics.setMnemonics(this);
+        Mnemonics.setMnemonics(panelDates);
+        Mnemonics.setMnemonics(panelPersons);
+        Mnemonics.setMnemonics((Component) tabbedPane);
         setIconImages();
         setTableTitles();
         tableAllPersons.setModel(allPersonsTableModel);
@@ -306,7 +309,7 @@ public class BirthdaysDialog extends Dialog {
         buttonEditPerson = new JButton();
         panelTools = new ToolsPanel();
         panelPreferences = new PreferencesPanel();
-        jPanel1 = new JPanel();
+        panelAbout = new JPanel();
         jLabel1 = new JLabel();
 
         setDefaultCloseOperation(WindowConstants.DISPOSE_ON_CLOSE);
@@ -434,24 +437,24 @@ public class BirthdaysDialog extends Dialog {
 
         jLabel1.setText(Bundle.getString(BirthdaysDialog.class, "BirthdaysDialog.About.Text", AppVersion.VERSION, AppVersion.DATE));
 
-        GroupLayout jPanel1Layout = new GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
+        GroupLayout panelAboutLayout = new GroupLayout(panelAbout);
+        panelAbout.setLayout(panelAboutLayout);
+        panelAboutLayout.setHorizontalGroup(
+            panelAboutLayout.createParallelGroup(GroupLayout.Alignment.LEADING)
+            .addGroup(panelAboutLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jLabel1)
                 .addContainerGap(651, Short.MAX_VALUE))
         );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
+        panelAboutLayout.setVerticalGroup(
+            panelAboutLayout.createParallelGroup(GroupLayout.Alignment.LEADING)
+            .addGroup(panelAboutLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jLabel1)
                 .addContainerGap(484, Short.MAX_VALUE))
         );
 
-        tabbedPane.addTab(bundle.getString("BirthdaysDialog.jPanel1.TabConstraints.tabTitle"), jPanel1); // NOI18N
+        tabbedPane.addTab(bundle.getString("BirthdaysDialog.panelAbout.TabConstraints.tabTitle"), panelAbout); // NOI18N
 
         GroupLayout layout = new GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -526,9 +529,9 @@ public class BirthdaysDialog extends Dialog {
     private JButton buttonEditPerson;
     private JButton buttonRemovePerson;
     private JLabel jLabel1;
-    private JPanel jPanel1;
     private JLabel labelFilterPerson;
     private JLabel labelHintDoubleclick;
+    private JPanel panelAbout;
     private JPanel panelDates;
     private JPanel panelPersons;
     private PreferencesPanel panelPreferences;

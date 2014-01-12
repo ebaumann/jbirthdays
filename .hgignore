@@ -11,3 +11,8 @@ dist/.*
 \.orig$
 \.orig\..*$
 \.rej$
+^OmegaT/.*\.bak$
+^OmegaT/.*/source/.*
+^OmegaT/.*/target/.*
+^OmegaT/.*\.zip$
+.*/omegat/project_stats.txt$
