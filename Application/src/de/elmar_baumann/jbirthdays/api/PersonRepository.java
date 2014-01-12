@@ -13,6 +13,10 @@ public interface PersonRepository {
 
     void save(Collection<? extends Person> persons);
 
+    /**
+     * If multiple implementations existing, the preferred repository will be used.
+     * @return
+     */
     boolean isPreferred();
 
     String getDisplayName();
