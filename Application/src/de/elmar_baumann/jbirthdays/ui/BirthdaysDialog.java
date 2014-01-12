@@ -8,6 +8,10 @@ import de.elmar_baumann.jbirthdays.util.IconUtil;
 import de.elmar_baumann.jbirthdays.util.Mnemonics;
 import de.elmar_baumann.jbirthdays.util.TableUtil;
 import java.awt.Component;
+import java.awt.Dimension;
+import java.awt.GridBagConstraints;
+import java.awt.GridBagLayout;
+import java.awt.Insets;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.KeyAdapter;
@@ -31,7 +35,6 @@ import java.util.ResourceBundle;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.BorderFactory;
-import javax.swing.GroupLayout;
 import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
@@ -40,7 +43,6 @@ import javax.swing.JScrollPane;
 import javax.swing.JTabbedPane;
 import javax.swing.JTable;
 import javax.swing.JTextField;
-import javax.swing.LayoutStyle;
 import javax.swing.WindowConstants;
 import javax.swing.border.TitledBorder;
 import javax.swing.event.ListSelectionEvent;
@@ -62,6 +64,7 @@ public class BirthdaysDialog extends Dialog {
     private final PersonSearchFilter allPersonsSearchFilter = new PersonSearchFilter(allPersonsTableModel);
 
     public BirthdaysDialog() {
+        System.out.println(AppVersion.VERSION);
         initComponents();
         postInitComponents();
     }
@@ -289,6 +292,7 @@ public class BirthdaysDialog extends Dialog {
      */
     @SuppressWarnings("unchecked")
     private void initComponents() {//GEN-BEGIN:initComponents
+        GridBagConstraints gridBagConstraints;
 
         tabbedPane = new JTabbedPane();
         panelDates = new JPanel();
@@ -310,68 +314,101 @@ public class BirthdaysDialog extends Dialog {
         panelTools = new ToolsPanel();
         panelPreferences = new PreferencesPanel();
         panelAbout = new JPanel();
-        jLabel1 = new JLabel();
+        labelAbout = new JLabel();
 
         setDefaultCloseOperation(WindowConstants.DISPOSE_ON_CLOSE);
         setTitle(Bundle.getString(BirthdaysDialog.class, "BirthdaysDialog.Title", AppVersion.VERSION)
         );
+        getContentPane().setLayout(new GridBagLayout());
+
+        panelDates.setLayout(new GridBagLayout());
 
         scrollPaneBirthdayToday.setBorder(BorderFactory.createTitledBorder(""));
+        scrollPaneBirthdayToday.setPreferredSize(new Dimension(400, 150));
 
         tableBirthdayToday.setAutoResizeMode(JTable.AUTO_RESIZE_OFF);
         scrollPaneBirthdayToday.setViewportView(tableBirthdayToday);
 
+        gridBagConstraints = new GridBagConstraints();
+        gridBagConstraints.gridwidth = GridBagConstraints.REMAINDER;
+        gridBagConstraints.fill = GridBagConstraints.BOTH;
+        gridBagConstraints.anchor = GridBagConstraints.WEST;
+        gridBagConstraints.weightx = 1.0;
+        gridBagConstraints.weighty = 0.33;
+        gridBagConstraints.insets = new Insets(10, 10, 0, 10);
+        panelDates.add(scrollPaneBirthdayToday, gridBagConstraints);
+
         scrollPaneBirthdayBefore.setBorder(BorderFactory.createTitledBorder(""));
+        scrollPaneBirthdayBefore.setPreferredSize(new Dimension(400, 150));
 
         tableBirthdayBefore.setAutoResizeMode(JTable.AUTO_RESIZE_OFF);
         scrollPaneBirthdayBefore.setViewportView(tableBirthdayBefore);
 
+        gridBagConstraints = new GridBagConstraints();
+        gridBagConstraints.gridwidth = GridBagConstraints.REMAINDER;
+        gridBagConstraints.fill = GridBagConstraints.BOTH;
+        gridBagConstraints.anchor = GridBagConstraints.WEST;
+        gridBagConstraints.weightx = 1.0;
+        gridBagConstraints.weighty = 0.33;
+        gridBagConstraints.insets = new Insets(5, 10, 0, 10);
+        panelDates.add(scrollPaneBirthdayBefore, gridBagConstraints);
+
         scrollPaneBirthdayAfter.setBorder(BorderFactory.createTitledBorder(""));
+        scrollPaneBirthdayAfter.setPreferredSize(new Dimension(400, 150));
 
         tableBirthdayAfter.setAutoResizeMode(JTable.AUTO_RESIZE_OFF);
         scrollPaneBirthdayAfter.setViewportView(tableBirthdayAfter);
 
+        gridBagConstraints = new GridBagConstraints();
+        gridBagConstraints.gridwidth = GridBagConstraints.REMAINDER;
+        gridBagConstraints.fill = GridBagConstraints.BOTH;
+        gridBagConstraints.anchor = GridBagConstraints.WEST;
+        gridBagConstraints.weightx = 1.0;
+        gridBagConstraints.weighty = 0.33;
+        gridBagConstraints.insets = new Insets(5, 10, 0, 10);
+        panelDates.add(scrollPaneBirthdayAfter, gridBagConstraints);
+
         ResourceBundle bundle = ResourceBundle.getBundle("de/elmar_baumann/jbirthdays/ui/Bundle"); // NOI18N
         labelHintDoubleclick.setText(bundle.getString("BirthdaysDialog.labelHintDoubleclick.text")); // NOI18N
-
-        GroupLayout panelDatesLayout = new GroupLayout(panelDates);
-        panelDates.setLayout(panelDatesLayout);
-        panelDatesLayout.setHorizontalGroup(
-            panelDatesLayout.createParallelGroup(GroupLayout.Alignment.LEADING)
-            .addGroup(panelDatesLayout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(panelDatesLayout.createParallelGroup(GroupLayout.Alignment.LEADING)
-                    .addComponent(scrollPaneBirthdayToday)
-                    .addComponent(scrollPaneBirthdayAfter, GroupLayout.Alignment.TRAILING, GroupLayout.DEFAULT_SIZE, 707, Short.MAX_VALUE)
-                    .addComponent(scrollPaneBirthdayBefore, GroupLayout.DEFAULT_SIZE, 707, Short.MAX_VALUE)
-                    .addGroup(panelDatesLayout.createSequentialGroup()
-                        .addComponent(labelHintDoubleclick)
-                        .addGap(0, 0, Short.MAX_VALUE)))
-                .addContainerGap())
-        );
-        panelDatesLayout.setVerticalGroup(
-            panelDatesLayout.createParallelGroup(GroupLayout.Alignment.LEADING)
-            .addGroup(panelDatesLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(scrollPaneBirthdayToday, GroupLayout.DEFAULT_SIZE, 149, Short.MAX_VALUE)
-                .addGap(11, 11, 11)
-                .addComponent(scrollPaneBirthdayBefore, GroupLayout.DEFAULT_SIZE, 149, Short.MAX_VALUE)
-                .addPreferredGap(LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(scrollPaneBirthdayAfter, GroupLayout.DEFAULT_SIZE, 147, Short.MAX_VALUE)
-                .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(labelHintDoubleclick)
-                .addContainerGap())
-        );
+        gridBagConstraints = new GridBagConstraints();
+        gridBagConstraints.gridwidth = GridBagConstraints.REMAINDER;
+        gridBagConstraints.fill = GridBagConstraints.BOTH;
+        gridBagConstraints.anchor = GridBagConstraints.WEST;
+        gridBagConstraints.weightx = 1.0;
+        gridBagConstraints.insets = new Insets(5, 10, 10, 10);
+        panelDates.add(labelHintDoubleclick, gridBagConstraints);
 
         tabbedPane.addTab(bundle.getString("BirthdaysDialog.panelDates.TabConstraints.tabTitle"), panelDates); // NOI18N
+
+        panelPersons.setLayout(new GridBagLayout());
+
+        scrollPaneAllPersons.setPreferredSize(new Dimension(400, 200));
 
         tableAllPersons.setAutoResizeMode(JTable.AUTO_RESIZE_OFF);
         scrollPaneAllPersons.setViewportView(tableAllPersons);
 
+        gridBagConstraints = new GridBagConstraints();
+        gridBagConstraints.gridwidth = GridBagConstraints.REMAINDER;
+        gridBagConstraints.fill = GridBagConstraints.BOTH;
+        gridBagConstraints.anchor = GridBagConstraints.WEST;
+        gridBagConstraints.weightx = 1.0;
+        gridBagConstraints.weighty = 1.0;
+        gridBagConstraints.insets = new Insets(10, 10, 0, 10);
+        panelPersons.add(scrollPaneAllPersons, gridBagConstraints);
+
         labelFilterPerson.setLabelFor(textFieldFilterPerson);
         labelFilterPerson.setText(bundle.getString("BirthdaysDialog.labelFilterPerson.text")); // NOI18N
+        gridBagConstraints = new GridBagConstraints();
+        gridBagConstraints.anchor = GridBagConstraints.WEST;
+        gridBagConstraints.insets = new Insets(7, 10, 10, 0);
+        panelPersons.add(labelFilterPerson, gridBagConstraints);
 
         textFieldFilterPerson.setColumns(20);
+        gridBagConstraints = new GridBagConstraints();
+        gridBagConstraints.anchor = GridBagConstraints.WEST;
+        gridBagConstraints.weightx = 1.0;
+        gridBagConstraints.insets = new Insets(7, 5, 10, 0);
+        panelPersons.add(textFieldFilterPerson, gridBagConstraints);
 
         buttonAddPerson.setText(bundle.getString("BirthdaysDialog.buttonAddPerson.text")); // NOI18N
         buttonAddPerson.addActionListener(new ActionListener() {
@@ -379,6 +416,10 @@ public class BirthdaysDialog extends Dialog {
                 buttonAddPersonActionPerformed(evt);
             }
         });
+        gridBagConstraints = new GridBagConstraints();
+        gridBagConstraints.anchor = GridBagConstraints.WEST;
+        gridBagConstraints.insets = new Insets(7, 5, 10, 0);
+        panelPersons.add(buttonAddPerson, gridBagConstraints);
 
         buttonRemovePerson.setText(bundle.getString("BirthdaysDialog.buttonRemovePerson.text")); // NOI18N
         buttonRemovePerson.setEnabled(false);
@@ -387,6 +428,10 @@ public class BirthdaysDialog extends Dialog {
                 buttonRemovePersonActionPerformed(evt);
             }
         });
+        gridBagConstraints = new GridBagConstraints();
+        gridBagConstraints.anchor = GridBagConstraints.WEST;
+        gridBagConstraints.insets = new Insets(7, 5, 10, 0);
+        panelPersons.add(buttonRemovePerson, gridBagConstraints);
 
         buttonEditPerson.setText(bundle.getString("BirthdaysDialog.buttonEditPerson.text")); // NOI18N
         buttonEditPerson.setEnabled(false);
@@ -395,90 +440,39 @@ public class BirthdaysDialog extends Dialog {
                 buttonEditPersonActionPerformed(evt);
             }
         });
-
-        GroupLayout panelPersonsLayout = new GroupLayout(panelPersons);
-        panelPersons.setLayout(panelPersonsLayout);
-        panelPersonsLayout.setHorizontalGroup(
-            panelPersonsLayout.createParallelGroup(GroupLayout.Alignment.LEADING)
-            .addGroup(panelPersonsLayout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(panelPersonsLayout.createParallelGroup(GroupLayout.Alignment.LEADING)
-                    .addGroup(GroupLayout.Alignment.TRAILING, panelPersonsLayout.createSequentialGroup()
-                        .addComponent(labelFilterPerson)
-                        .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(textFieldFilterPerson, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(buttonAddPerson)
-                        .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(buttonRemovePerson)
-                        .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(buttonEditPerson))
-                    .addComponent(scrollPaneAllPersons, GroupLayout.DEFAULT_SIZE, 707, Short.MAX_VALUE))
-                .addContainerGap())
-        );
-        panelPersonsLayout.setVerticalGroup(
-            panelPersonsLayout.createParallelGroup(GroupLayout.Alignment.LEADING)
-            .addGroup(panelPersonsLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(scrollPaneAllPersons, GroupLayout.DEFAULT_SIZE, 458, Short.MAX_VALUE)
-                .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(panelPersonsLayout.createParallelGroup(GroupLayout.Alignment.BASELINE)
-                    .addComponent(buttonEditPerson)
-                    .addComponent(buttonRemovePerson)
-                    .addComponent(buttonAddPerson)
-                    .addComponent(labelFilterPerson)
-                    .addComponent(textFieldFilterPerson, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
-                .addContainerGap())
-        );
+        gridBagConstraints = new GridBagConstraints();
+        gridBagConstraints.anchor = GridBagConstraints.WEST;
+        gridBagConstraints.insets = new Insets(7, 5, 10, 10);
+        panelPersons.add(buttonEditPerson, gridBagConstraints);
 
         tabbedPane.addTab(bundle.getString("BirthdaysDialog.panelPersons.TabConstraints.tabTitle"), panelPersons); // NOI18N
         tabbedPane.addTab(bundle.getString("BirthdaysDialog.panelTools.TabConstraints.tabTitle"), panelTools); // NOI18N
         tabbedPane.addTab(bundle.getString("BirthdaysDialog.panelPreferences.TabConstraints.tabTitle"), panelPreferences); // NOI18N
 
-        jLabel1.setText(Bundle.getString(BirthdaysDialog.class, "BirthdaysDialog.About.Text", AppVersion.VERSION, AppVersion.DATE));
+        panelAbout.setLayout(new GridBagLayout());
 
-        GroupLayout panelAboutLayout = new GroupLayout(panelAbout);
-        panelAbout.setLayout(panelAboutLayout);
-        panelAboutLayout.setHorizontalGroup(
-            panelAboutLayout.createParallelGroup(GroupLayout.Alignment.LEADING)
-            .addGroup(panelAboutLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel1)
-                .addContainerGap(651, Short.MAX_VALUE))
-        );
-        panelAboutLayout.setVerticalGroup(
-            panelAboutLayout.createParallelGroup(GroupLayout.Alignment.LEADING)
-            .addGroup(panelAboutLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel1)
-                .addContainerGap(484, Short.MAX_VALUE))
-        );
+        labelAbout.setText(Bundle.getString(BirthdaysDialog.class, "BirthdaysDialog.About.Text", AppVersion.VERSION, AppVersion.DATE));
+        gridBagConstraints = new GridBagConstraints();
+        gridBagConstraints.gridwidth = GridBagConstraints.REMAINDER;
+        gridBagConstraints.anchor = GridBagConstraints.NORTHWEST;
+        gridBagConstraints.weightx = 1.0;
+        gridBagConstraints.weighty = 1.0;
+        gridBagConstraints.insets = new Insets(10, 10, 10, 10);
+        panelAbout.add(labelAbout, gridBagConstraints);
 
         tabbedPane.addTab(bundle.getString("BirthdaysDialog.panelAbout.TabConstraints.tabTitle"), panelAbout); // NOI18N
 
-        GroupLayout layout = new GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(tabbedPane)
-                .addContainerGap())
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(tabbedPane)
-                .addContainerGap())
-        );
+        gridBagConstraints = new GridBagConstraints();
+        gridBagConstraints.gridwidth = GridBagConstraints.REMAINDER;
+        gridBagConstraints.gridheight = GridBagConstraints.REMAINDER;
+        gridBagConstraints.fill = GridBagConstraints.BOTH;
+        gridBagConstraints.weightx = 1.0;
+        gridBagConstraints.weighty = 1.0;
+        gridBagConstraints.insets = new Insets(10, 10, 10, 10);
+        getContentPane().add(tabbedPane, gridBagConstraints);
 
         pack();
     }//GEN-END:initComponents
-
-    private void buttonAddPersonActionPerformed(ActionEvent evt) {//GEN-FIRST:event_buttonAddPersonActionPerformed
-        addPerson();
-    }//GEN-LAST:event_buttonAddPersonActionPerformed
 
     private void buttonEditPersonActionPerformed(ActionEvent evt) {//GEN-FIRST:event_buttonEditPersonActionPerformed
         editSelectedPersons(tableAllPersons);
@@ -487,6 +481,10 @@ public class BirthdaysDialog extends Dialog {
     private void buttonRemovePersonActionPerformed(ActionEvent evt) {//GEN-FIRST:event_buttonRemovePersonActionPerformed
         removeSelectedPersons();
     }//GEN-LAST:event_buttonRemovePersonActionPerformed
+
+    private void buttonAddPersonActionPerformed(ActionEvent evt) {//GEN-FIRST:event_buttonAddPersonActionPerformed
+        addPerson();
+    }//GEN-LAST:event_buttonAddPersonActionPerformed
 
     /**
      * @param args the command line arguments
@@ -528,7 +526,7 @@ public class BirthdaysDialog extends Dialog {
     private JButton buttonAddPerson;
     private JButton buttonEditPerson;
     private JButton buttonRemovePerson;
-    private JLabel jLabel1;
+    private JLabel labelAbout;
     private JLabel labelFilterPerson;
     private JLabel labelHintDoubleclick;
     private JPanel panelAbout;

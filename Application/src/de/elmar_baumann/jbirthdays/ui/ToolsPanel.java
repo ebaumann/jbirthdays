@@ -53,7 +53,9 @@ public class ToolsPanel extends javax.swing.JPanel {
      */
     @SuppressWarnings("unchecked")
     private void initComponents() {//GEN-BEGIN:initComponents
+        java.awt.GridBagConstraints gridBagConstraints;
 
+        panelContent = new javax.swing.JPanel();
         panelImport = new javax.swing.JPanel();
         panelOldQtBirthdayApp = new javax.swing.JPanel();
         buttonImportQtDb = new javax.swing.JButton();
@@ -63,11 +65,18 @@ public class ToolsPanel extends javax.swing.JPanel {
         panelExport = new javax.swing.JPanel();
         buttonExportToIcal = new javax.swing.JButton();
         labelIcalInfo = new javax.swing.JLabel();
+        panelFill = new javax.swing.JPanel();
+
+        setLayout(new java.awt.GridBagLayout());
+
+        panelContent.setLayout(new java.awt.GridBagLayout());
 
         java.util.ResourceBundle bundle = java.util.ResourceBundle.getBundle("de/elmar_baumann/jbirthdays/ui/Bundle"); // NOI18N
         panelImport.setBorder(javax.swing.BorderFactory.createTitledBorder(bundle.getString("ToolsPanel.panelImport.border.title"))); // NOI18N
+        panelImport.setLayout(new java.awt.GridBagLayout());
 
         panelOldQtBirthdayApp.setBorder(javax.swing.BorderFactory.createTitledBorder(bundle.getString("ToolsPanel.panelOldQtBirthdayApp.border.title"))); // NOI18N
+        panelOldQtBirthdayApp.setLayout(new java.awt.GridBagLayout());
 
         buttonImportQtDb.setText(bundle.getString("ToolsPanel.buttonImportQtDb.text")); // NOI18N
         buttonImportQtDb.addActionListener(new java.awt.event.ActionListener() {
@@ -75,105 +84,93 @@ public class ToolsPanel extends javax.swing.JPanel {
                 buttonImportQtDbActionPerformed(evt);
             }
         });
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.WEST;
+        gridBagConstraints.insets = new java.awt.Insets(5, 5, 0, 0);
+        panelOldQtBirthdayApp.add(buttonImportQtDb, gridBagConstraints);
 
         labelImportCharset.setText(bundle.getString("ToolsPanel.labelImportCharset.text")); // NOI18N
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.WEST;
+        gridBagConstraints.insets = new java.awt.Insets(5, 5, 0, 0);
+        panelOldQtBirthdayApp.add(labelImportCharset, gridBagConstraints);
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridwidth = java.awt.GridBagConstraints.REMAINDER;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.WEST;
+        gridBagConstraints.weightx = 1.0;
+        gridBagConstraints.insets = new java.awt.Insets(5, 5, 0, 5);
+        panelOldQtBirthdayApp.add(comboBoxImportCharsets, gridBagConstraints);
 
         labelCharsetsInfo.setText("Will be set programatically"); // NOI18N
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridwidth = java.awt.GridBagConstraints.REMAINDER;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.WEST;
+        gridBagConstraints.insets = new java.awt.Insets(5, 5, 0, 0);
+        panelOldQtBirthdayApp.add(labelCharsetsInfo, gridBagConstraints);
 
-        javax.swing.GroupLayout panelOldQtBirthdayAppLayout = new javax.swing.GroupLayout(panelOldQtBirthdayApp);
-        panelOldQtBirthdayApp.setLayout(panelOldQtBirthdayAppLayout);
-        panelOldQtBirthdayAppLayout.setHorizontalGroup(
-            panelOldQtBirthdayAppLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(panelOldQtBirthdayAppLayout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(panelOldQtBirthdayAppLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(panelOldQtBirthdayAppLayout.createSequentialGroup()
-                        .addComponent(buttonImportQtDb)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(labelImportCharset)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(comboBoxImportCharsets, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(labelCharsetsInfo))
-                .addContainerGap(44, Short.MAX_VALUE))
-        );
-        panelOldQtBirthdayAppLayout.setVerticalGroup(
-            panelOldQtBirthdayAppLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(panelOldQtBirthdayAppLayout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(panelOldQtBirthdayAppLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(buttonImportQtDb)
-                    .addComponent(labelImportCharset)
-                    .addComponent(comboBoxImportCharsets, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(labelCharsetsInfo)
-                .addContainerGap(13, Short.MAX_VALUE))
-        );
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.WEST;
+        gridBagConstraints.weightx = 1.0;
+        gridBagConstraints.insets = new java.awt.Insets(5, 5, 5, 5);
+        panelImport.add(panelOldQtBirthdayApp, gridBagConstraints);
 
-        javax.swing.GroupLayout panelImportLayout = new javax.swing.GroupLayout(panelImport);
-        panelImport.setLayout(panelImportLayout);
-        panelImportLayout.setHorizontalGroup(
-            panelImportLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(panelImportLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(panelOldQtBirthdayApp, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(215, Short.MAX_VALUE))
-        );
-        panelImportLayout.setVerticalGroup(
-            panelImportLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelImportLayout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(panelOldQtBirthdayApp, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
-        );
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridwidth = java.awt.GridBagConstraints.REMAINDER;
+        gridBagConstraints.fill = java.awt.GridBagConstraints.HORIZONTAL;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.WEST;
+        gridBagConstraints.weightx = 1.0;
+        gridBagConstraints.insets = new java.awt.Insets(10, 10, 0, 10);
+        panelContent.add(panelImport, gridBagConstraints);
 
         panelExport.setBorder(javax.swing.BorderFactory.createTitledBorder(bundle.getString("ToolsPanel.panelExport.border.title"))); // NOI18N
+        panelExport.setLayout(new java.awt.GridBagLayout());
 
         buttonExportToIcal.setAction(new ExportToIcalAction(this));
         buttonExportToIcal.setText(bundle.getString("ToolsPanel.buttonExportToIcal.text")); // NOI18N
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridy = 0;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.WEST;
+        gridBagConstraints.insets = new java.awt.Insets(5, 0, 5, 0);
+        panelExport.add(buttonExportToIcal, gridBagConstraints);
 
         labelIcalInfo.setText(bundle.getString("ToolsPanel.labelIcalInfo.text")); // NOI18N
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridy = 0;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.WEST;
+        gridBagConstraints.weightx = 1.0;
+        gridBagConstraints.insets = new java.awt.Insets(5, 5, 5, 5);
+        panelExport.add(labelIcalInfo, gridBagConstraints);
 
-        javax.swing.GroupLayout panelExportLayout = new javax.swing.GroupLayout(panelExport);
-        panelExport.setLayout(panelExportLayout);
-        panelExportLayout.setHorizontalGroup(
-            panelExportLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(panelExportLayout.createSequentialGroup()
-                .addGap(22, 22, 22)
-                .addComponent(buttonExportToIcal)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(labelIcalInfo)
-                .addContainerGap(22, Short.MAX_VALUE))
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridwidth = java.awt.GridBagConstraints.REMAINDER;
+        gridBagConstraints.fill = java.awt.GridBagConstraints.HORIZONTAL;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.WEST;
+        gridBagConstraints.weightx = 1.0;
+        gridBagConstraints.insets = new java.awt.Insets(10, 10, 0, 10);
+        panelContent.add(panelExport, gridBagConstraints);
+
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridwidth = java.awt.GridBagConstraints.REMAINDER;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.WEST;
+        gridBagConstraints.weightx = 1.0;
+        add(panelContent, gridBagConstraints);
+
+        javax.swing.GroupLayout panelFillLayout = new javax.swing.GroupLayout(panelFill);
+        panelFill.setLayout(panelFillLayout);
+        panelFillLayout.setHorizontalGroup(
+            panelFillLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 0, Short.MAX_VALUE)
         );
-        panelExportLayout.setVerticalGroup(
-            panelExportLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(panelExportLayout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(panelExportLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(buttonExportToIcal)
-                    .addComponent(labelIcalInfo))
-                .addContainerGap(15, Short.MAX_VALUE))
+        panelFillLayout.setVerticalGroup(
+            panelFillLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 0, Short.MAX_VALUE)
         );
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
-        this.setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(12, 12, 12)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(panelExport, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(panelImport, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(panelImport, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(panelExport, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.fill = java.awt.GridBagConstraints.VERTICAL;
+        gridBagConstraints.weighty = 1.0;
+        gridBagConstraints.insets = new java.awt.Insets(10, 0, 0, 0);
+        add(panelFill, gridBagConstraints);
     }//GEN-END:initComponents
 
     private void buttonImportQtDbActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonImportQtDbActionPerformed
@@ -188,7 +185,9 @@ public class ToolsPanel extends javax.swing.JPanel {
     private javax.swing.JLabel labelCharsetsInfo;
     private javax.swing.JLabel labelIcalInfo;
     private javax.swing.JLabel labelImportCharset;
+    private javax.swing.JPanel panelContent;
     private javax.swing.JPanel panelExport;
+    private javax.swing.JPanel panelFill;
     private javax.swing.JPanel panelImport;
     private javax.swing.JPanel panelOldQtBirthdayApp;
     // End of variables declaration//GEN-END:variables
