@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE tmx SYSTEM "tmx11.dtd">
 <tmx version="1.1">
-  <header creationtool="OmegaT" o-tmf="OmegaT TMX" adminlang="EN-US" datatype="plaintext" creationtoolversion="2.6.3_3" segtype="sentence" srclang="EN"/>
+  <header creationtool="OmegaT" o-tmf="OmegaT TMX" adminlang="EN-US" datatype="plaintext" creationtoolversion="3.0.6" segtype="sentence" srclang="EN"/>
   <body>
 <!-- Default translations -->
     <tu>
@@ -170,6 +170,14 @@
       </tuv>
       <tuv lang="DE" changeid="elmar" changedate="20140112T123708Z">
         <seg>Alter</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="EN">
+        <seg>Automatically check for and download &amp;Updates after starting JBirthdays</seg>
+      </tuv>
+      <tuv lang="DE" changeid="ebaumann" changedate="20140113T083845Z" creationid="ebaumann" creationdate="20140113T083845Z">
+        <seg>Automatisch auf &amp;Updates prüfen und diese herunterladen nach Start von JBirthdays</seg>
       </tuv>
     </tu>
     <tu>
