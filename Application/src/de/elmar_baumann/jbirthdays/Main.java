@@ -15,8 +15,8 @@ public class Main {
 
     public static void main(String[] args) {
         AppLoggingSystem.init();
+        Logger.getLogger(Main.class.getName()).log(Level.INFO, "Starting JBirthdays {0}", AppVersion.VERSION);
         EventQueue.invokeLater(new Runnable() {
-
             @Override
             public void run() {
                 setLookAndFeel();

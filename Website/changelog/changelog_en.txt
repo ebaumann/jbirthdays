@@ -3,6 +3,12 @@ Character encoding of this file: UTF-8
 Changelog JBirthdays http://elmar-baumann.de/JBirthdays
 =======================================================
 
+0.2.0 2014-01-13
+----------------
+* Added auto update
+* Option to send an email to persons having birthday at
+  the present day
+
 0.1.0 2014-01-12
 ----------------
 Started Project

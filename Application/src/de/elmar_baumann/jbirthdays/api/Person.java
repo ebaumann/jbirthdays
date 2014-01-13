@@ -15,7 +15,7 @@ import javax.xml.bind.annotation.XmlType;
  * @author Elmar Baumann
  */
 @XmlAccessorType(XmlAccessType.NONE)
-@XmlType(propOrder = {"uuid", "firstName", "lastName", "birthdayYear", "birthdayMonth", "birthdayDay", "notes"})
+@XmlType(propOrder = {"uuid", "firstName", "lastName", "email", "birthdayYear", "birthdayMonth", "birthdayDay", "notes"})
 public final class Person {
 
     @XmlElement(name = "uuid")
@@ -32,6 +32,8 @@ public final class Person {
     private int birthdayDay;
     @XmlElement(name = "notes")
     private String notes;
+    @XmlElement(name = "email")
+    private String email;
 
     public String getFirstName() {
         return firstName;
@@ -79,6 +81,18 @@ public final class Person {
 
     public void setNotes(String notes) {
         this.notes = notes;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public boolean hasEmail() {
+        return StringUtil.hasContent(email);
     }
 
     /**

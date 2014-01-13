@@ -167,6 +167,10 @@ public class PersonTableModel implements TableModel {
         listeners.remove(l);
     }
 
+    public List<Person> getPersons() {
+        return Collections.unmodifiableList(persons);
+    }
+
     public Person getPerson(int rowIndex) {
         assertIsRowIndex(rowIndex);
         return persons.get(rowIndex);

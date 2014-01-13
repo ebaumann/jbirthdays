@@ -38,6 +38,14 @@
     </tu>
     <tu>
       <tuv xml:lang="EN">
+        <seg>&amp;Email</seg>
+      </tuv>
+      <tuv xml:lang="DE" changeid="ebaumann" changedate="20140113T092222Z">
+        <seg>&amp;E-Mail</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="EN">
         <seg>&amp;First Name:</seg>
       </tuv>
       <tuv xml:lang="DE" changeid="elmar" changedate="20140112T123612Z">
@@ -342,6 +350,14 @@
     </tu>
     <tu>
       <tuv xml:lang="EN">
+        <seg>Happy birthday</seg>
+      </tuv>
+      <tuv xml:lang="DE" changeid="ebaumann" changedate="20140113T092210Z">
+        <seg>Alles Gute zum Geburtstag</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="EN">
         <seg>Hint: Double click onto a person opens it's edit dialog and displays notes in a larger display area</seg>
       </tuv>
       <tuv xml:lang="DE" changeid="elmar" changedate="20140112T124652Z">
@@ -522,6 +538,14 @@
       </tuv>
       <tuv xml:lang="DE" changeid="elmar" changedate="20140112T124916Z">
         <seg>Ignoriert bereits existierende Personen.</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="EN">
+        <seg>Start Email program for persons having birthday today (only if they have an Email address)</seg>
+      </tuv>
+      <tuv xml:lang="DE" changeid="ebaumann" changedate="20140113T092318Z">
+        <seg>Startet das E-Mail-Program für Personen, die heute Geburtstag haben (nur falls sie eine E-Mail-Adresse besitzen)</seg>
       </tuv>
     </tu>
     <tu>
