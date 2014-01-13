@@ -104,7 +104,9 @@ public class ToolsPanel extends javax.swing.JPanel {
         labelCharsetsInfo.setText("Will be set programatically"); // NOI18N
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridwidth = java.awt.GridBagConstraints.REMAINDER;
+        gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.WEST;
+        gridBagConstraints.weightx = 1.0;
         gridBagConstraints.insets = new java.awt.Insets(5, 5, 0, 0);
         panelOldQtBirthdayApp.add(labelCharsetsInfo, gridBagConstraints);
 
