@@ -58,19 +58,6 @@ th {
     background: #f7f7f7;
 }
 
-td.check {
-    text-align: center;
-}
-
-ul {
-    list-style-type: none;
-}
-
-#content li ul {
-    padding-top: 0;
-	margin-top: 0;
-}
-
 pre {
     background: #fafafa;
 }
@@ -111,6 +98,10 @@ pre, code, kbd {
 
 #content p img {
     margin-top: 0.75em;
+}
+
+#content ul {
+    padding-left: 1.5em;
 }
 
 #sitenav h2 {
