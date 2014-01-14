@@ -45,11 +45,11 @@
                        match="&lt;span class=&quot;version&quot;&gt;(.*)&lt;/span&gt;"
                        replace="&lt;span class=&quot;version&quot;&gt;${Version}&lt;/span&gt;"/>
         <replaceregexp file="${repo.root}/Website/.htaccess"
-                       match="Redirect permanent /dist/JBirthdays-setup.exe.*"
-                       replace="Redirect permanent /dist/JBirthdays-setup.exe http://sourceforge.net/projects/jbirthdays/files/downloads/JBirthdays-setup-${Version}.exe/download"/>
+                       match="Redirect permanent /JBirthdays/dist/JBirthdays-setup.exe.*"
+                       replace="Redirect permanent /JBirthdays/dist/JBirthdays-setup.exe http://sourceforge.net/projects/jbirthdays/files/downloads/JBirthdays-setup-${Version}.exe/download"/>
         <replaceregexp file="${repo.root}/Website/.htaccess"
-                       match="Redirect permanent /dist/JBirthdays.zip.*"
-                       replace="Redirect permanent /dist/JBirthdays.zip   http://sourceforge.net/projects/jbirthdays/files/downloads/JBirthdays-${Version}.zip/download"/>
+                       match="Redirect permanent /JBirthdays/dist/JBirthdays.zip.*"
+                       replace="Redirect permanent /JBirthdays/dist/JBirthdays.zip   http://sourceforge.net/projects/jbirthdays/files/downloads/JBirthdays-${Version}.zip/download"/>
         <replaceregexp file="InnoSetup/JBirthdays.iss"
                        encoding="Cp1252"
                        match="AppVerName=.*"
