@@ -7,12 +7,15 @@ import java.util.Collection;
 import java.util.Date;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import java.util.prefs.Preferences;
 import org.openide.util.Lookup;
 
 /**
  * @author Elmar Baumann
  */
 public final class BirthdaysUtil {
+
+    private static final String KEY_PREFERRED = "BirthdaysUtil.PreferredPersonRepository";
 
     /**
      * @param persons
@@ -96,13 +99,38 @@ public final class BirthdaysUtil {
     }
 
     public static PersonRepository findPreferredRepository() {
-        for(PersonRepository repo : Lookup.getDefault().lookupAll(PersonRepository.class)) {
-            if (repo.isPreferred()) {
-                Logger.getLogger(BirthdaysUtil.class.getName()).log(Level.INFO, "Using repository: {0}", repo.getDisplayName());
-                return repo;
+        Preferences prefs = Preferences.userNodeForPackage(BirthdaysUtil.class);
+        String prefValue = prefs.get(KEY_PREFERRED, null);
+        PersonRepository defaultRepo = null;
+        for (PersonRepository repo : Lookup.getDefault().lookupAll(PersonRepository.class)) {
+            defaultRepo = repo;
+            if (repo.getUUid().equals(prefValue)) {
+                defaultRepo = repo;
+                break;
             }
         }
+        if (defaultRepo != null) {
+            Logger.getLogger(BirthdaysUtil.class.getName()).log(Level.INFO, "Using repository: {0}", defaultRepo.getDisplayName());
+            return defaultRepo;
+        }
         throw new IllegalStateException("No preferred repository implemented!");
+    }
+
+    public static boolean isPreferredRepository(PersonRepository repo) {
+        if (repo == null) {
+            throw new NullPointerException("repo == null");
+        }
+        Preferences prefs = Preferences.userNodeForPackage(BirthdaysUtil.class);
+        String prefValue = prefs.get(KEY_PREFERRED, null);
+        return repo.getUUid().equals(prefValue);
+    }
+
+    public static void setPreferredRepositoryUuid(String uuid) {
+        if (uuid == null) {
+            throw new NullPointerException("uuid == null");
+        }
+        Preferences prefs = Preferences.userNodeForPackage(BirthdaysUtil.class);
+        prefs.put(KEY_PREFERRED, uuid);
     }
 
     /**

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE tmx SYSTEM "tmx14.dtd">
 <tmx version="1.4">
-  <header creationtool="OmegaT" o-tmf="OmegaT TMX" adminlang="EN-US" datatype="plaintext" creationtoolversion="3.0.6" segtype="sentence" srclang="EN"/>
+  <header creationtool="OmegaT" o-tmf="OmegaT TMX" adminlang="EN-US" datatype="plaintext" creationtoolversion="2.6.3_3" segtype="sentence" srclang="EN"/>
   <body>
 <!-- Default translations -->
     <tu>
@@ -40,7 +40,7 @@
       <tuv xml:lang="EN">
         <seg>&amp;Email</seg>
       </tuv>
-      <tuv xml:lang="DE" changeid="ebaumann" changedate="20140113T092222Z" creationid="ebaumann" creationdate="20140113T092222Z">
+      <tuv xml:lang="DE" changeid="ebaumann" changedate="20140113T092222Z">
         <seg>&amp;E-Mail</seg>
       </tuv>
     </tu>
@@ -168,7 +168,7 @@
       <tuv xml:lang="EN">
         <seg>A new version ({0}) of JBirthdays had been downloaded: {1}</seg>
       </tuv>
-      <tuv xml:lang="DE" changeid="ebaumann" changedate="20140114T090527Z" creationid="ebaumann" creationdate="20140114T090527Z">
+      <tuv xml:lang="DE" changeid="ebaumann" changedate="20140114T090527Z">
         <seg>Eine neue Version ({0}) von JBirthdays wurde heruntergeladen: {1}</seg>
       </tuv>
     </tu>
@@ -192,8 +192,16 @@
       <tuv xml:lang="EN">
         <seg>Automatically check for and download &amp;Updates after starting JBirthdays</seg>
       </tuv>
-      <tuv xml:lang="DE" changeid="ebaumann" changedate="20140113T083845Z" creationid="ebaumann" creationdate="20140113T083845Z">
+      <tuv xml:lang="DE" changeid="ebaumann" changedate="20140113T083845Z">
         <seg>Automatisch auf &amp;Updates prüfen und diese herunterladen nach Start von JBirthdays</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="EN">
+        <seg>Available Database formats:</seg>
+      </tuv>
+      <tuv xml:lang="DE" changeid="elmar" changedate="20140114T182059Z">
+        <seg>Verfügbare Datenbankformate:</seg>
       </tuv>
     </tu>
     <tu>
@@ -246,6 +254,14 @@
     </tu>
     <tu>
       <tuv xml:lang="EN">
+        <seg>Choose database</seg>
+      </tuv>
+      <tuv xml:lang="DE" changeid="elmar" changedate="20140114T181900Z">
+        <seg>Datenbank auswählen</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="EN">
         <seg>Choose database file of old Birthdays program database</seg>
       </tuv>
       <tuv xml:lang="DE" changeid="elmar" changedate="20140112T122841Z">
@@ -254,9 +270,17 @@
     </tu>
     <tu>
       <tuv xml:lang="EN">
+        <seg>Choose existing JBirthdays database</seg>
+      </tuv>
+      <tuv xml:lang="DE" changeid="elmar" changedate="20140114T181910Z">
+        <seg>Existierende JBirthdays-Datenbank</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="EN">
         <seg>Choose export file</seg>
       </tuv>
-      <tuv xml:lang="DE" changeid="ebaumann" changedate="20140114T090119Z" creationid="ebaumann" creationdate="20140114T090119Z">
+      <tuv xml:lang="DE" changeid="ebaumann" changedate="20140114T090119Z">
         <seg>Datei für den Export auswählen</seg>
       </tuv>
     </tu>
@@ -264,7 +288,7 @@
       <tuv xml:lang="EN">
         <seg>Choose file with exported persons</seg>
       </tuv>
-      <tuv xml:lang="DE" changeid="ebaumann" changedate="20140114T090913Z" creationid="ebaumann" creationdate="20140114T090230Z">
+      <tuv xml:lang="DE" changeid="ebaumann" changedate="20140114T090913Z">
         <seg>Datei mit exportierten Personen auswählen</seg>
       </tuv>
     </tu>
@@ -282,6 +306,14 @@
       </tuv>
       <tuv xml:lang="DE" changeid="elmar" changedate="20140112T122256Z">
         <seg>Zielordner für die iCal-Datei auswählen</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="EN">
+        <seg>Database</seg>
+      </tuv>
+      <tuv xml:lang="DE" changeid="elmar" changedate="20140114T181809Z">
+        <seg>Datenbank</seg>
       </tuv>
     </tu>
     <tu>
@@ -304,7 +336,7 @@
       <tuv xml:lang="EN">
         <seg>Download successful</seg>
       </tuv>
-      <tuv xml:lang="DE" changeid="ebaumann" changedate="20140114T090505Z" creationid="ebaumann" creationdate="20140114T090505Z">
+      <tuv xml:lang="DE" changeid="ebaumann" changedate="20140114T090505Z">
         <seg>Download war erfolgreich</seg>
       </tuv>
     </tu>
@@ -312,8 +344,16 @@
       <tuv xml:lang="EN">
         <seg>E&amp;xport...</seg>
       </tuv>
-      <tuv xml:lang="DE" changeid="ebaumann" changedate="20140114T090324Z" creationid="ebaumann" creationdate="20140114T090324Z">
+      <tuv xml:lang="DE" changeid="ebaumann" changedate="20140114T090324Z">
         <seg>E&amp;xportieren...</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="EN">
+        <seg>E-M&amp;ail:</seg>
+      </tuv>
+      <tuv xml:lang="DE" changeid="elmar" changedate="20140114T181811Z">
+        <seg>E-M&amp;ail:</seg>
       </tuv>
     </tu>
     <tu>
@@ -336,7 +376,7 @@
       <tuv xml:lang="EN">
         <seg>Error calling mail client: {0}</seg>
       </tuv>
-      <tuv xml:lang="DE" changeid="ebaumann" changedate="20140114T090545Z" creationid="ebaumann" creationdate="20140114T090545Z">
+      <tuv xml:lang="DE" changeid="ebaumann" changedate="20140114T090545Z">
         <seg>Fehler beim Aufruf des E-Mail-Programms: {0}</seg>
       </tuv>
     </tu>
@@ -368,7 +408,7 @@
       <tuv xml:lang="EN">
         <seg>Export completed</seg>
       </tuv>
-      <tuv xml:lang="DE" changeid="ebaumann" changedate="20140114T090156Z" creationid="ebaumann" creationdate="20140114T090156Z">
+      <tuv xml:lang="DE" changeid="ebaumann" changedate="20140114T090156Z">
         <seg>Export beendet</seg>
       </tuv>
     </tu>
@@ -376,7 +416,7 @@
       <tuv xml:lang="EN">
         <seg>Export error: {0}</seg>
       </tuv>
-      <tuv xml:lang="DE" changeid="ebaumann" changedate="20140114T090201Z" creationid="ebaumann" creationdate="20140114T090201Z">
+      <tuv xml:lang="DE" changeid="ebaumann" changedate="20140114T090201Z">
         <seg>Fehler beim Export: {0}</seg>
       </tuv>
     </tu>
@@ -392,7 +432,7 @@
       <tuv xml:lang="EN">
         <seg>Export for importing with an other JBirthdays application or for a Backup</seg>
       </tuv>
-      <tuv xml:lang="DE" changeid="ebaumann" changedate="20140114T090431Z" creationid="ebaumann" creationdate="20140114T090431Z">
+      <tuv xml:lang="DE" changeid="ebaumann" changedate="20140114T090431Z">
         <seg>Export für den Import mit einer anderen JBirthdays-Anwendung oder für ein Backup</seg>
       </tuv>
     </tu>
@@ -422,9 +462,17 @@
     </tu>
     <tu>
       <tuv xml:lang="EN">
+        <seg>File:</seg>
+      </tuv>
+      <tuv xml:lang="DE" changeid="elmar" changedate="20140114T181913Z">
+        <seg>Datei:</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="EN">
         <seg>Happy birthday</seg>
       </tuv>
-      <tuv xml:lang="DE" changeid="ebaumann" changedate="20140113T092210Z" creationid="ebaumann" creationdate="20140113T092210Z">
+      <tuv xml:lang="DE" changeid="ebaumann" changedate="20140113T092210Z">
         <seg>Alles Gute zum Geburtstag</seg>
       </tuv>
     </tu>
@@ -440,7 +488,7 @@
       <tuv xml:lang="EN">
         <seg>I&amp;mport...</seg>
       </tuv>
-      <tuv xml:lang="DE" changeid="ebaumann" changedate="20140114T090314Z" creationid="ebaumann" creationdate="20140114T090314Z">
+      <tuv xml:lang="DE" changeid="ebaumann" changedate="20140114T090314Z">
         <seg>I&amp;mportieren...</seg>
       </tuv>
     </tu>
@@ -448,7 +496,7 @@
       <tuv xml:lang="EN">
         <seg>Import (skips existing persons)</seg>
       </tuv>
-      <tuv xml:lang="DE" changeid="ebaumann" changedate="20140114T091710Z" creationid="ebaumann" creationdate="20140114T091710Z">
+      <tuv xml:lang="DE" changeid="ebaumann" changedate="20140114T091710Z">
         <seg>Import (ignoriert bereits existierende Personen)</seg>
       </tuv>
     </tu>
@@ -464,7 +512,7 @@
       <tuv xml:lang="EN">
         <seg>Import finished</seg>
       </tuv>
-      <tuv xml:lang="DE" changeid="ebaumann" changedate="20140114T094528Z" creationid="ebaumann" creationdate="20140114T090256Z">
+      <tuv xml:lang="DE" changeid="ebaumann" changedate="20140114T094528Z">
         <seg>Import beendet</seg>
       </tuv>
     </tu>
@@ -480,7 +528,7 @@
       <tuv xml:lang="EN">
         <seg>Import from a file exported with JBirthdays</seg>
       </tuv>
-      <tuv xml:lang="DE" changeid="ebaumann" changedate="20140114T090453Z" creationid="ebaumann" creationdate="20140114T090453Z">
+      <tuv xml:lang="DE" changeid="ebaumann" changedate="20140114T090453Z">
         <seg>Import einer Datei, die mit JBirthdays exportiert wurde</seg>
       </tuv>
     </tu>
@@ -488,7 +536,7 @@
       <tuv xml:lang="EN">
         <seg>Import from previous old Birthday application</seg>
       </tuv>
-      <tuv xml:lang="DE" changeid="ebaumann" changedate="20140114T091838Z" creationid="ebaumann" creationdate="20140114T091838Z">
+      <tuv xml:lang="DE" changeid="ebaumann" changedate="20140114T091838Z">
         <seg>Von der vorherigen alten Geburtstags-Anwendung importieren</seg>
       </tuv>
     </tu>
@@ -496,7 +544,7 @@
       <tuv xml:lang="EN">
         <seg>Imported {0,choice,0#no person|1#1 person|1&lt;{0} persons}.</seg>
       </tuv>
-      <tuv xml:lang="DE" changeid="ebaumann" changedate="20140114T094630Z" creationid="ebaumann" creationdate="20140114T094630Z">
+      <tuv xml:lang="DE" changeid="ebaumann" changedate="20140114T094630Z">
         <seg>{0,choice,0#Es wurde keine Person|1#Es wurde eine Person|1&lt;Es wurden {0} Personen} importiert.</seg>
       </tuv>
     </tu>
@@ -504,7 +552,7 @@
       <tuv xml:lang="EN">
         <seg>Imported {0,choice,0#no person|1#one person|1&lt;{0} persons}.</seg>
       </tuv>
-      <tuv xml:lang="DE" changeid="ebaumann" changedate="20140114T094454Z" creationid="ebaumann" creationdate="20140114T094454Z">
+      <tuv xml:lang="DE" changeid="ebaumann" changedate="20140114T094454Z">
         <seg>{0,choice,0#Es wurde keine Person|1#Es wurde eine Person|1&lt;Es wurden {0} Personen} importiert.</seg>
       </tuv>
     </tu>
@@ -542,6 +590,14 @@
     </tu>
     <tu>
       <tuv xml:lang="EN">
+        <seg>JBirthdays XML files</seg>
+      </tuv>
+      <tuv xml:lang="DE" changeid="elmar" changedate="20140114T181758Z">
+        <seg>JBirthdays XML-Dateien</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="EN">
         <seg>JBirthdays {0}</seg>
       </tuv>
       <tuv xml:lang="DE" changeid="elmar" changedate="20140112T123217Z">
@@ -552,7 +608,7 @@
       <tuv xml:lang="EN">
         <seg>Java does not support Email for this operating system</seg>
       </tuv>
-      <tuv xml:lang="DE" changeid="ebaumann" changedate="20140114T090606Z" creationid="ebaumann" creationdate="20140114T090606Z">
+      <tuv xml:lang="DE" changeid="ebaumann" changedate="20140114T090606Z">
         <seg>Java unterstützt keine E-Mail für dieses Betriebssystem</seg>
       </tuv>
     </tu>
@@ -584,7 +640,7 @@
       <tuv xml:lang="EN">
         <seg>Overwrite existing file "{0}"?</seg>
       </tuv>
-      <tuv xml:lang="DE" changeid="ebaumann" changedate="20140114T093126Z" creationid="ebaumann" creationdate="20140114T093126Z">
+      <tuv xml:lang="DE" changeid="ebaumann" changedate="20140114T093126Z">
         <seg>Existierende Datei "{0}" überschreiben?</seg>
       </tuv>
     </tu>
@@ -656,7 +712,7 @@
       <tuv xml:lang="EN">
         <seg>Start Email program for persons having birthday today (only if they have an Email address)</seg>
       </tuv>
-      <tuv xml:lang="DE" changeid="ebaumann" changedate="20140113T092318Z" creationid="ebaumann" creationdate="20140113T092318Z">
+      <tuv xml:lang="DE" changeid="ebaumann" changedate="20140113T092318Z">
         <seg>Startet das E-Mail-Program für Personen, die heute Geburtstag haben (nur falls sie eine E-Mail-Adresse besitzen)</seg>
       </tuv>
     </tu>
@@ -670,9 +726,17 @@
     </tu>
     <tu>
       <tuv xml:lang="EN">
+        <seg>Use this database format</seg>
+      </tuv>
+      <tuv xml:lang="DE" changeid="elmar" changedate="20140114T182507Z">
+        <seg>Dieses Datenbankformat benutzen</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="EN">
         <seg>XML files</seg>
       </tuv>
-      <tuv xml:lang="DE" changeid="ebaumann" changedate="20140114T090235Z" creationid="ebaumann" creationdate="20140114T090235Z">
+      <tuv xml:lang="DE" changeid="ebaumann" changedate="20140114T090235Z">
         <seg>XML-Dateien</seg>
       </tuv>
     </tu>
@@ -688,7 +752,7 @@
       <tuv xml:lang="EN">
         <seg>{0,choice,0#No person|1#One person|1&lt;{0} persons} has been exported.</seg>
       </tuv>
-      <tuv xml:lang="DE" changeid="ebaumann" changedate="20140114T094652Z" creationid="ebaumann" creationdate="20140114T094652Z">
+      <tuv xml:lang="DE" changeid="ebaumann" changedate="20140114T094652Z">
         <seg>{0,choice,0#Es wurde keine Person|1#Es wurde eine Person|1&lt;Es wurden {0} Personen} exportiert.</seg>
       </tuv>
     </tu>

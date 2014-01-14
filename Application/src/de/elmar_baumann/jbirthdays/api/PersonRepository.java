@@ -1,5 +1,6 @@
 package de.elmar_baumann.jbirthdays.api;
 
+import java.awt.Component;
 import java.util.Collection;
 
 /**
@@ -13,11 +14,9 @@ public interface PersonRepository {
 
     void save(Collection<? extends Person> persons);
 
-    /**
-     * If multiple implementations existing, the preferred repository will be used.
-     * @return
-     */
-    boolean isPreferred();
+    Component getSettingsComponent();
 
     String getDisplayName();
+
+    String getUUid();
 }

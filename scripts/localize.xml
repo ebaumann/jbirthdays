@@ -34,6 +34,7 @@
         <copy todir="${translation.srcdir}">
             <fileset dir="${repo.root}">
                 <include name="**/*.properties"/>
+                <exclude name="**/conf/**"/>
                 <exclude name="**/build/**"/>
                 <exclude name="**/nbproject/**"/>
                 <exclude name="**/AppVersion.properties"/>

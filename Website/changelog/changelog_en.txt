@@ -5,6 +5,7 @@ Changelog JBirthdays http://elmar-baumann.de/JBirthdays
 
 0.3.0 2014-01-14
 ----------------
+* Database is choosable
 * Added export and import of persons for backups and
   changing data with other JBirtdays applications
 

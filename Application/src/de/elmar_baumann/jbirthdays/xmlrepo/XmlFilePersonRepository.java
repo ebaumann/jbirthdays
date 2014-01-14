@@ -1,34 +1,44 @@
 package de.elmar_baumann.jbirthdays.xmlrepo;
 
-import de.elmar_baumann.jbirthdays.api.Persons;
 import de.elmar_baumann.jbirthdays.api.Person;
+import de.elmar_baumann.jbirthdays.api.Persons;
+import de.elmar_baumann.jbirthdays.api.RepositoryChangedEvent;
 import de.elmar_baumann.jbirthdays.util.XmlUtil;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
+import java.util.prefs.Preferences;
+import org.bushe.swing.event.EventBus;
 
 /**
  * @author Elmar Baumann
  */
 public final class XmlFilePersonRepository {
 
+    private static final String KEY_FILENAME = "XmlFilePersonRepository.Filename";
     private static final String DEFAULT_FILENAME = System.getProperty("user.home")
             + File.separator + ".de.elmar_baumann" + File.separator
             + "JBirthdays" + File.separator + "Persons.xml";
-    private final File xmlFile;
+    private File xmlFile;
+    public static final XmlFilePersonRepository INSTANCE = new XmlFilePersonRepository();
 
-    public XmlFilePersonRepository() {
-        this(new File(DEFAULT_FILENAME));
+    static String getFilename() {
+        Preferences prefs = Preferences.userNodeForPackage(XmlFilePersonRepository.class);
+        return prefs.get(KEY_FILENAME, DEFAULT_FILENAME);
     }
 
-    public XmlFilePersonRepository(File xmlFile) {
+    private XmlFilePersonRepository() {
+        this(new File(getFilename()));
+    }
+
+    XmlFilePersonRepository(File xmlFile) {
         if (xmlFile == null) {
             throw new NullPointerException("xmlFile == null");
         }
         this.xmlFile = xmlFile;
     }
 
-    public Persons findAll() {
+    public synchronized Persons findAll() {
         if (!xmlFile.exists()) {
             return new Persons();
         }
@@ -39,7 +49,7 @@ public final class XmlFilePersonRepository {
         }
     }
 
-    public void save(Persons persons) {
+    public synchronized void save(Persons persons) {
         if (persons == null) {
             throw new NullPointerException("persons == null");
         }
@@ -52,7 +62,7 @@ public final class XmlFilePersonRepository {
         }
     }
 
-    private void ensureDir() {
+    private synchronized void ensureDir() {
         File dir = xmlFile.getParentFile();
         if (!dir.exists()) {
             dir.mkdirs();
@@ -60,5 +70,29 @@ public final class XmlFilePersonRepository {
                 throw new RuntimeException("Can't create directory " + dir);
             }
         }
+    }
+
+    synchronized File getFile() {
+        return xmlFile;
+}
+
+    void setFile(File file) {
+        if (file == null) {
+            throw new NullPointerException("file == null");
+        }
+        synchronized (this) {
+            xmlFile = file;
+            persistFilename(file);
+        }
+        EventBus.publish(new RepositoryChangedEvent(RepositoryChangedEvent.Type.LOCATION, this));
+    }
+
+    static String getUuid() {
+        return XmlFilePersonRepository.class.getName();
+    }
+
+    private static void persistFilename(File file) {
+        Preferences prefs = Preferences.userNodeForPackage(XmlFilePersonRepository.class);
+        prefs.put(KEY_FILENAME, file.getAbsolutePath());
     }
 }
