@@ -105,6 +105,71 @@ public final class BirthdaysUtil {
         throw new IllegalStateException("No preferred repository implemented!");
     }
 
+    /**
+     * Checks for {@link Person#isSamePerson(de.elmar_baumann.jbirthdays.api.Person)}
+     * rather than the UUID.
+     *
+     * @param persons
+     * @param person
+     * @return true if at least one person in persons matches the person
+     */
+    public static boolean containsPerson(Collection<? extends Person> persons, Person person) {
+        if (persons == null) {
+            throw new NullPointerException("persons == null");
+        }
+        if (person == null) {
+            throw new NullPointerException("person == null");
+        }
+        for (Person p : persons) {
+            if (person.isSamePerson(p)) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    /**
+     * Adds a person to persons if no person in persons matches to the person
+     * via {@link Person#isSamePerson(de.elmar_baumann.jbirthdays.api.Person)}.
+     * @param persons
+     * @param person
+     * @return true if added
+     */
+    public static boolean addIfNotContained(Collection<Person> persons, Person person) {
+        if (persons == null) {
+            throw new NullPointerException("persons == null");
+        }
+        if (!containsPerson(persons, person)) {
+            persons.add(person);
+            return true;
+        }
+        return false;
+    }
+
+    /**
+     * Adds to persons in {@code to} each not contained persons from {@link from}
+     * where matched determined via
+     * {@link Person#isSamePerson(de.elmar_baumann.jbirthdays.api.Person)}.
+     * @param from
+     * @param to
+     * @return count of added persons
+     */
+    public static int addNotContainedPersons(Collection<? extends Person> from, Collection<Person> to) {
+        if (from == null) {
+            throw new NullPointerException("from == null");
+        }
+        if (to == null) {
+            throw new NullPointerException("to == null");
+        }
+        int added = 0;
+        for (Person person : from) {
+            if (addIfNotContained(to, person)) {
+                added++;
+            }
+        }
+        return added;
+    }
+
     private BirthdaysUtil() {
     }
 }

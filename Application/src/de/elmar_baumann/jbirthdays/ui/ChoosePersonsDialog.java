@@ -3,6 +3,9 @@ package de.elmar_baumann.jbirthdays.ui;
 import de.elmar_baumann.jbirthdays.api.Person;
 import de.elmar_baumann.jbirthdays.util.Mnemonics;
 import de.elmar_baumann.jbirthdays.util.TableUtil;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
+import java.awt.event.MouseListener;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
 import java.awt.event.WindowListener;
@@ -38,6 +41,7 @@ public class ChoosePersonsDialog extends Dialog {
         Mnemonics.setMnemonics(this);
         tablePersons.setDefaultRenderer(Object.class, new PersonsTableCellRenderer());
         tablePersons.setRowSorter(searchFilter.getRowSorter());
+        tablePersons.addMouseListener(doubleClickListener);
         textFieldFilterPerson.getDocument().addDocumentListener(searchFilter);
         tablePersons.getSelectionModel().addListSelectionListener(okButtonEnabler);
         TableUtil.restoreColumnWidths("ChoosePersonsDialog.tablePersons", tablePersons, allPersonsTablemodel.getDefaultColumnWidths());
@@ -104,6 +108,18 @@ public class ChoosePersonsDialog extends Dialog {
         @Override
         public void windowClosing(WindowEvent e) {
             TableUtil.persistColumnWidths("ChoosePersonsDialog.tablePersons", tablePersons);
+        }
+    };
+
+    private final MouseListener doubleClickListener = new MouseAdapter() {
+
+        @Override
+        public void mouseClicked(MouseEvent e) {
+            if (e.getClickCount() > 1 && e.getSource() == tablePersons) {
+                if (tablePersons.rowAtPoint(e.getPoint()) >= 0) {
+                    ok();
+                }
+            }
         }
     };
 

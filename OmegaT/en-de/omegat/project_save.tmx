@@ -166,6 +166,14 @@
     </tu>
     <tu>
       <tuv lang="EN">
+        <seg>A new version ({0}) of JBirthdays had been downloaded: {1}</seg>
+      </tuv>
+      <tuv lang="DE" changeid="ebaumann" changedate="20140114T090527Z" creationid="ebaumann" creationdate="20140114T090527Z">
+        <seg>Eine neue Version ({0}) von JBirthdays wurde heruntergeladen: {1}</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="EN">
         <seg>About</seg>
       </tuv>
       <tuv lang="DE" changeid="elmar" changedate="20140112T123055Z">
@@ -254,6 +262,22 @@
     </tu>
     <tu>
       <tuv lang="EN">
+        <seg>Choose export file</seg>
+      </tuv>
+      <tuv lang="DE" changeid="ebaumann" changedate="20140114T090119Z" creationid="ebaumann" creationdate="20140114T090119Z">
+        <seg>Datei für den Export auswählen</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="EN">
+        <seg>Choose file with exported persons</seg>
+      </tuv>
+      <tuv lang="DE" changeid="ebaumann" changedate="20140114T090913Z" creationid="ebaumann" creationdate="20140114T090230Z">
+        <seg>Datei mit exportierten Personen auswählen</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="EN">
         <seg>Choose persons for export</seg>
       </tuv>
       <tuv lang="DE" changeid="elmar" changedate="20140112T122229Z">
@@ -286,6 +310,22 @@
     </tu>
     <tu>
       <tuv lang="EN">
+        <seg>Download successful</seg>
+      </tuv>
+      <tuv lang="DE" changeid="ebaumann" changedate="20140114T090505Z" creationid="ebaumann" creationdate="20140114T090505Z">
+        <seg>Download war erfolgreich</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="EN">
+        <seg>E&amp;xport...</seg>
+      </tuv>
+      <tuv lang="DE" changeid="ebaumann" changedate="20140114T090324Z" creationid="ebaumann" creationdate="20140114T090324Z">
+        <seg>E&amp;xportieren...</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="EN">
         <seg>Edit Person</seg>
       </tuv>
       <tuv lang="DE" changeid="elmar" changedate="20140112T123642Z">
@@ -298,6 +338,14 @@
       </tuv>
       <tuv lang="DE" changeid="elmar" changedate="20140112T122317Z">
         <seg>Fehler</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="EN">
+        <seg>Error calling mail client: {0}</seg>
+      </tuv>
+      <tuv lang="DE" changeid="ebaumann" changedate="20140114T090545Z" creationid="ebaumann" creationdate="20140114T090545Z">
+        <seg>Fehler beim Aufruf des E-Mail-Programms: {0}</seg>
       </tuv>
     </tu>
     <tu>
@@ -334,10 +382,34 @@
     </tu>
     <tu>
       <tuv lang="EN">
+        <seg>Export completed</seg>
+      </tuv>
+      <tuv lang="DE" changeid="ebaumann" changedate="20140114T090156Z" creationid="ebaumann" creationdate="20140114T090156Z">
+        <seg>Export beendet</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="EN">
+        <seg>Export error: {0}</seg>
+      </tuv>
+      <tuv lang="DE" changeid="ebaumann" changedate="20140114T090201Z" creationid="ebaumann" creationdate="20140114T090201Z">
+        <seg>Fehler beim Export: {0}</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="EN">
         <seg>Export finished</seg>
       </tuv>
       <tuv lang="DE" changeid="elmar" changedate="20140112T122418Z">
         <seg>Export beendet</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="EN">
+        <seg>Export for importing with an other JBirthdays application or for a Backup</seg>
+      </tuv>
+      <tuv lang="DE" changeid="ebaumann" changedate="20140114T090431Z" creationid="ebaumann" creationdate="20140114T090431Z">
+        <seg>Export für den Import mit einer anderen JBirthdays-Anwendung oder für ein Backup</seg>
       </tuv>
     </tu>
     <tu>
@@ -352,8 +424,8 @@
       <tuv lang="EN">
         <seg>Exported {0,choice,0#no person|1#one person|1&lt;{0} persons} to iCal file {1}</seg>
       </tuv>
-      <tuv lang="DE" changeid="elmar" changedate="20140112T122412Z">
-        <seg>{0,choice,0#Keine Person|1#Eine Person|1&lt;{0} Personen} in iCal-Datei {1}  exportiert</seg>
+      <tuv lang="DE" changeid="ebaumann" changedate="20140114T094907Z">
+        <seg>{0,choice,0#Keine Person|1#Eine Person|1&lt;{0} Personen} in iCal-Datei {1}  exportiert.</seg>
       </tuv>
     </tu>
     <tu>
@@ -382,10 +454,26 @@
     </tu>
     <tu>
       <tuv lang="EN">
+        <seg>I&amp;mport...</seg>
+      </tuv>
+      <tuv lang="DE" changeid="ebaumann" changedate="20140114T090314Z" creationid="ebaumann" creationdate="20140114T090314Z">
+        <seg>I&amp;mportieren...</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="EN">
         <seg>Import</seg>
       </tuv>
       <tuv lang="DE" changeid="elmar" changedate="20140112T124216Z">
         <seg>Importieren</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="EN">
+        <seg>Import (skips existing persons)</seg>
+      </tuv>
+      <tuv lang="DE" changeid="ebaumann" changedate="20140114T091710Z" creationid="ebaumann" creationdate="20140114T091710Z">
+        <seg>Import (ignoriert bereits existierende Personen)</seg>
       </tuv>
     </tu>
     <tu>
@@ -398,6 +486,14 @@
     </tu>
     <tu>
       <tuv lang="EN">
+        <seg>Import finished</seg>
+      </tuv>
+      <tuv lang="DE" changeid="ebaumann" changedate="20140114T094528Z" creationid="ebaumann" creationdate="20140114T090256Z">
+        <seg>Import beendet</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="EN">
         <seg>Import from QT Birthdays database</seg>
       </tuv>
       <tuv lang="DE" changeid="elmar" changedate="20140112T123821Z">
@@ -406,10 +502,26 @@
     </tu>
     <tu>
       <tuv lang="EN">
+        <seg>Import from a file exported with JBirthdays</seg>
+      </tuv>
+      <tuv lang="DE" changeid="ebaumann" changedate="20140114T090453Z" creationid="ebaumann" creationdate="20140114T090453Z">
+        <seg>Import einer Datei, die mit JBirthdays exportiert wurde</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="EN">
+        <seg>Import from previous old Birthday application</seg>
+      </tuv>
+      <tuv lang="DE" changeid="ebaumann" changedate="20140114T091838Z" creationid="ebaumann" creationdate="20140114T091838Z">
+        <seg>Von der vorherigen alten Geburtstags-Anwendung importieren</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="EN">
         <seg>Import from previous old Birthday application (written in C++ and with QT library)</seg>
       </tuv>
-      <tuv lang="DE" changeid="elmar" changedate="20140112T125131Z">
-        <seg>Von der vorherigen alten Geburtstags-Anwendung importieren (geschrieben in C++ und mit der QT-Bibliothek)</seg>
+      <tuv lang="DE" changeid="ebaumann" changedate="20140114T091726Z">
+        <seg>Von der vorherigen alten Geburtstags-Anwendung importieren</seg>
       </tuv>
     </tu>
     <tu>
@@ -426,6 +538,38 @@
       </tuv>
       <tuv lang="DE" changeid="elmar" changedate="20140112T123841Z">
         <seg>{0,choice,0#Keine Person|1#1 Person|1&lt;{0} Personen} importiert</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="EN">
+        <seg>Imported {0,choice,0#no person|1#1 person|1&lt;{0} persons}.</seg>
+      </tuv>
+      <tuv lang="DE" changeid="ebaumann" changedate="20140114T094630Z" creationid="ebaumann" creationdate="20140114T094630Z">
+        <seg>{0,choice,0#Es wurde keine Person|1#Es wurde eine Person|1&lt;Es wurden {0} Personen} importiert.</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="EN">
+        <seg>Imported {0,choice,0#no person|1#one person|1&lt;{0} persons}</seg>
+      </tuv>
+      <tuv lang="DE" changeid="ebaumann" changedate="20140114T094204Z" creationid="ebaumann" creationdate="20140114T094204Z">
+        <seg>{0,choice,0#Es wurde keine Person|1#Es wurde eine Person|1&lt;Es wurden {0} Personen} importiert.</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="EN">
+        <seg>Imported {0,choice,0#no person|1#one person|1&lt;{0} persons}.</seg>
+      </tuv>
+      <tuv lang="DE" changeid="ebaumann" changedate="20140114T094454Z" creationid="ebaumann" creationdate="20140114T094454Z">
+        <seg>{0,choice,0#Es wurde keine Person|1#Es wurde eine Person|1&lt;Es wurden {0} Personen} importiert.</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="EN">
+        <seg>Imported {0} persons</seg>
+      </tuv>
+      <tuv lang="DE" changeid="ebaumann" changedate="20140114T090251Z" creationid="ebaumann" creationdate="20140114T090251Z">
+        <seg>Es wurden{0} Personen importiert</seg>
       </tuv>
     </tu>
     <tu>
@@ -470,6 +614,14 @@
     </tu>
     <tu>
       <tuv lang="EN">
+        <seg>Java does not support Email for this operating system</seg>
+      </tuv>
+      <tuv lang="DE" changeid="ebaumann" changedate="20140114T090606Z" creationid="ebaumann" creationdate="20140114T090606Z">
+        <seg>Java unterstützt keine E-Mail für dieses Betriebssystem</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="EN">
         <seg>Local XML file</seg>
       </tuv>
       <tuv lang="DE" changeid="elmar" changedate="20140112T124347Z">
@@ -490,6 +642,14 @@
       </tuv>
       <tuv lang="DE" changeid="elmar" changedate="20140112T123722Z">
         <seg>Notizen</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="EN">
+        <seg>Overwrite existing file "{0}"?</seg>
+      </tuv>
+      <tuv lang="DE" changeid="ebaumann" changedate="20140114T093126Z" creationid="ebaumann" creationdate="20140114T093126Z">
+        <seg>Existierende Datei "{0}" überschreiben?</seg>
       </tuv>
     </tu>
     <tu>
@@ -582,6 +742,14 @@
     </tu>
     <tu>
       <tuv lang="EN">
+        <seg>XML files</seg>
+      </tuv>
+      <tuv lang="DE" changeid="ebaumann" changedate="20140114T090235Z" creationid="ebaumann" creationdate="20140114T090235Z">
+        <seg>XML-Dateien</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="EN">
         <seg>iCal files can be read from many calendar applications such as Google Calendar or Lightning</seg>
       </tuv>
       <tuv lang="DE" changeid="elmar" changedate="20140112T124253Z">
@@ -590,10 +758,34 @@
     </tu>
     <tu>
       <tuv lang="EN">
+        <seg>{0,choice,0#No person|1#One person|1&lt;{0} persons} has been exported</seg>
+      </tuv>
+      <tuv lang="DE" changeid="ebaumann" changedate="20140114T094125Z" creationid="ebaumann" creationdate="20140114T094125Z">
+        <seg>{0,choice,0#Es wurde keine Person|1#Es wurde eine Person|1&lt;Es wurden {0} Personen} exportiert</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="EN">
+        <seg>{0,choice,0#No person|1#One person|1&lt;{0} persons} has been exported.</seg>
+      </tuv>
+      <tuv lang="DE" changeid="ebaumann" changedate="20140114T094652Z" creationid="ebaumann" creationdate="20140114T094652Z">
+        <seg>{0,choice,0#Es wurde keine Person|1#Es wurde eine Person|1&lt;Es wurden {0} Personen} exportiert.</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="EN">
         <seg>{0,choice,1#1 year|1&lt;{0} years}</seg>
       </tuv>
       <tuv lang="DE" changeid="elmar" changedate="20140112T122915Z">
         <seg>{0,choice,1#1 Jahr|1&lt;{0} Jahre}</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="EN">
+        <seg>{0} persons has been exported</seg>
+      </tuv>
+      <tuv lang="DE" changeid="ebaumann" changedate="20140114T090148Z" creationid="ebaumann" creationdate="20140114T090148Z">
+        <seg>Es wurden {0} Personen exportiert</seg>
       </tuv>
     </tu>
 <!-- Alternative translations -->

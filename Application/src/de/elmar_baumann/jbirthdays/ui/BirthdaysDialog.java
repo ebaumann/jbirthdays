@@ -10,6 +10,7 @@ import de.elmar_baumann.jbirthdays.util.Mnemonics;
 import de.elmar_baumann.jbirthdays.util.TableUtil;
 import java.awt.Component;
 import java.awt.Dimension;
+import java.awt.EventQueue;
 import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
 import java.awt.Insets;
@@ -44,6 +45,7 @@ import javax.swing.JScrollPane;
 import javax.swing.JTabbedPane;
 import javax.swing.JTable;
 import javax.swing.JTextField;
+import javax.swing.SwingWorker;
 import javax.swing.WindowConstants;
 import javax.swing.border.TitledBorder;
 import javax.swing.event.ListSelectionEvent;
@@ -135,25 +137,21 @@ public class BirthdaysDialog extends Dialog {
     }
 
     private void loadPersons() {
-        try {
-            Collection<? extends Person> loadedPersons = BirthdaysUtil.findPreferredRepository().findAll();
-            allPersons.clear();
-            allPersons.addAll(loadedPersons);
-            Collections.sort(allPersons, Person.CMP_ASC_BY_LAST_NAME);
-            allPersonsTableModel.setPersons(allPersons);
-        } catch (Throwable t) {
-            Logger.getLogger(BirthdaysDialog.class.getName()).log(Level.SEVERE, null, t);
-            showErrorMessage(Bundle.getString(BirthdaysDialog.class, "BirthdaysDialog.ErrorMessage.LoadPersons", t.getLocalizedMessage()));
+        EventQueue.invokeLater(new Runnable() {
+            @Override
+            public void run() {
+                new LoadFromPreferredRepositoryWorker().execute();
         }
+        });
     }
 
     private void savePersons() {
-        try {
-            BirthdaysUtil.findPreferredRepository().save(allPersons);
-        } catch (Throwable t) {
-            Logger.getLogger(BirthdaysDialog.class.getName()).log(Level.SEVERE, null, t);
-            showErrorMessage(Bundle.getString(BirthdaysDialog.class, "BirthdaysDialog.ErrorMessage.SavePersons", t.getLocalizedMessage()));
+        EventQueue.invokeLater(new Runnable() {
+            @Override
+            public void run() {
+                new SaveToPreferredRepositoryWorker().execute();
         }
+        });
     }
 
     private void updateBirthdayTables() {
@@ -304,6 +302,47 @@ public class BirthdaysDialog extends Dialog {
             TableUtil.persistColumnWidths("BirthdaysDialog.tableBirthdayBefore", tableBirthdayBefore);
             TableUtil.persistColumnWidths("BirthdaysDialog.tableBirthdayAfter", tableBirthdayAfter);
             TableUtil.persistColumnWidths("BirthdaysDialog.tableAllPersons", tableAllPersons);
+        }
+    };
+
+    private final class LoadFromPreferredRepositoryWorker extends SwingWorker<Collection<? extends Person>, Void> {
+
+        @Override
+        protected Collection<? extends Person> doInBackground() throws Exception {
+            return BirthdaysUtil.findPreferredRepository().findAll();
+        }
+
+        @Override
+        protected void done() {
+            try {
+                Collection<? extends Person> loadedPersons = get();
+                allPersons.clear();
+                allPersons.addAll(loadedPersons);
+                Collections.sort(allPersons, Person.CMP_ASC_BY_LAST_NAME);
+                allPersonsTableModel.setPersons(allPersons);
+            } catch (Throwable t) {
+                Logger.getLogger(BirthdaysDialog.class.getName()).log(Level.SEVERE, null, t);
+                showErrorMessage(Bundle.getString(BirthdaysDialog.class, "BirthdaysDialog.ErrorMessage.LoadPersons", t.getLocalizedMessage()));
+            }
+        }
+    }
+
+    private final class SaveToPreferredRepositoryWorker extends SwingWorker<Void, Void> {
+
+        @Override
+        protected Void doInBackground() throws Exception {
+            BirthdaysUtil.findPreferredRepository().save(allPersons);
+            return null;
+        }
+
+        @Override
+        protected void done() {
+            try {
+                get();
+            } catch (Throwable t) {
+                Logger.getLogger(BirthdaysDialog.class.getName()).log(Level.SEVERE, null, t);
+                showErrorMessage(Bundle.getString(BirthdaysDialog.class, "BirthdaysDialog.ErrorMessage.SavePersons", t.getLocalizedMessage()));
+            }
         }
     };
 

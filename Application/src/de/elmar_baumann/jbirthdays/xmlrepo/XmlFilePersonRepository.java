@@ -1,5 +1,6 @@
 package de.elmar_baumann.jbirthdays.xmlrepo;
 
+import de.elmar_baumann.jbirthdays.api.Persons;
 import de.elmar_baumann.jbirthdays.api.Person;
 import de.elmar_baumann.jbirthdays.util.XmlUtil;
 import java.io.File;

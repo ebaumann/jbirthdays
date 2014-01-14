@@ -1,8 +1,7 @@
 package de.elmar_baumann.jbirthdays.xmlrepo;
 
 import de.elmar_baumann.jbirthdays.api.Person;
-import de.elmar_baumann.jbirthdays.xmlrepo.Persons;
-import de.elmar_baumann.jbirthdays.xmlrepo.XmlFilePersonRepository;
+import de.elmar_baumann.jbirthdays.api.Persons;
 import java.io.File;
 import java.util.Arrays;
 import org.junit.Assert;

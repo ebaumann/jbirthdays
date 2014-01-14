@@ -88,7 +88,7 @@ public final class QtBirthdaysDbImport {
         for (String line : lines) {
             Logger.getLogger(QtBirthdaysDbImport.class.getName()).log(Level.INFO, "Reading line: {0}", line);
             Person person = lineToPeron(line);
-            boolean exists = person != null && containsPerson(existingPersons, person);
+            boolean exists = person != null && BirthdaysUtil.containsPerson(existingPersons, person);
             if (exists) {
                 Logger.getLogger(QtBirthdaysDbImport.class.getName()).log(Level.INFO, "Person ''{0}'' already exists and will not be imported", person);
             }
@@ -157,15 +157,6 @@ public final class QtBirthdaysDbImport {
 
     private static int getDay(String dateString) {
         return toDateInt(dateString, 0);
-    }
-
-    private static boolean containsPerson(Collection<? extends Person> persons, Person person) {
-        for (Person p : persons) {
-            if (person.isSamePerson(p)) {
-                return true;
-            }
-        }
-        return false;
     }
 
     private QtBirthdaysDbImport() {

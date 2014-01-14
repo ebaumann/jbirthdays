@@ -3,6 +3,11 @@
 Changelog JBirthdays http://elmar-baumann.de/JBirthdays
 =======================================================
 
+0.3.0 2014-01-14
+----------------
+* Export und Import von Personen hinzugefügt zum Backup
+  und Austausch mit anderen JBirthdays-Anwendungen
+
 0.2.0 2014-01-13
 ----------------
 * Auto-Update hinzugefügt
