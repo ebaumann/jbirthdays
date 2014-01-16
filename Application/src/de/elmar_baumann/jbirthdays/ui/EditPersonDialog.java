@@ -51,6 +51,7 @@ public class EditPersonDialog extends Dialog {
         setInt(textFieldBirthdayMonth, person.getBirthdayMonth());
         setInt(textFieldBirthdayDay, person.getBirthdayDay());
         textAreaNotes.setText(StringUtil.nullToEmptyString(person.getNotes()));
+        checkBoxNotify.setSelected(person.isNotify());
     }
 
     public Person save() {
@@ -62,6 +63,7 @@ public class EditPersonDialog extends Dialog {
             person.setBirthdayMonth(toInt(textFieldBirthdayMonth));
             person.setBirthdayDay(toInt(textFieldBirthdayDay));
             person.setNotes(textAreaNotes.getText());
+            person.setNotify(checkBoxNotify.isSelected());
         }
         return person;
     }
@@ -115,7 +117,9 @@ public class EditPersonDialog extends Dialog {
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
+        java.awt.GridBagConstraints gridBagConstraints;
 
+        panelContent = new javax.swing.JPanel();
         labelFirstName = new javax.swing.JLabel();
         textFieldFirstName = new javax.swing.JTextField();
         labelLastName = new javax.swing.JLabel();
@@ -132,27 +136,64 @@ public class EditPersonDialog extends Dialog {
         labelNotes = new javax.swing.JLabel();
         scrollPaneNotes = new javax.swing.JScrollPane();
         textAreaNotes = new javax.swing.JTextArea();
+        panelButtons = new javax.swing.JPanel();
+        checkBoxNotify = new javax.swing.JCheckBox();
         buttonOk = new javax.swing.JButton();
         buttonCancel = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         java.util.ResourceBundle bundle = java.util.ResourceBundle.getBundle("de/elmar_baumann/jbirthdays/ui/Bundle"); // NOI18N
         setTitle(bundle.getString("EditPersonDialog.title")); // NOI18N
+        getContentPane().setLayout(new java.awt.GridBagLayout());
+
+        panelContent.setLayout(new java.awt.GridBagLayout());
 
         labelFirstName.setLabelFor(textFieldFirstName);
         labelFirstName.setText(bundle.getString("EditPersonDialog.labelFirstName.text")); // NOI18N
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.WEST;
+        panelContent.add(labelFirstName, gridBagConstraints);
 
         textFieldFirstName.setColumns(30);
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridwidth = java.awt.GridBagConstraints.REMAINDER;
+        gridBagConstraints.fill = java.awt.GridBagConstraints.HORIZONTAL;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.WEST;
+        gridBagConstraints.weightx = 1.0;
+        gridBagConstraints.insets = new java.awt.Insets(0, 5, 0, 0);
+        panelContent.add(textFieldFirstName, gridBagConstraints);
 
         labelLastName.setLabelFor(textFieldLastName);
         labelLastName.setText(bundle.getString("EditPersonDialog.labelLastName.text")); // NOI18N
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.WEST;
+        gridBagConstraints.insets = new java.awt.Insets(5, 0, 0, 0);
+        panelContent.add(labelLastName, gridBagConstraints);
 
         textFieldLastName.setColumns(30);
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridwidth = java.awt.GridBagConstraints.REMAINDER;
+        gridBagConstraints.fill = java.awt.GridBagConstraints.HORIZONTAL;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.WEST;
+        gridBagConstraints.weightx = 1.0;
+        gridBagConstraints.insets = new java.awt.Insets(5, 5, 0, 0);
+        panelContent.add(textFieldLastName, gridBagConstraints);
 
         labelEmail.setLabelFor(textFieldEmail);
         labelEmail.setText(bundle.getString("EditPersonDialog.labelEmail.text")); // NOI18N
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.WEST;
+        gridBagConstraints.insets = new java.awt.Insets(5, 0, 0, 0);
+        panelContent.add(labelEmail, gridBagConstraints);
 
         textFieldEmail.setColumns(30);
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridwidth = java.awt.GridBagConstraints.REMAINDER;
+        gridBagConstraints.fill = java.awt.GridBagConstraints.HORIZONTAL;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.WEST;
+        gridBagConstraints.weightx = 1.0;
+        gridBagConstraints.insets = new java.awt.Insets(5, 5, 0, 0);
+        panelContent.add(textFieldEmail, gridBagConstraints);
 
         panelDateOfBirth.setBorder(javax.swing.BorderFactory.createTitledBorder(bundle.getString("EditPersonDialog.panelDateOfBirth.border.title"))); // NOI18N
 
@@ -204,8 +245,20 @@ public class EditPersonDialog extends Dialog {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridwidth = java.awt.GridBagConstraints.REMAINDER;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.WEST;
+        gridBagConstraints.weightx = 1.0;
+        gridBagConstraints.insets = new java.awt.Insets(7, 0, 0, 0);
+        panelContent.add(panelDateOfBirth, gridBagConstraints);
+
         labelNotes.setLabelFor(textAreaNotes);
         labelNotes.setText(bundle.getString("EditPersonDialog.labelNotes.text")); // NOI18N
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridwidth = java.awt.GridBagConstraints.REMAINDER;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.WEST;
+        gridBagConstraints.weightx = 1.0;
+        panelContent.add(labelNotes, gridBagConstraints);
 
         textAreaNotes.setColumns(20);
         textAreaNotes.setLineWrap(true);
@@ -213,12 +266,32 @@ public class EditPersonDialog extends Dialog {
         textAreaNotes.setWrapStyleWord(true);
         scrollPaneNotes.setViewportView(textAreaNotes);
 
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridwidth = java.awt.GridBagConstraints.REMAINDER;
+        gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.WEST;
+        gridBagConstraints.weightx = 1.0;
+        gridBagConstraints.weighty = 1.0;
+        gridBagConstraints.insets = new java.awt.Insets(7, 0, 0, 0);
+        panelContent.add(scrollPaneNotes, gridBagConstraints);
+
+        panelButtons.setLayout(new java.awt.GridBagLayout());
+
+        checkBoxNotify.setText(bundle.getString("EditPersonDialog.checkBoxNotify.text")); // NOI18N
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.WEST;
+        gridBagConstraints.weightx = 1.0;
+        panelButtons.add(checkBoxNotify, gridBagConstraints);
+
         buttonOk.setText(bundle.getString("EditPersonDialog.buttonOk.text")); // NOI18N
         buttonOk.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 buttonOkActionPerformed(evt);
             }
         });
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.EAST;
+        panelButtons.add(buttonOk, gridBagConstraints);
 
         buttonCancel.setText(bundle.getString("EditPersonDialog.buttonCancel.text")); // NOI18N
         buttonCancel.addActionListener(new java.awt.event.ActionListener() {
@@ -226,69 +299,26 @@ public class EditPersonDialog extends Dialog {
                 buttonCancelActionPerformed(evt);
             }
         });
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.EAST;
+        gridBagConstraints.insets = new java.awt.Insets(0, 5, 0, 0);
+        panelButtons.add(buttonCancel, gridBagConstraints);
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(buttonOk)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(buttonCancel)
-                .addGap(10, 10, 10))
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(labelEmail)
-                            .addComponent(labelLastName)
-                            .addComponent(labelFirstName))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(textFieldEmail)
-                    .addComponent(textFieldLastName)
-                    .addComponent(textFieldFirstName))
-                .addContainerGap())
-            .addGroup(layout.createSequentialGroup()
-                .addGap(10, 10, 10)
-                .addComponent(labelNotes)
-                .addGap(300, 300, 300))
-            .addGroup(layout.createSequentialGroup()
-                .addGap(10, 10, 10)
-                .addComponent(scrollPaneNotes)
-                .addGap(10, 10, 10))
-            .addGroup(layout.createSequentialGroup()
-                .addGap(10, 10, 10)
-                .addComponent(panelDateOfBirth, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGap(10, 10, 10))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(labelFirstName)
-                    .addComponent(textFieldFirstName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(labelLastName)
-                    .addComponent(textFieldLastName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(labelEmail)
-                    .addComponent(textFieldEmail, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(panelDateOfBirth, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(3, 3, 3)
-                .addComponent(labelNotes)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(scrollPaneNotes, javax.swing.GroupLayout.DEFAULT_SIZE, 83, Short.MAX_VALUE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(buttonOk)
-                    .addComponent(buttonCancel))
-                .addContainerGap())
-        );
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridwidth = java.awt.GridBagConstraints.REMAINDER;
+        gridBagConstraints.fill = java.awt.GridBagConstraints.HORIZONTAL;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.EAST;
+        gridBagConstraints.insets = new java.awt.Insets(5, 0, 0, 0);
+        panelContent.add(panelButtons, gridBagConstraints);
+
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridwidth = java.awt.GridBagConstraints.REMAINDER;
+        gridBagConstraints.gridheight = java.awt.GridBagConstraints.REMAINDER;
+        gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
+        gridBagConstraints.weightx = 1.0;
+        gridBagConstraints.weighty = 1.0;
+        gridBagConstraints.insets = new java.awt.Insets(10, 10, 10, 10);
+        getContentPane().add(panelContent, gridBagConstraints);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -340,6 +370,7 @@ public class EditPersonDialog extends Dialog {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton buttonCancel;
     private javax.swing.JButton buttonOk;
+    private javax.swing.JCheckBox checkBoxNotify;
     private javax.swing.JLabel labelBirthdayDay;
     private javax.swing.JLabel labelBirthdayMonth;
     private javax.swing.JLabel labelBirthdayYear;
@@ -347,6 +378,8 @@ public class EditPersonDialog extends Dialog {
     private javax.swing.JLabel labelFirstName;
     private javax.swing.JLabel labelLastName;
     private javax.swing.JLabel labelNotes;
+    private javax.swing.JPanel panelButtons;
+    private javax.swing.JPanel panelContent;
     private javax.swing.JPanel panelDateOfBirth;
     private javax.swing.JScrollPane scrollPaneNotes;
     private javax.swing.JTextArea textAreaNotes;

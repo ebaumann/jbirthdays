@@ -3,6 +3,15 @@ Character encoding of this file: UTF-8
 Changelog JBirthdays http://elmar-baumann.de/JBirthdays
 =======================================================
 
+0.4.0 2014-01-16
+----------------
+* Birthdays of specific persons can be excluded
+  from notification
+* Logfile can be viewed
+* Database ca be moved to different folders
+* Option to install downloaded new versions
+  of JBirthdays (Windows only)
+
 0.3.0 2014-01-14
 ----------------
 * Database is choosable

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE tmx SYSTEM "tmx11.dtd">
 <tmx version="1.1">
-  <header creationtool="OmegaT" o-tmf="OmegaT TMX" adminlang="EN-US" datatype="plaintext" creationtoolversion="2.6.3_3" segtype="sentence" srclang="EN"/>
+  <header creationtool="OmegaT" o-tmf="OmegaT TMX" adminlang="EN-US" datatype="plaintext" creationtoolversion="3.0.6" segtype="sentence" srclang="EN"/>
   <body>
 <!-- Default translations -->
     <tu>
@@ -110,6 +110,14 @@
     </tu>
     <tu>
       <tuv lang="EN">
+        <seg>&amp;View Logfile</seg>
+      </tuv>
+      <tuv lang="DE" changeid="ebaumann" changedate="20140116T082626Z" creationid="ebaumann" creationdate="20140116T082626Z">
+        <seg>&amp;Protokolldatei anzeigen</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="EN">
         <seg>&amp;Year:</seg>
       </tuv>
       <tuv lang="DE" changeid="elmar" changedate="20140112T123607Z">
@@ -150,6 +158,14 @@
     </tu>
     <tu>
       <tuv lang="EN">
+        <seg>&lt;html&gt;Error opening the log file {0}:&lt;p&gt;{1}&lt;/html&gt;</seg>
+      </tuv>
+      <tuv lang="DE" changeid="ebaumann" changedate="20140116T082613Z" creationid="ebaumann" creationdate="20140116T082613Z">
+        <seg>&lt;html&gt;Fehler beim Öffnen der Protokolldatei {0}:&lt;p&gt;{1}&lt;/html&gt;</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="EN">
         <seg>&lt;html&gt;Error saving persons:&lt;p&gt;{0}&lt;/html&gt;</seg>
       </tuv>
       <tuv lang="DE" changeid="elmar" changedate="20140112T123050Z">
@@ -162,6 +178,14 @@
       </tuv>
       <tuv lang="DE" changeid="elmar" changedate="20140112T124118Z">
         <seg>&lt;html&gt;Hinweis: Falls die importierten Personen "merkwürdige" Zeichen enthalten, löschen Sie diese und importieren sie mit einer anderen Zeichenkodierung.&lt;br/&gt;Unter Windows ist die Zeichenkodierung gewöhnlich "&lt;b&gt;{0}&lt;/b&gt;" und unter Linux "&lt;b&gt;{1}&lt;/b&gt;".&lt;/html&gt;</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="EN">
+        <seg>&lt;html&gt;Java does not support open files for this sytem environment.&lt;p&gt;Try to open the log file with a text editor:&lt;p&gt;{0}&lt;/html&gt;</seg>
+      </tuv>
+      <tuv lang="DE" changeid="ebaumann" changedate="20140116T082732Z" creationid="ebaumann" creationdate="20140116T082732Z">
+        <seg>&lt;html&gt;Java unterstützt nicht das Öffnen von Dateien für diese Betriebssystem-Umgebung.&lt;p&gt;Versuchen Sie, die Datei mit einem Texteditor zu öffnen:&lt;p&gt;{0}&lt;/html&gt;</seg>
       </tuv>
     </tu>
     <tu>
@@ -272,8 +296,8 @@
       <tuv lang="EN">
         <seg>Choose existing JBirthdays database</seg>
       </tuv>
-      <tuv lang="DE" changeid="elmar" changedate="20140114T181910Z">
-        <seg>Existierende JBirthdays-Datenbank</seg>
+      <tuv lang="DE" changeid="ebaumann" changedate="20140116T085703Z">
+        <seg>Existierende JBirthdays-Datenbank auswählen</seg>
       </tuv>
     </tu>
     <tu>
@@ -394,6 +418,14 @@
       </tuv>
       <tuv lang="DE" changeid="elmar" changedate="20140112T122901Z">
         <seg>Fehler beim importieren von {0}</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="EN">
+        <seg>Error moving database: {0}</seg>
+      </tuv>
+      <tuv lang="DE" changeid="ebaumann" changedate="20140116T085727Z" creationid="ebaumann" creationdate="20140116T085727Z">
+        <seg>Fehler beim Verschieben der Datenbank: {0}</seg>
       </tuv>
     </tu>
     <tu>
@@ -622,10 +654,26 @@
     </tu>
     <tu>
       <tuv lang="EN">
+        <seg>Move to a different folder</seg>
+      </tuv>
+      <tuv lang="DE" changeid="ebaumann" changedate="20140116T085713Z" creationid="ebaumann" creationdate="20140116T085713Z">
+        <seg>In einen anderen Ordner verschieben</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="EN">
         <seg>Name</seg>
       </tuv>
       <tuv lang="DE" changeid="elmar" changedate="20140112T123717Z">
         <seg>Name</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="EN">
+        <seg>No&amp;tify for Birthday</seg>
+      </tuv>
+      <tuv lang="DE" changeid="ebaumann" changedate="20140116T094621Z" creationid="ebaumann" creationdate="20140116T094621Z">
+        <seg>Über Geburtstage bena&amp;chrichtigen</seg>
       </tuv>
     </tu>
     <tu>
@@ -706,6 +754,14 @@
       </tuv>
       <tuv lang="DE" changeid="elmar" changedate="20140112T123427Z">
         <seg>Personen auswählen</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="EN">
+        <seg>Select new database folder</seg>
+      </tuv>
+      <tuv lang="DE" changeid="ebaumann" changedate="20140116T085739Z" creationid="ebaumann" creationdate="20140116T085739Z">
+        <seg>Neuen Datenbank-Ordner auswählen</seg>
       </tuv>
     </tu>
     <tu>

@@ -46,4 +46,8 @@ public final class Persons {
         }
         return false;
     }
+
+    public int getCount() {
+        return persons.size();
+    }
 }
