@@ -7,6 +7,7 @@ Changelog JBirthdays http://elmar-baumann.de/JBirthdays
 ----------------
 * Option: Don't display birthday
 * Logfile can be viewed
+* Database ca be moved to different folders
 
 0.3.0 2014-01-14
 ----------------

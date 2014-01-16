@@ -312,8 +312,8 @@
       <tuv lang="EN">
         <seg>Choose existing JBirthdays database</seg>
       </tuv>
-      <tuv lang="DE" changeid="elmar" changedate="20140114T181910Z">
-        <seg>Existierende JBirthdays-Datenbank</seg>
+      <tuv lang="DE" changeid="ebaumann" changedate="20140116T085703Z">
+        <seg>Existierende JBirthdays-Datenbank auswählen</seg>
       </tuv>
     </tu>
     <tu>
@@ -450,6 +450,14 @@
       </tuv>
       <tuv lang="DE" changeid="elmar" changedate="20140112T122901Z">
         <seg>Fehler beim importieren von {0}</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="EN">
+        <seg>Error moving database: {0}</seg>
+      </tuv>
+      <tuv lang="DE" changeid="ebaumann" changedate="20140116T085727Z" creationid="ebaumann" creationdate="20140116T085727Z">
+        <seg>Fehler beim Verschieben der Datenbank: {0}</seg>
       </tuv>
     </tu>
     <tu>
@@ -726,6 +734,14 @@
     </tu>
     <tu>
       <tuv lang="EN">
+        <seg>Move to a different folder</seg>
+      </tuv>
+      <tuv lang="DE" changeid="ebaumann" changedate="20140116T085713Z" creationid="ebaumann" creationdate="20140116T085713Z">
+        <seg>In einen anderen Ordner verschieben</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="EN">
         <seg>Name</seg>
       </tuv>
       <tuv lang="DE" changeid="elmar" changedate="20140112T123717Z">
@@ -810,6 +826,14 @@
       </tuv>
       <tuv lang="DE" changeid="elmar" changedate="20140112T123427Z">
         <seg>Personen auswählen</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="EN">
+        <seg>Select new database folder</seg>
+      </tuv>
+      <tuv lang="DE" changeid="ebaumann" changedate="20140116T085739Z" creationid="ebaumann" creationdate="20140116T085739Z">
+        <seg>Neuen Datenbank-Ordner auswählen</seg>
       </tuv>
     </tu>
     <tu>

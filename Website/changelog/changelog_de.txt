@@ -7,6 +7,7 @@ Changelog JBirthdays http://elmar-baumann.de/JBirthdays
 ----------------
 * Option: Geburtstag nicht anzeigen
 * Protokolldatei kann angezeigt werden
+* Datenbank kann in andere Ordner verschoben werden
 
 0.3.0 2014-01-14
 ----------------
