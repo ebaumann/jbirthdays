@@ -1,0 +1,29 @@
+Character encoding of this file: UTF-8
+
+Changelog JBirthdays http://elmar-baumann.de/JBirthdays
+=======================================================
+
+0.4.0 2014-01-16
+----------------
+* Birthdays of specific persons can be excluded
+  from notification
+* Logfile can be viewed
+* Database ca be moved to different folders
+* Option to install downloaded new versions
+  of JBirthdays (Windows only)
+
+0.3.0 2014-01-14
+----------------
+* Database is choosable
+* Added export and import of persons for backups and
+  changing data with other JBirtdays applications
+
+0.2.0 2014-01-13
+----------------
+* Added auto update
+* Option to send an email to persons having birthday at
+  the present day
+
+0.1.0 2014-01-12
+----------------
+Started Project

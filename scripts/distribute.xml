@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="JBirthdays distribution" default="default" basedir=".">
+
+    <description>JBirthdays Distribution</description>
+
+    <property name="repo.root" value=".."/>
+    <property name="dist.dir" value="${repo.root}/dist_files"/>
+    <property name="upload.dir" value="${dist.dir}/upload"/>
+    <property name="private.confdir" value="conf"/>
+    <condition property="isWindows">
+        <os family="windows" />
+    </condition>
+    <condition property="isUnix">
+        <os family="unix"/>
+    </condition>
+
+    <property file="${repo.root}/Application/src/de/elmar_baumann/jbirthdays/AppVersion.properties"/>
+
+    <target name="0-all">
+        <antcall target="-delete-upload-files"/>
+        <antcall target="1-set-version-info"/>
+        <antcall target="2-create-zip"/>
+        <antcall target="3-create-setup-exe"/>
+        <antcall target="4-upload" />
+    </target>
+
+    <target name="-delete-upload-files">
+        <echo message="Deleting upload Setup/ZIP files"/>
+        <delete file="${upload.dir}/JBirthdays-setup.exe" failonerror="false"/>
+        <delete file="${upload.dir}/JBirthdays.zip" failonerror="false"/>
+    </target>
+
+    <target name="1-set-version-info" >
+        <echo message="Setting Version Info to Distribution"/>
+        <replaceregexp file="${repo.root}/Website/download.html"
+                       match="&lt;span class=&quot;version&quot;&gt;(.*)&lt;/span&gt;"
+                       replace="&lt;span class=&quot;version&quot;&gt;${Version}&lt;/span&gt;"/>
+        <tstamp>
+            <format property="rfc.time" pattern="yyyy-MM-dd'T'HH:mm:ssXXX"/>
+        </tstamp>
+        <replaceregexp file="${repo.root}/Website/download.html"
+                       match="&lt;meta name=&quot;date&quot;.*"
+                       replace="&lt;meta name=&quot;date&quot; content=&quot;${rfc.time}&quot; /&gt;"/>
+        <replaceregexp file="${repo.root}/Website/jbirthdays-version.txt"
+                       match="&lt;span class=&quot;version&quot;&gt;(.*)&lt;/span&gt;"
+                       replace="&lt;span class=&quot;version&quot;&gt;${Version}&lt;/span&gt;"/>
+        <replaceregexp file="${repo.root}/Website/.htaccess"
+                       match="Redirect permanent /JBirthdays/dist/JBirthdays-setup.exe.*"
+                       replace="Redirect permanent /JBirthdays/dist/JBirthdays-setup.exe http://sourceforge.net/projects/jbirthdays/files/downloads/JBirthdays-setup-${Version}.exe/download"/>
+        <replaceregexp file="${repo.root}/Website/.htaccess"
+                       match="Redirect permanent /JBirthdays/dist/JBirthdays.zip.*"
+                       replace="Redirect permanent /JBirthdays/dist/JBirthdays.zip   http://sourceforge.net/projects/jbirthdays/files/downloads/JBirthdays-${Version}.zip/download"/>
+        <replaceregexp file="InnoSetup/JBirthdays.iss"
+                       encoding="Cp1252"
+                       match="AppVerName=.*"
+                       replace="AppVerName=JBirthdays ${Version}"/>
+        <replaceregexp file="InnoSetup/JBirthdays.iss"
+                       encoding="Cp1252"
+                       match="AppVersion=.*"
+                       replace="AppVersion=${Version}"/>
+    </target>
+
+    <target name="2-create-zip">
+        <echo message="Creating ZIP distribution"/>
+        <property name="program.dist.dir" value="${repo.root}/Application/dist"/>
+        <property name="zipfile" value="${upload.dir}/JBirthdays.zip"/>
+        <mkdir dir="${upload.dir}"/>
+        <delete file="${zipfile}" failonerror="false"/>
+        <zip destfile="${zipfile}">
+            <zipfileset dir="${program.dist.dir}" prefix="JBirthdays"/>
+        </zip>
+    </target>
+
+    <target name="3-create-setup-exe" if="isWindows">
+        <!-- Compil32.exe (path to the Inno Setup compiler) will be read from innosetup.properties  -->
+        <echo message="Creating Setup.exe with Inno Setup"/>
+        <property file="${private.confdir}/innosetup.properties"/>
+        <exec
+            command="&quot;${compil32.exe}&quot; /cc JBirthdays.iss"
+            dir="InnoSetup"/>
+    </target>
+
+    <target name="4-upload">
+        <echo message="Uploading JBirthdays Distribution"/>
+        <antcall target="-upload-sourceforge"/>
+        <antcall target="-upload-website"/>
+    </target>
+
+    <target name="-upload-sourceforge">
+        <!--${username} and ${password} will be read from sourceforge.properties,
+            ${Version} from Version.properties
+        -->
+        <property file="${private.confdir}/sourceforge.properties"/>
+        <property name="dist.src" location="${repo.root}/dist_files/upload"/>
+        <scp
+            file="${dist.src}/JBirthdays.zip"
+            remoteTofile="${username}@frs.sourceforge.net:/home/frs/project/jbirthdays/downloads/JBirthdays-${Version}.zip"
+            trust="true"
+            password="${password}"
+        />
+        <scp
+            file="${dist.src}/JBirthdays-setup.exe"
+            remoteTofile="${username}@frs.sourceforge.net:/home/frs/project/jbirthdays/downloads/JBirthdays-setup-${Version}.exe"
+            trust="true"
+            password="${password}"
+        />
+    </target>
+
+    <target name="-upload-website">
+        <echo message="Uploading new/updated website files to JBirthdays website"/>
+        <property file="${private.confdir}/website.properties"/><!-- contains server, user and pass -->
+        <ftp server="${server}"
+             userid="${user}"
+             password="${pass}"
+             remotedir="html/JBirthdays"
+             depends="yes"
+             verbose="yes">
+            <fileset dir="${repo.root}/Website"/>
+        </ftp>
+    </target>
+
+</project>

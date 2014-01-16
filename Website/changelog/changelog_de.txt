@@ -1,0 +1,29 @@
+﻿Zeichenkodierung dieser Datei: UTF-8
+
+Changelog JBirthdays http://elmar-baumann.de/JBirthdays
+=======================================================
+
+0.4.0 2014-01-16
+----------------
+* Geburtstage bestimmter Personen können von der
+  Benachrichtigung ausgeschlossen werden
+* Protokolldatei kann angezeigt werden
+* Datenbank kann in andere Ordner verschoben werden
+* Unter Windows wird angeboten, heruntergeladene neue
+  Versionen von JBirthdays zu installieren
+
+0.3.0 2014-01-14
+----------------
+* Datenbank kann ausgewählt werden
+* Export und Import von Personen hinzugefügt zum Backup
+  und Austausch mit anderen JBirthdays-Anwendungen
+
+0.2.0 2014-01-13
+----------------
+* Auto-Update hinzugefügt
+* An Personen, die Geburtstag haben, kann eine E-Mail
+  gesendet werden
+
+0.1.0 2014-01-12
+----------------
+Projekt gestartet
