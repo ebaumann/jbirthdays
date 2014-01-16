@@ -15,7 +15,8 @@ import javax.xml.bind.annotation.XmlType;
  * @author Elmar Baumann
  */
 @XmlAccessorType(XmlAccessType.NONE)
-@XmlType(propOrder = {"uuid", "firstName", "lastName", "email", "birthdayYear", "birthdayMonth", "birthdayDay", "notes"})
+@XmlType(propOrder = {"uuid", "firstName", "lastName", "email", "birthdayYear",
+    "birthdayMonth", "birthdayDay", "notes", "display"})
 public final class Person {
 
     @XmlElement(name = "uuid")
@@ -34,6 +35,8 @@ public final class Person {
     private String notes;
     @XmlElement(name = "email")
     private String email;
+    @XmlElement(name = "display")
+    private boolean display = true;
 
     public String getFirstName() {
         return firstName;
@@ -95,16 +98,12 @@ public final class Person {
         return StringUtil.hasContent(email);
     }
 
-    /**
-     * @return true if month and day may be a date, if year is specified,
-     *         leap years are an issue (February 29 on non leap years is invalid)
-     */
-    public boolean isBirthdayDateValid() {
-        return birthdayDay == 0 || birthdayMonth == 0
-                ? false
-                : birthdayYear > 0
-                ? DateUtil.isValidDate(birthdayYear, birthdayMonth, birthdayDay)
-                : DateUtil.maybeDate(birthdayMonth, birthdayDay);
+    public boolean isDisplay() {
+        return display;
+    }
+
+    public void setDisplay(boolean display) {
+        this.display = display;
     }
 
     @Override
@@ -134,6 +133,18 @@ public final class Person {
         int hash = 3;
         hash = 23 * hash + Objects.hashCode(this.uuid);
         return hash;
+    }
+
+    /**
+     * @return true if month and day may be a date, if year is specified,
+     *         leap years are an issue (February 29 on non leap years is invalid)
+     */
+    public boolean isBirthdayDateValid() {
+        return birthdayDay == 0 || birthdayMonth == 0
+                ? false
+                : birthdayYear > 0
+                ? DateUtil.isValidDate(birthdayYear, birthdayMonth, birthdayDay)
+                : DateUtil.maybeDate(birthdayMonth, birthdayDay);
     }
 
     /**

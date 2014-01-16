@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE tmx SYSTEM "tmx14.dtd">
 <tmx version="1.4">
-  <header creationtool="OmegaT" o-tmf="OmegaT TMX" adminlang="EN-US" datatype="plaintext" creationtoolversion="2.6.3_3" segtype="sentence" srclang="EN"/>
+  <header creationtool="OmegaT" o-tmf="OmegaT TMX" adminlang="EN-US" datatype="plaintext" creationtoolversion="3.0.6" segtype="sentence" srclang="EN"/>
   <body>
 <!-- Default translations -->
     <tu>
@@ -330,6 +330,14 @@
       </tuv>
       <tuv xml:lang="DE" changeid="elmar" changedate="20140112T123342Z">
         <seg>Termine</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="EN">
+        <seg>Di&amp;splay birthday</seg>
+      </tuv>
+      <tuv xml:lang="DE" changeid="ebaumann" changedate="20140116T080845Z" creationid="ebaumann" creationdate="20140116T080845Z">
+        <seg>Geburtstag an&amp;zeigen</seg>
       </tuv>
     </tu>
     <tu>
