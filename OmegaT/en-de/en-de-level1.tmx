@@ -358,14 +358,6 @@
     </tu>
     <tu>
       <tuv lang="EN">
-        <seg>Di&amp;splay birthday</seg>
-      </tuv>
-      <tuv lang="DE" changeid="ebaumann" changedate="20140116T080845Z" creationid="ebaumann" creationdate="20140116T080845Z">
-        <seg>Geburtstag an&amp;zeigen</seg>
-      </tuv>
-    </tu>
-    <tu>
-      <tuv lang="EN">
         <seg>Download successful</seg>
       </tuv>
       <tuv lang="DE" changeid="ebaumann" changedate="20140114T090505Z">
@@ -674,6 +666,14 @@
       </tuv>
       <tuv lang="DE" changeid="elmar" changedate="20140112T123717Z">
         <seg>Name</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="EN">
+        <seg>No&amp;tify for Birthday</seg>
+      </tuv>
+      <tuv lang="DE" changeid="ebaumann" changedate="20140116T094621Z" creationid="ebaumann" creationdate="20140116T094621Z">
+        <seg>Über Geburtstage bena&amp;chrichtigen</seg>
       </tuv>
     </tu>
     <tu>

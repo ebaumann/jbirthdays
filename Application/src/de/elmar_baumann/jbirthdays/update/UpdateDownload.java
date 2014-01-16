@@ -9,6 +9,7 @@ import java.awt.EventQueue;
 import java.io.BufferedOutputStream;
 import java.io.File;
 import java.io.FileOutputStream;
+import java.io.IOException;
 import java.net.URL;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -92,12 +93,38 @@ public final class UpdateDownload extends Thread {
         EventQueue.invokeLater(new Runnable() {
             @Override
             public void run() {
-                JOptionPane.showMessageDialog(null,
-                        Bundle.getString(UpdateDownload.class, "UpdateDownload.Success", netVersion, downloadFile),
-                        Bundle.getString(UpdateDownload.class, "UpdateDownload.Success.Title"),
-                        JOptionPane.INFORMATION_MESSAGE);
+                if (SystemUtil.isWindows()) {
+                    checkInstall(downloadFile);
+                } else {
+                    JOptionPane.showMessageDialog(null,
+                            Bundle.getString(UpdateDownload.class, "UpdateDownload.Success", netVersion, downloadFile),
+                            Bundle.getString(UpdateDownload.class, "UpdateDownload.Success.Title"),
+                            JOptionPane.INFORMATION_MESSAGE);
+                }
             }
         });
+    }
+
+    private void checkInstall(final File downloadFile) {
+        String message = Bundle.getString(UpdateDownload.class, "UpdateDownload.Confirm.Install", netVersion, downloadFile);
+        if (JOptionPane.showConfirmDialog(null, message) == JOptionPane.YES_OPTION) {
+            Runtime.getRuntime().addShutdownHook(new Thread(new Runnable() {
+                @Override
+                public void run() {
+                    Process proc = null;
+                    try {
+                        proc = Runtime.getRuntime().exec(downloadFile.getAbsolutePath());
+                    } catch (IOException ex) {
+                        Logger.getLogger(UpdateDownload.class.getName()).log(Level.SEVERE, null, ex);
+                    }
+                    if (proc != null) {
+                        proc.getInputStream();
+                        proc.getErrorStream();
+                    }
+                }
+            }) {
+            });
+        }
     }
 
     private String getDownloadUrl() {

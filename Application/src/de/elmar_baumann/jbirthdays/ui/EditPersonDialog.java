@@ -51,7 +51,7 @@ public class EditPersonDialog extends Dialog {
         setInt(textFieldBirthdayMonth, person.getBirthdayMonth());
         setInt(textFieldBirthdayDay, person.getBirthdayDay());
         textAreaNotes.setText(StringUtil.nullToEmptyString(person.getNotes()));
-        checkBoxDisplay.setSelected(person.isDisplay());
+        checkBoxNotify.setSelected(person.isNotify());
     }
 
     public Person save() {
@@ -63,7 +63,7 @@ public class EditPersonDialog extends Dialog {
             person.setBirthdayMonth(toInt(textFieldBirthdayMonth));
             person.setBirthdayDay(toInt(textFieldBirthdayDay));
             person.setNotes(textAreaNotes.getText());
-            person.setDisplay(checkBoxDisplay.isSelected());
+            person.setNotify(checkBoxNotify.isSelected());
         }
         return person;
     }
@@ -136,8 +136,8 @@ public class EditPersonDialog extends Dialog {
         labelNotes = new javax.swing.JLabel();
         scrollPaneNotes = new javax.swing.JScrollPane();
         textAreaNotes = new javax.swing.JTextArea();
-        checkBoxDisplay = new javax.swing.JCheckBox();
         panelButtons = new javax.swing.JPanel();
+        checkBoxNotify = new javax.swing.JCheckBox();
         buttonOk = new javax.swing.JButton();
         buttonCancel = new javax.swing.JButton();
 
@@ -275,14 +275,13 @@ public class EditPersonDialog extends Dialog {
         gridBagConstraints.insets = new java.awt.Insets(7, 0, 0, 0);
         panelContent.add(scrollPaneNotes, gridBagConstraints);
 
-        checkBoxDisplay.setText(bundle.getString("EditPersonDialog.checkBoxDisplay.text")); // NOI18N
+        panelButtons.setLayout(new java.awt.GridBagLayout());
+
+        checkBoxNotify.setText(bundle.getString("EditPersonDialog.checkBoxNotify.text")); // NOI18N
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.anchor = java.awt.GridBagConstraints.WEST;
         gridBagConstraints.weightx = 1.0;
-        gridBagConstraints.insets = new java.awt.Insets(5, 0, 0, 0);
-        panelContent.add(checkBoxDisplay, gridBagConstraints);
-
-        panelButtons.setLayout(new java.awt.GridBagLayout());
+        panelButtons.add(checkBoxNotify, gridBagConstraints);
 
         buttonOk.setText(bundle.getString("EditPersonDialog.buttonOk.text")); // NOI18N
         buttonOk.addActionListener(new java.awt.event.ActionListener() {
@@ -291,7 +290,7 @@ public class EditPersonDialog extends Dialog {
             }
         });
         gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.weightx = 1.0;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.EAST;
         panelButtons.add(buttonOk, gridBagConstraints);
 
         buttonCancel.setText(bundle.getString("EditPersonDialog.buttonCancel.text")); // NOI18N
@@ -301,12 +300,13 @@ public class EditPersonDialog extends Dialog {
             }
         });
         gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.weightx = 1.0;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.EAST;
         gridBagConstraints.insets = new java.awt.Insets(0, 5, 0, 0);
         panelButtons.add(buttonCancel, gridBagConstraints);
 
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridwidth = java.awt.GridBagConstraints.REMAINDER;
+        gridBagConstraints.fill = java.awt.GridBagConstraints.HORIZONTAL;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.EAST;
         gridBagConstraints.insets = new java.awt.Insets(5, 0, 0, 0);
         panelContent.add(panelButtons, gridBagConstraints);
@@ -370,7 +370,7 @@ public class EditPersonDialog extends Dialog {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton buttonCancel;
     private javax.swing.JButton buttonOk;
-    private javax.swing.JCheckBox checkBoxDisplay;
+    private javax.swing.JCheckBox checkBoxNotify;
     private javax.swing.JLabel labelBirthdayDay;
     private javax.swing.JLabel labelBirthdayMonth;
     private javax.swing.JLabel labelBirthdayYear;

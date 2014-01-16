@@ -42,8 +42,8 @@ public final class PersonsTableCellRenderer extends DefaultTableCellRenderer {
         TableModel model = table.getModel();
         if (model instanceof PersonTableModel) {
             Person person = ((PersonTableModel) model).getPerson(row);
-            setFont(person.isDisplay() ? defaultFont : notDisplayFont);
-            setForeground(person.isDisplay() ? defaultForeground : Color.GRAY);
+            setFont(person.isNotify()? defaultFont : notDisplayFont);
+            setForeground(person.isNotify() ? defaultForeground : Color.GRAY);
         }
     }
 }

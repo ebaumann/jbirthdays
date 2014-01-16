@@ -16,7 +16,7 @@ import javax.xml.bind.annotation.XmlType;
  */
 @XmlAccessorType(XmlAccessType.NONE)
 @XmlType(propOrder = {"uuid", "firstName", "lastName", "email", "birthdayYear",
-    "birthdayMonth", "birthdayDay", "notes", "display"})
+    "birthdayMonth", "birthdayDay", "notes", "notify"})
 public final class Person {
 
     @XmlElement(name = "uuid")
@@ -35,8 +35,8 @@ public final class Person {
     private String notes;
     @XmlElement(name = "email")
     private String email;
-    @XmlElement(name = "display")
-    private boolean display = true;
+    @XmlElement(name = "notify")
+    private boolean notify = true;
 
     public String getFirstName() {
         return firstName;
@@ -98,12 +98,12 @@ public final class Person {
         return StringUtil.hasContent(email);
     }
 
-    public boolean isDisplay() {
-        return display;
+    public boolean isNotify() {
+        return notify;
     }
 
-    public void setDisplay(boolean display) {
-        this.display = display;
+    public void setNotify(boolean display) {
+        this.notify = display;
     }
 
     @Override

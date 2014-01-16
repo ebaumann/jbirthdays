@@ -750,6 +750,14 @@
     </tu>
     <tu>
       <tuv lang="EN">
+        <seg>No&amp;tify for Birthday</seg>
+      </tuv>
+      <tuv lang="DE" changeid="ebaumann" changedate="20140116T094621Z" creationid="ebaumann" creationdate="20140116T094621Z">
+        <seg>Über Geburtstage bena&amp;chrichtigen</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="EN">
         <seg>Notes</seg>
       </tuv>
       <tuv lang="DE" changeid="elmar" changedate="20140112T123722Z">

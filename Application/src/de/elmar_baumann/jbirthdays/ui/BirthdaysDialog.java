@@ -160,21 +160,21 @@ public class BirthdaysDialog extends Dialog {
 
     private void updateBirthdayTables() {
         Date today = new Date();
-        birthdayTodayTableModel.setPersons(filterDisplayable(
+        birthdayTodayTableModel.setPersons(filterNotify(
                 BirthdaysUtil.findWithBirthdayAt(allPersons, today)));
-        birthdayBeforeTableModel.setPersons(filterDisplayable(
+        birthdayBeforeTableModel.setPersons(filterNotify(
                 BirthdaysUtil.findWithBirthdayInNdays(allPersons, today,
                         panelPreferences.getDaysBefore())));
-        birthdayAfterTableModel.setPersons(filterDisplayable(
+        birthdayAfterTableModel.setPersons(filterNotify(
                 BirthdaysUtil.findWithBirthdayBeforeNdays(allPersons, today,
                         panelPreferences.getDaysAfter())));
         setEmailButtonEnabled();
     }
 
-    private Collection<? extends Person> filterDisplayable(Collection<? extends Person> persons) {
+    private Collection<? extends Person> filterNotify(Collection<? extends Person> persons) {
         Collection<Person> displayablePersons = new ArrayList<>(persons.size());
         for (Person person : persons) {
-            if (person.isDisplay()) {
+            if (person.isNotify()) {
                 displayablePersons.add(person);
             }
         }

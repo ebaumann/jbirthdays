@@ -5,9 +5,12 @@ Changelog JBirthdays http://elmar-baumann.de/JBirthdays
 
 0.4.0 2014-01-16
 ----------------
-* Option: Geburtstag nicht anzeigen
+* Geburtstage bestimmter Personen können von der
+  Benachrichtigung ausgeschlossen werden
 * Protokolldatei kann angezeigt werden
 * Datenbank kann in andere Ordner verschoben werden
+* Unter Windows wird angeboten, heruntergeladene neue
+  Versionen von JBirthdays zu installieren
 
 0.3.0 2014-01-14
 ----------------
