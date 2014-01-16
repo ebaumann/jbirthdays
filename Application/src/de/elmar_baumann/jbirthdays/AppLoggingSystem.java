@@ -1,5 +1,8 @@
 package de.elmar_baumann.jbirthdays;
 
+import de.elmar_baumann.jbirthdays.util.Bundle;
+import java.awt.Desktop;
+import java.awt.event.ActionEvent;
 import java.io.File;
 import java.io.IOException;
 import java.io.UnsupportedEncodingException;
@@ -10,6 +13,9 @@ import java.util.logging.LogManager;
 import java.util.logging.Logger;
 import java.util.logging.SimpleFormatter;
 import java.util.logging.StreamHandler;
+import javax.swing.AbstractAction;
+import javax.swing.Action;
+import javax.swing.JOptionPane;
 
 /**
  * @author Elmar Baumann
@@ -25,8 +31,9 @@ public final class AppLoggingSystem {
     private static volatile boolean init;
 
     static {
-        LOGFILE = new File(System.getProperty("user.home") + File.separator + ".de.elmar_baumann" +
-                File.separator + "jbirthdays" + File.separator + "JBirthdays-Log.txt");
+        LOGFILE = new File(System.getProperty("user.home") + File.separator
+                + ".de.elmar_baumann" + File.separator + "jbirthdays"
+                + File.separator + "JBirthdays-Log.txt");
     }
 
     public static void init() {
@@ -90,6 +97,45 @@ public final class AppLoggingSystem {
 
     public static File getLogfile() {
         return LOGFILE;
+    }
+
+    public static Action createViewLogfileAction() {
+        return new ViewLogfileAction();
+    }
+
+    private static final class ViewLogfileAction extends AbstractAction {
+
+        private static final long serialVersionUID = 1L;
+
+        @Override
+        public void actionPerformed(ActionEvent e) {
+            if (desktopSupportsOpen()) {
+                try {
+                    Desktop.getDesktop().open(LOGFILE);
+                } catch (Throwable t) {
+                    Logger.getLogger(ViewLogfileAction.class.getName()).log(Level.SEVERE, null, t);
+                    errorMessageOpen(t);
+                }
+            } else {
+                errorMessageDtSupport();
+            }
+        }
+
+        private boolean desktopSupportsOpen() {
+            return Desktop.isDesktopSupported() && Desktop.getDesktop().isSupported(Desktop.Action.OPEN);
+        }
+
+        private void errorMessageDtSupport() {
+            String message = Bundle.getString(AppLoggingSystem.class, "AppLoggingSystem.ErrorMessageDtSupport.Message", LOGFILE);
+            String title = Bundle.getString(AppLoggingSystem.class, "AppLoggingSystem.ErrorMessageDtSupport.Title");
+            JOptionPane.showMessageDialog(null, message, title, JOptionPane.ERROR_MESSAGE);
+        }
+
+        private void errorMessageOpen(Throwable t) {
+            String message = Bundle.getString(AppLoggingSystem.class, "AppLoggingSystem.ErrorMessageOpen.Message", LOGFILE, t);
+            String title = Bundle.getString(AppLoggingSystem.class, "AppLoggingSystem.ErrorMessageOpen.Title");
+            JOptionPane.showMessageDialog(null, message, title, JOptionPane.ERROR_MESSAGE);
+        }
     }
 
     private AppLoggingSystem() {

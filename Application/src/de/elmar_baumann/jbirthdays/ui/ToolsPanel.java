@@ -1,5 +1,6 @@
 package de.elmar_baumann.jbirthdays.ui;
 
+import de.elmar_baumann.jbirthdays.AppLoggingSystem;
 import de.elmar_baumann.jbirthdays.ical.ExportToIcalAction;
 import de.elmar_baumann.jbirthdays.imexport.QtBirthdaysDbImport;
 import de.elmar_baumann.jbirthdays.imexport.XmlExportAction;
@@ -85,6 +86,7 @@ public class ToolsPanel extends javax.swing.JPanel {
         comboBoxQtImportCharsets = new javax.swing.JComboBox<>();
         buttonQtImport = new javax.swing.JButton();
         labelQtImportInfoCharsets = new javax.swing.JLabel();
+        buttonViewLogfile = new javax.swing.JButton();
         panelFill = new javax.swing.JPanel();
 
         setLayout(new java.awt.GridBagLayout());
@@ -211,6 +213,14 @@ public class ToolsPanel extends javax.swing.JPanel {
         gridBagConstraints.weightx = 1.0;
         add(panelContent, gridBagConstraints);
 
+        buttonViewLogfile.setAction(AppLoggingSystem.createViewLogfileAction());
+        buttonViewLogfile.setText(bundle.getString("ToolsPanel.buttonViewLogfile.text")); // NOI18N
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridwidth = java.awt.GridBagConstraints.REMAINDER;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.WEST;
+        gridBagConstraints.insets = new java.awt.Insets(7, 10, 0, 0);
+        add(buttonViewLogfile, gridBagConstraints);
+
         javax.swing.GroupLayout panelFillLayout = new javax.swing.GroupLayout(panelFill);
         panelFill.setLayout(panelFillLayout);
         panelFillLayout.setHorizontalGroup(
@@ -239,6 +249,7 @@ public class ToolsPanel extends javax.swing.JPanel {
     private javax.swing.JButton buttonExportToIcal;
     private javax.swing.JButton buttonImport;
     private javax.swing.JButton buttonQtImport;
+    private javax.swing.JButton buttonViewLogfile;
     private javax.swing.JComboBox<Charset> comboBoxQtImportCharsets;
     private javax.swing.JLabel labelExportInfo;
     private javax.swing.JLabel labelIcalInfo;

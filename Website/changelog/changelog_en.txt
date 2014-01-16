@@ -6,6 +6,7 @@ Changelog JBirthdays http://elmar-baumann.de/JBirthdays
 0.4.0 2014-01-16
 ----------------
 * Option: Don't display birthday
+* Logfile can be viewed
 
 0.3.0 2014-01-14
 ----------------
