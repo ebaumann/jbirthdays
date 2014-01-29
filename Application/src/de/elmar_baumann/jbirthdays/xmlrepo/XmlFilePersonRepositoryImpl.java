@@ -50,4 +50,9 @@ public final class XmlFilePersonRepositoryImpl implements PersonRepository {
     public String getUUid() {
         return XmlFilePersonRepository.getUuid();
     }
+
+    @Override
+    public boolean isReadOnly() {
+        return false;
+    }
 }

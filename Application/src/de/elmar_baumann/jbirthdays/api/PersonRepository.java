@@ -19,4 +19,6 @@ public interface PersonRepository {
     String getDisplayName();
 
     String getUUid();
+
+    boolean isReadOnly();
 }
