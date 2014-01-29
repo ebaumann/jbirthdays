@@ -249,7 +249,6 @@ public class BirthdaysDialog extends Dialog {
     private void savePersonsAndUpdateTables() {
         savePersons();
         loadPersons();
-        updateBirthdayTables();
     }
 
     private void sendEmail() {
@@ -266,7 +265,6 @@ public class BirthdaysDialog extends Dialog {
     public void setVisible(boolean visible) {
         if (visible && allPersons.isEmpty()) {
             loadPersons();
-            updateBirthdayTables();
         }
         super.setVisible(visible);
     }
@@ -310,7 +308,6 @@ public class BirthdaysDialog extends Dialog {
         @Override
         public void propertyChange(PropertyChangeEvent evt) {
             loadPersons();
-            updateBirthdayTables();
         }
     };
 
@@ -339,6 +336,7 @@ public class BirthdaysDialog extends Dialog {
                 allPersons.addAll(loadedPersons);
                 Collections.sort(allPersons, Person.CMP_ASC_BY_LAST_NAME);
                 allPersonsTableModel.setPersons(allPersons);
+                updateBirthdayTables();
             } catch (Throwable t) {
                 Logger.getLogger(BirthdaysDialog.class.getName()).log(Level.SEVERE, null, t);
                 showErrorMessage(Bundle.getString(BirthdaysDialog.class, "BirthdaysDialog.ErrorMessage.LoadPersons", t.getLocalizedMessage()));
