@@ -3,6 +3,11 @@ Character encoding of this file: UTF-8
 Changelog JBirthdays http://elmar-baumann.de/JBirthdays
 =======================================================
 
+0.4.1 2014-01-29
+----------------
+* Bugfix: Possibly no persons were displayed after
+  starting the application
+
 0.4.0 2014-01-16
 ----------------
 * Birthdays of specific persons can be excluded
