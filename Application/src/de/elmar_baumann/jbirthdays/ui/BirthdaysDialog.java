@@ -273,8 +273,9 @@ public class BirthdaysDialog extends Dialog {
         @Override
         public void valueChanged(ListSelectionEvent e) {
             if (!e.getValueIsAdjusting()) {
-                buttonEditPerson.setEnabled(e.getFirstIndex() >= 0);
-                buttonRemovePerson.setEnabled(e.getFirstIndex() >= 0);
+                boolean readOnly = isReadOnly();
+                buttonEditPerson.setEnabled(!readOnly && e.getFirstIndex() >= 0);
+                buttonRemovePerson.setEnabled(!readOnly && e.getFirstIndex() >= 0);
             }
         }
     };
@@ -337,6 +338,7 @@ public class BirthdaysDialog extends Dialog {
                 Collections.sort(allPersons, Person.CMP_ASC_BY_LAST_NAME);
                 allPersonsTableModel.setPersons(allPersons);
                 updateBirthdayTables();
+                buttonAddPerson.setEnabled(!isReadOnly());
             } catch (Throwable t) {
                 Logger.getLogger(BirthdaysDialog.class.getName()).log(Level.SEVERE, null, t);
                 showErrorMessage(Bundle.getString(BirthdaysDialog.class, "BirthdaysDialog.ErrorMessage.LoadPersons", t.getLocalizedMessage()));
@@ -362,6 +364,10 @@ public class BirthdaysDialog extends Dialog {
             }
         }
     };
+
+    private boolean isReadOnly() {
+        return BirthdaysUtil.findPreferredRepository().isReadOnly();
+    }
 
     @EventSubscriber(eventClass = RepositoryChangedEvent.class)
     public void repositoryChanged(RepositoryChangedEvent evt) {
