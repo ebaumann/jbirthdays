@@ -6,6 +6,7 @@ Changelog JBirthdays http://elmar-baumann.de/JBirthdays
 0.4.3 2014-02-01
 ----------------
 
+* Added exit button
 * Bugfix: Weekday of birthday
 
 0.4.2 2014-02-01

@@ -366,6 +366,14 @@
     </tu>
     <tu>
       <tuv xml:lang="EN">
+        <seg>E&amp;xit</seg>
+      </tuv>
+      <tuv xml:lang="DE" changeid="elmar" changedate="20140201T164850Z">
+        <seg>&amp;Beenden</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="EN">
         <seg>E&amp;xport...</seg>
       </tuv>
       <tuv xml:lang="DE" changeid="ebaumann" changedate="20140114T090324Z">
