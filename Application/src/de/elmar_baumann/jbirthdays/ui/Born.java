@@ -1,7 +1,9 @@
 package de.elmar_baumann.jbirthdays.ui;
 
 import de.elmar_baumann.jbirthdays.api.Person;
+import static de.elmar_baumann.jbirthdays.ui.BirthdayDate.getInvalidDateString;
 import java.text.DateFormat;
+import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
 
@@ -27,9 +29,27 @@ public final class Born implements Comparable<Born> {
         if (person.getBirthdayYear() <= 0) {
             return person.getBirthdayMonth() + " - " + person.getBirthdayDay();
         }
-        String weekday = BirthdayDate.formatBirthdaysWeekday(person, false);
+        String weekday = formatBirthdaysWeekday(person);
         DateFormat df = DateFormat.getDateInstance(DateFormat.MEDIUM);
         return weekday + ", " + df.format(getBorn());
+    }
+
+    private String formatBirthdaysWeekday(Person person) {
+        if (!person.isBirthdayDateValid()) {
+            return getInvalidDateString(person);
+        }
+        int birthdayMonth = person.getBirthdayMonth();
+        int birthdayDay = person.getBirthdayDay();
+        Calendar birthdayCal = Calendar.getInstance();
+        if (person.getBirthdayYear() > 0) {
+            birthdayCal.set(Calendar.YEAR, person.getBirthdayYear());
+        } else {
+            return "?";
+        }
+        birthdayCal.set(Calendar.MONTH, birthdayMonth - 1);
+        birthdayCal.set(Calendar.DAY_OF_MONTH, birthdayDay);
+        SimpleDateFormat dateFormat = new SimpleDateFormat("EEEE");
+        return dateFormat.format(birthdayCal.getTime());
     }
 
     private Date getBorn() {
