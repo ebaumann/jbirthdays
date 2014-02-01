@@ -366,6 +366,14 @@
     </tu>
     <tu>
       <tuv xml:lang="EN">
+        <seg>Downloaded a new version ({0}) of JBirthdays: {1}</seg>
+      </tuv>
+      <tuv xml:lang="DE" changeid="elmar" changedate="20140201T170025Z">
+        <seg>Neue Version ({0}) von JBirthdays heruntergeladen#: {1}</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="EN">
         <seg>E&amp;xit</seg>
       </tuv>
       <tuv xml:lang="DE" changeid="elmar" changedate="20140201T164850Z">
@@ -630,6 +638,14 @@
     </tu>
     <tu>
       <tuv xml:lang="EN">
+        <seg>JBirthdays Bug</seg>
+      </tuv>
+      <tuv xml:lang="DE" changeid="elmar" changedate="20140201T170411Z">
+        <seg>JBirthdays-Fehler</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="EN">
         <seg>JBirthdays XML files</seg>
       </tuv>
       <tuv xml:lang="DE" changeid="elmar" changedate="20140114T181758Z">
@@ -718,6 +734,14 @@
     </tu>
     <tu>
       <tuv xml:lang="EN">
+        <seg>Please describe error and how it can be reproduced</seg>
+      </tuv>
+      <tuv xml:lang="DE" changeid="elmar" changedate="20140201T170651Z">
+        <seg>Bitte Fehler beschreiben und wie dieser reproduziert werden kann</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="EN">
         <seg>Please input a value between {0} and {1}</seg>
       </tuv>
       <tuv xml:lang="DE" changeid="elmar" changedate="20140112T123705Z">
@@ -770,6 +794,14 @@
       </tuv>
       <tuv xml:lang="DE" changeid="ebaumann" changedate="20140116T085739Z">
         <seg>Neuen Datenbank-Ordner auswählen</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="EN">
+        <seg>Send &amp;Bug Report</seg>
+      </tuv>
+      <tuv xml:lang="DE" changeid="elmar" changedate="20140201T170345Z">
+        <seg>&amp;Fehler melden</seg>
       </tuv>
     </tu>
     <tu>
