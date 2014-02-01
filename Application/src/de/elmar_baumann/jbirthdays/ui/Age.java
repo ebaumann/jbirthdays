@@ -33,7 +33,14 @@ public final class Age implements Comparable<Age> {
         }
         Calendar todayCal = Calendar.getInstance();
         int thisYear = todayCal.get(Calendar.YEAR);
-        return thisYear - person.getBirthdayYear();
+        int thisMonth = todayCal.get(Calendar.MONTH) + 1;
+        int thisDay = todayCal.get(Calendar.DAY_OF_MONTH);
+        int maxAge = thisYear - person.getBirthdayYear();
+        boolean isMaxAge = thisMonth > person.getBirthdayMonth()
+                || thisMonth == person.getBirthdayMonth() && thisDay >= person.getBirthdayDay();
+        return isMaxAge
+                ? maxAge
+                : maxAge - 1;
     }
 
     @Override
