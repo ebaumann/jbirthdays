@@ -3,6 +3,11 @@
 Changelog JBirthdays http://elmar-baumann.de/JBirthdays
 =======================================================
 
+0.4.2 2014-02-01
+----------------
+
+* Bugfix: Alter einer Person
+
 0.4.1 2014-01-29
 ----------------
 * Bugfix: Es war möglich, dass nach Start keine

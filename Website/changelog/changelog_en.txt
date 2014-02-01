@@ -3,6 +3,11 @@ Character encoding of this file: UTF-8
 Changelog JBirthdays http://elmar-baumann.de/JBirthdays
 =======================================================
 
+0.4.2 2014-02-01
+----------------
+
+* Bugfix: Person's age
+
 0.4.1 2014-01-29
 ----------------
 * Bugfix: Possibly no persons were displayed after
