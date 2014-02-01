@@ -1,7 +1,7 @@
 [Setup]
 AppName=JBirthdays
-AppVerName=JBirthdays 0.4.3
-AppVersion=0.4.3
+AppVerName=JBirthdays 0.4.4
+AppVersion=0.4.4
 AppPublisher=Elmar Baumann <eb@elmar-baumann.de>
 AppPublisherURL=http://elmar-baumann.de/JBirthdays/
 AppSupportURL=mailto:eb@elmar-baumann.de
