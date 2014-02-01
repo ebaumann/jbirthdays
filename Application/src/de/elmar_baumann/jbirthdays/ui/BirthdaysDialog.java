@@ -63,10 +63,10 @@ public class BirthdaysDialog extends Dialog {
     private static final long serialVersionUID = 1L;
     private static final TableCellRenderer TABLE_CELL_RENDERER = new PersonsTableCellRenderer();
     private final List<Person> allPersons = new ArrayList<>();
-    private final PersonTableModel allPersonsTableModel = new PersonTableModel(false);
-    private final PersonTableModel birthdayTodayTableModel = new PersonTableModel(true);
-    private final PersonTableModel birthdayBeforeTableModel = new PersonTableModel(true);
-    private final PersonTableModel birthdayAfterTableModel = new PersonTableModel(true);
+    private final PersonTableModel allPersonsTableModel = new PersonTableModel(false, false);
+    private final PersonTableModel birthdayTodayTableModel = new PersonTableModel(true, false);
+    private final PersonTableModel birthdayBeforeTableModel = new PersonTableModel(true, true);
+    private final PersonTableModel birthdayAfterTableModel = new PersonTableModel(true, false);
     private final PersonSearchFilter allPersonsSearchFilter = new PersonSearchFilter(allPersonsTableModel);
 
     public BirthdaysDialog() {
