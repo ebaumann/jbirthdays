@@ -14,12 +14,14 @@ import java.util.Date;
 public final class BirthdayDate implements Comparable<BirthdayDate> {
 
     private final Person person;
+    private final boolean dateInFuture;
 
-    public BirthdayDate(Person person) {
+    public BirthdayDate(Person person, boolean dateInFuture) {
         if (this == null) {
             throw new NullPointerException("this == null");
         }
         this.person = person;
+        this.dateInFuture = dateInFuture;
     }
 
     static String formatBirthdaysWeekday(Person person, boolean current) {
@@ -31,9 +33,11 @@ public final class BirthdayDate implements Comparable<BirthdayDate> {
         Calendar todayCal = Calendar.getInstance();
         Calendar birthdayCal = Calendar.getInstance();
         if (current) {
+            int todayMonth = todayCal.get(Calendar.MONTH) + 1;
+            int todayDay = todayCal.get(Calendar.DAY_OF_MONTH);
             boolean inThisYear = DateUtil.isBefore(
-                    todayCal.get(Calendar.MONTH) + 1, todayCal.get(Calendar.DAY_OF_MONTH),
-                    birthdayMonth, birthdayDay);
+                    todayMonth, todayDay, birthdayMonth, birthdayDay)
+                    || todayMonth == birthdayMonth && todayDay == birthdayDay;
             int thisYear = todayCal.get(Calendar.YEAR);
             birthdayCal.set(Calendar.YEAR, inThisYear ? thisYear : thisYear + 1);
         } else {
@@ -58,9 +62,14 @@ public final class BirthdayDate implements Comparable<BirthdayDate> {
             return null;
         }
         Calendar cal = Calendar.getInstance();
-        if (DateUtil.isBefore(
-                cal.get(Calendar.MONTH) + 1, cal.get(Calendar.DAY_OF_MONTH),
-                person.getBirthdayMonth(), person.getBirthdayDay())) {
+        boolean prevYear = dateInFuture
+                ? DateUtil.isBefore(
+                        person.getBirthdayMonth(), person.getBirthdayDay(),
+                        cal.get(Calendar.MONTH) + 1, cal.get(Calendar.DAY_OF_MONTH))
+                : DateUtil.isBefore(
+                        cal.get(Calendar.MONTH) + 1, cal.get(Calendar.DAY_OF_MONTH),
+                        person.getBirthdayMonth(), person.getBirthdayDay());
+        if (prevYear) {
             cal.set(Calendar.YEAR, cal.get(Calendar.YEAR) - 1);
         }
         cal.set(Calendar.MONTH, person.getBirthdayMonth() - 1);
@@ -73,7 +82,7 @@ public final class BirthdayDate implements Comparable<BirthdayDate> {
         if (!person.isBirthdayDateValid()) {
             return getInvalidDateString(person);
         }
-        String weekday = formatBirthdaysWeekday(person, false);
+        String weekday = formatBirthdaysWeekday(person, true);
         DateFormat df = DateFormat.getDateInstance(DateFormat.MEDIUM);
         return weekday + ", " + df.format(getDate());
     }

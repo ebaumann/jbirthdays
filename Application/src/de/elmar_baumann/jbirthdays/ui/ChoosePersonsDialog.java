@@ -23,7 +23,7 @@ import javax.swing.event.ListSelectionListener;
 public class ChoosePersonsDialog extends Dialog {
 
     private static final long serialVersionUID = 1L;
-    private final PersonTableModel allPersonsTablemodel = new PersonTableModel(false);
+    private final PersonTableModel allPersonsTablemodel = new PersonTableModel(false, false);
     private final PersonSearchFilter searchFilter = new PersonSearchFilter(allPersonsTablemodel);
     private boolean accepted;
 

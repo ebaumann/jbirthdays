@@ -22,6 +22,7 @@ public class PersonTableModel implements TableModel {
     private final Collection<TableModelListener> listeners;
     private final List<Person> persons;
     private final boolean withBirthdayColumn;
+    private final boolean birthdayColumnForFutureBirthdays;
 
     private static final String[] COLUMN_NAMES_WITH_BIRTHDAY = new String[]{
         Bundle.getString(PersonTableModel.class, "PersonTableModel.Column.Birthday"),
@@ -53,16 +54,17 @@ public class PersonTableModel implements TableModel {
         String.class,
     };
 
-    public PersonTableModel(boolean withBirthdayColumn) {
-        this(Collections.<Person>emptyList(), withBirthdayColumn);
+    public PersonTableModel(boolean withBirthdayColumn, boolean birthdayColumnForFutureBirthdays) {
+        this(Collections.<Person>emptyList(), withBirthdayColumn, birthdayColumnForFutureBirthdays);
     }
 
-    public PersonTableModel(Collection<? extends Person> persons, boolean withBirthdayColumn) {
+    public PersonTableModel(Collection<? extends Person> persons, boolean withBirthdayColumn, boolean birthdayColumnForFutureBirthdays) {
         if (persons == null) {
             throw new NullPointerException("persons == null");
         }
         this.persons = new ArrayList<>(persons);
         this.withBirthdayColumn = withBirthdayColumn;
+        this.birthdayColumnForFutureBirthdays = birthdayColumnForFutureBirthdays;
         listeners = new CopyOnWriteArrayList<>();
     }
 
@@ -127,7 +129,7 @@ public class PersonTableModel implements TableModel {
         switch (columnIndex) {
             case 0:
                 return withBirthdayColumn
-                        ? new BirthdayDate(person)
+                        ? new BirthdayDate(person, birthdayColumnForFutureBirthdays)
                         : new PersonName(person);
             case 1:
                 return withBirthdayColumn
