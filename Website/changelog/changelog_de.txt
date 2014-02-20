@@ -3,6 +3,11 @@
 Changelog JBirthdays http://elmar-baumann.de/JBirthdays
 =======================================================
 
+0.4.5 2014-02-20
+----------------
+
+* Spaltenbreiten werden beim Beenden gespeichert
+
 0.4.4 2014-02-01
 ----------------
 
