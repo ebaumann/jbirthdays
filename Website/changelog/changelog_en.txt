@@ -3,6 +3,11 @@ Character encoding of this file: UTF-8
 Changelog JBirthdays http://elmar-baumann.de/JBirthdays
 =======================================================
 
+0.4.5 2014-02-20
+----------------
+
+* Restoring column widths when quitting the application
+
 0.4.4 2014-02-01
 ----------------
 

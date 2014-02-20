@@ -23,9 +23,6 @@ import java.awt.event.KeyListener;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
-import java.awt.event.WindowAdapter;
-import java.awt.event.WindowEvent;
-import java.awt.event.WindowListener;
 import java.beans.PropertyChangeEvent;
 import java.beans.PropertyChangeListener;
 import java.util.ArrayList;
@@ -85,10 +82,7 @@ public class BirthdaysDialog extends Dialog {
         tableBirthdayToday.setModel(birthdayTodayTableModel);
         tableBirthdayBefore.setModel(birthdayBeforeTableModel);
         tableBirthdayAfter.setModel(birthdayAfterTableModel);
-        TableUtil.restoreColumnWidths("BirthdaysDialog.tableBirthdayToday", tableBirthdayToday, birthdayTodayTableModel.getDefaultColumnWidths());
-        TableUtil.restoreColumnWidths("BirthdaysDialog.tableBirthdayBefore", tableBirthdayBefore, birthdayBeforeTableModel.getDefaultColumnWidths());
-        TableUtil.restoreColumnWidths("BirthdaysDialog.tableBirthdayAfter", tableBirthdayAfter, birthdayAfterTableModel.getDefaultColumnWidths());
-        TableUtil.restoreColumnWidths("BirthdaysDialog.tableAllPersons", tableAllPersons, allPersonsTableModel.getDefaultColumnWidths());
+        restoreColumnWidths();
         panelPreferences.addPropertyChangeListener(PreferencesPanel.PROPERTY_DAYS_BEFORE, preferencesChangedListener);
         panelPreferences.addPropertyChangeListener(PreferencesPanel.PROPERTY_DAYS_AFTER, preferencesChangedListener);
         tableAllPersons.getSelectionModel().addListSelectionListener(enableEditRemoveButtonListener);
@@ -106,8 +100,27 @@ public class BirthdaysDialog extends Dialog {
         tableBirthdayToday.setDefaultRenderer(Object.class, TABLE_CELL_RENDERER);
         tableBirthdayBefore.setDefaultRenderer(Object.class, TABLE_CELL_RENDERER);
         tableBirthdayAfter.setDefaultRenderer(Object.class, TABLE_CELL_RENDERER);
-        addWindowListener(closeListener);
         AnnotationProcessor.process(this);
+    }
+
+    private void persistColumnWidths() {
+        TableUtil.persistColumnWidths("BirthdaysDialog.tableBirthdayToday", tableBirthdayToday);
+        TableUtil.persistColumnWidths("BirthdaysDialog.tableBirthdayBefore", tableBirthdayBefore);
+        TableUtil.persistColumnWidths("BirthdaysDialog.tableBirthdayAfter", tableBirthdayAfter);
+        TableUtil.persistColumnWidths("BirthdaysDialog.tableAllPersons", tableAllPersons);
+    }
+
+    private void restoreColumnWidths() {
+        TableUtil.restoreColumnWidths("BirthdaysDialog.tableBirthdayToday", tableBirthdayToday, birthdayTodayTableModel.getDefaultColumnWidths());
+        TableUtil.restoreColumnWidths("BirthdaysDialog.tableBirthdayBefore", tableBirthdayBefore, birthdayBeforeTableModel.getDefaultColumnWidths());
+        TableUtil.restoreColumnWidths("BirthdaysDialog.tableBirthdayAfter", tableBirthdayAfter, birthdayAfterTableModel.getDefaultColumnWidths());
+        TableUtil.restoreColumnWidths("BirthdaysDialog.tableAllPersons", tableAllPersons, allPersonsTableModel.getDefaultColumnWidths());
+    }
+
+    @Override
+    public void dispose() {
+        persistColumnWidths();
+        super.dispose();
     }
 
     private void setIconImages() {
@@ -309,16 +322,6 @@ public class BirthdaysDialog extends Dialog {
         @Override
         public void propertyChange(PropertyChangeEvent evt) {
             loadPersons();
-        }
-    };
-
-    private final WindowListener closeListener = new WindowAdapter() {
-        @Override
-        public void windowClosing(WindowEvent e) {
-            TableUtil.persistColumnWidths("BirthdaysDialog.tableBirthdayToday", tableBirthdayToday);
-            TableUtil.persistColumnWidths("BirthdaysDialog.tableBirthdayBefore", tableBirthdayBefore);
-            TableUtil.persistColumnWidths("BirthdaysDialog.tableBirthdayAfter", tableBirthdayAfter);
-            TableUtil.persistColumnWidths("BirthdaysDialog.tableAllPersons", tableAllPersons);
         }
     };
 
@@ -609,7 +612,7 @@ public class BirthdaysDialog extends Dialog {
     }//GEN-LAST:event_buttonEmailActionPerformed
 
     private void buttonExitActionPerformed(ActionEvent evt) {//GEN-FIRST:event_buttonExitActionPerformed
-        super.dispose();
+        dispose();
     }//GEN-LAST:event_buttonExitActionPerformed
 
     /**
