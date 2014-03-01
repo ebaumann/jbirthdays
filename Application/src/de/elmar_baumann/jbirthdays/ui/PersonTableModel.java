@@ -23,6 +23,7 @@ public class PersonTableModel implements TableModel {
     private final List<Person> persons;
     private final boolean withBirthdayColumn;
     private final boolean birthdayColumnForFutureBirthdays;
+    private boolean showNextYearAge;
 
     private static final String[] COLUMN_NAMES_WITH_BIRTHDAY = new String[]{
         Bundle.getString(PersonTableModel.class, "PersonTableModel.Column.Birthday"),
@@ -75,6 +76,13 @@ public class PersonTableModel implements TableModel {
         this.persons.clear();
         this.persons.addAll(persons);
         fireTableChanged();
+    }
+
+    /**
+     * @param showNextYearAge default: false
+     */
+    public void setShowNextYearAge(boolean showNextYearAge) {
+        this.showNextYearAge = showNextYearAge;
     }
 
     private void fireTableChanged() {
@@ -134,10 +142,10 @@ public class PersonTableModel implements TableModel {
             case 1:
                 return withBirthdayColumn
                         ? new PersonName(person)
-                        : new Age(person);
+                        : new Age(person, showNextYearAge);
             case 2:
                 return withBirthdayColumn
-                        ? new Age(person)
+                        ? new Age(person, showNextYearAge)
                         : new Born(person);
             case 3:
                 return withBirthdayColumn

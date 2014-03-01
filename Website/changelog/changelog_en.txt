@@ -3,6 +3,11 @@ Character encoding of this file: UTF-8
 Changelog JBirthdays http://elmar-baumann.de/JBirthdays
 =======================================================
 
+0.4.6 2014-03-01
+----------------
+
+* New age is displayed in upcoming birthdays
+
 0.4.5 2014-02-20
 ----------------
 

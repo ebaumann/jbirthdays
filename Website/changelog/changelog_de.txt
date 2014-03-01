@@ -3,6 +3,11 @@
 Changelog JBirthdays http://elmar-baumann.de/JBirthdays
 =======================================================
 
+0.4.6 2014-03-01
+----------------
+
+* In zukünftigen Geburtstagen wird das neue Alter angezeigt
+
 0.4.5 2014-02-20
 ----------------
 
