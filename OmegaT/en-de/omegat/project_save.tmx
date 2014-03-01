@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE tmx SYSTEM "tmx11.dtd">
 <tmx version="1.1">
-  <header creationtool="OmegaT" o-tmf="OmegaT TMX" adminlang="EN-US" datatype="plaintext" creationtoolversion="2.6.3_3" segtype="sentence" srclang="EN"/>
+  <header creationtool="OmegaT" o-tmf="OmegaT TMX" adminlang="EN-US" datatype="plaintext" creationtoolversion="2.6.3_5" segtype="sentence" srclang="EN"/>
   <body>
 <!-- Default translations -->
     <tu>
@@ -202,6 +202,14 @@
       </tuv>
       <tuv lang="DE" changeid="ebaumann" changedate="20140116T082732Z">
         <seg>&lt;html&gt;Java unterstützt nicht das Öffnen von Dateien für diese Betriebssystem-Umgebung.&lt;p&gt;Versuchen Sie, die Datei mit einem Texteditor zu öffnen:&lt;p&gt;{0}&lt;/html&gt;</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="EN">
+        <seg>&lt;html&gt;{0,choice,1#1 year|1&lt;{0} years} &lt;span style="font-weight:bold;font-size:150%;"&gt;&amp;rarr;&lt;/span&gt; {1,choice,1#1 year|1&lt;{1} years}&lt;/html&gt;</seg>
+      </tuv>
+      <tuv lang="DE" changeid="elmar" changedate="20140301T142049Z">
+        <seg>&lt;html&gt;{0,choice,1#1 Jahr|1&lt;{0} Jahre} &lt;span style="font-weight:bold;font-size:150%;"&gt;&amp;rarr;&lt;/span&gt; {1,choice,1#1 Jahr|1&lt;{1} Jahre}&lt;/html&gt;</seg>
       </tuv>
     </tu>
     <tu>
@@ -958,6 +966,22 @@
     </tu>
     <tu>
       <tuv lang="EN">
+        <seg>{0,choice,0#0 years|1#1 year|1&lt;{0} years}</seg>
+      </tuv>
+      <tuv lang="DE" changeid="elmar" changedate="20140301T143000Z">
+        <seg>{0,choice,0#0 Jahre|1#1 Jahr|1&lt;{0} Jahre}</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="EN">
+        <seg>{0,choice,0#0 years|1#1 year|1&lt;{0} years} → {1,choice,0#0 years|1#1 year|1&lt;{1} years}</seg>
+      </tuv>
+      <tuv lang="DE" changeid="elmar" changedate="20140301T143019Z">
+        <seg>{0,choice,0#0 Jahre|1#1 Jahr|1&lt;{0} Jahre} → {1,choice,0#0 Jahre|1#1 Jahr|1&lt;{1} Jahre}</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="EN">
         <seg>{0,choice,0#No person|1#One person|1&lt;{0} persons} has been exported</seg>
       </tuv>
       <tuv lang="DE" changeid="ebaumann" changedate="20140114T094125Z">
@@ -978,6 +1002,14 @@
       </tuv>
       <tuv lang="DE" changeid="elmar" changedate="20140112T122915Z">
         <seg>{0,choice,1#1 Jahr|1&lt;{0} Jahre}</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="EN">
+        <seg>{0,choice,1#1 year|1&lt;{0} years} → {1,choice,1#1 year|1&lt;{1} years}</seg>
+      </tuv>
+      <tuv lang="DE" changeid="elmar" changedate="20140301T142643Z">
+        <seg>{0,choice,1#1 Jahr|1&lt;{0} Jahre} → {1,choice,1#1 Jahr|1&lt;{1} Jahre}</seg>
       </tuv>
     </tu>
     <tu>

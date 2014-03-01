@@ -10,12 +10,22 @@ import java.util.Calendar;
 public final class Age implements Comparable<Age> {
 
     private final Person person;
+    private final boolean showNextYearAge;
 
     public Age(Person person) {
+        this(person, false);
+    }
+
+    /**
+     * @param person
+     * @param showNextYearAge Default: false
+     */
+    public Age(Person person, boolean showNextYearAge) {
         if (person == null) {
             throw new NullPointerException("person == null");
         }
         this.person = person;
+        this.showNextYearAge = showNextYearAge;
     }
 
     @Override
@@ -24,7 +34,9 @@ public final class Age implements Comparable<Age> {
         if (age < 0) {
             return "?";
         }
-        return Bundle.getString(Age.class, "Age.Age", age);
+        return showNextYearAge
+                ? Bundle.getString(Age.class, "Age.AgeWithNextYear", age, age + 1)
+                : Bundle.getString(Age.class, "Age.Age", age);
     }
 
     private int getAge() {

@@ -81,6 +81,7 @@ public class BirthdaysDialog extends Dialog {
         tableAllPersons.setRowSorter(allPersonsSearchFilter.getRowSorter());
         tableBirthdayToday.setModel(birthdayTodayTableModel);
         tableBirthdayBefore.setModel(birthdayBeforeTableModel);
+        birthdayBeforeTableModel.setShowNextYearAge(true);
         tableBirthdayAfter.setModel(birthdayAfterTableModel);
         restoreColumnWidths();
         panelPreferences.addPropertyChangeListener(PreferencesPanel.PROPERTY_DAYS_BEFORE, preferencesChangedListener);

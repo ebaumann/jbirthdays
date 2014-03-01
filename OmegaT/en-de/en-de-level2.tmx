@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE tmx SYSTEM "tmx14.dtd">
 <tmx version="1.4">
-  <header creationtool="OmegaT" o-tmf="OmegaT TMX" adminlang="EN-US" datatype="plaintext" creationtoolversion="2.6.3_3" segtype="sentence" srclang="EN"/>
+  <header creationtool="OmegaT" o-tmf="OmegaT TMX" adminlang="EN-US" datatype="plaintext" creationtoolversion="2.6.3_5" segtype="sentence" srclang="EN"/>
   <body>
 <!-- Default translations -->
     <tu>
@@ -846,18 +846,26 @@
     </tu>
     <tu>
       <tuv xml:lang="EN">
-        <seg>{0,choice,0#No person|1#One person|1&lt;{0} persons} has been exported.</seg>
+        <seg>{0,choice,0#0 years|1#1 year|1&lt;{0} years}</seg>
       </tuv>
-      <tuv xml:lang="DE" changeid="ebaumann" changedate="20140114T094652Z">
-        <seg>{0,choice,0#Es wurde keine Person|1#Es wurde eine Person|1&lt;Es wurden {0} Personen} exportiert.</seg>
+      <tuv xml:lang="DE" changeid="elmar" changedate="20140301T143000Z">
+        <seg>{0,choice,0#0 Jahre|1#1 Jahr|1&lt;{0} Jahre}</seg>
       </tuv>
     </tu>
     <tu>
       <tuv xml:lang="EN">
-        <seg>{0,choice,1#1 year|1&lt;{0} years}</seg>
+        <seg>{0,choice,0#0 years|1#1 year|1&lt;{0} years} → {1,choice,0#0 years|1#1 year|1&lt;{1} years}</seg>
       </tuv>
-      <tuv xml:lang="DE" changeid="elmar" changedate="20140112T122915Z">
-        <seg>{0,choice,1#1 Jahr|1&lt;{0} Jahre}</seg>
+      <tuv xml:lang="DE" changeid="elmar" changedate="20140301T143019Z">
+        <seg>{0,choice,0#0 Jahre|1#1 Jahr|1&lt;{0} Jahre} → {1,choice,0#0 Jahre|1#1 Jahr|1&lt;{1} Jahre}</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="EN">
+        <seg>{0,choice,0#No person|1#One person|1&lt;{0} persons} has been exported.</seg>
+      </tuv>
+      <tuv xml:lang="DE" changeid="ebaumann" changedate="20140114T094652Z">
+        <seg>{0,choice,0#Es wurde keine Person|1#Es wurde eine Person|1&lt;Es wurden {0} Personen} exportiert.</seg>
       </tuv>
     </tu>
 <!-- Alternative translations -->
