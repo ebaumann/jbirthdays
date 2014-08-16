@@ -3,6 +3,14 @@ Character encoding of this file: UTF-8
 Changelog JBirthdays http://elmar-baumann.de/JBirthdays
 =======================================================
 
+0.4.7 2014-08-16
+----------------
+
+* Bugfix: Loading persons after saving is done in the same thread. Previously
+  the loaded persons after saving probably won't reflect the real state.
+  For example after adding a new person, she or he may not appear in the list
+  of persons. Same when changing a person's data or deleting a person.
+
 0.4.6 2014-03-01
 ----------------
 

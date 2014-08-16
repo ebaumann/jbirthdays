@@ -11,7 +11,6 @@ import de.elmar_baumann.jbirthdays.util.Mnemonics;
 import de.elmar_baumann.jbirthdays.util.TableUtil;
 import java.awt.Component;
 import java.awt.Dimension;
-import java.awt.EventQueue;
 import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
 import java.awt.Insets;
@@ -155,21 +154,11 @@ public class BirthdaysDialog extends Dialog {
     }
 
     private void loadPersons() {
-        EventQueue.invokeLater(new Runnable() {
-            @Override
-            public void run() {
-                new LoadFromPreferredRepositoryWorker().execute();
-        }
-        });
+        new LoadFromPreferredRepositoryWorker().execute();
     }
 
     private void savePersons() {
-        EventQueue.invokeLater(new Runnable() {
-            @Override
-            public void run() {
-                new SaveToPreferredRepositoryWorker().execute();
-        }
-        });
+        new SaveToPreferredRepositoryWorker().execute();
     }
 
     private void updateBirthdayTables() {
@@ -262,7 +251,6 @@ public class BirthdaysDialog extends Dialog {
 
     private void savePersonsAndUpdateTables() {
         savePersons();
-        loadPersons();
     }
 
     private void sendEmail() {
@@ -362,6 +350,7 @@ public class BirthdaysDialog extends Dialog {
         protected void done() {
             try {
                 get();
+                loadPersons();
             } catch (Throwable t) {
                 Logger.getLogger(BirthdaysDialog.class.getName()).log(Level.SEVERE, null, t);
                 showErrorMessage(Bundle.getString(BirthdaysDialog.class, "BirthdaysDialog.ErrorMessage.SavePersons", t.getLocalizedMessage()));
