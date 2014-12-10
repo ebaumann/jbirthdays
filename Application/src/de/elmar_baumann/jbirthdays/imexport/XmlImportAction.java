@@ -62,6 +62,9 @@ public final class XmlImportAction extends AbstractAction {
     }
 
     private Collection<? extends Person> choosePersons(Collection<? extends Person> fromPersons) {
+        if (fromPersons.isEmpty()) {
+            return Collections.emptyList();
+        }
         ChoosePersonsDialog dlg = new ChoosePersonsDialog(ComponentUtil.findParentDialog(parentComponent));
         dlg.setPersons(fromPersons);
         dlg.setVisible(true);
@@ -76,6 +79,7 @@ public final class XmlImportAction extends AbstractAction {
         String filterDescription = Bundle.getString(XmlImportAction.class, "XmlImportAction.FileFilterDescription");
         FileNameExtensionFilter filter = new FileNameExtensionFilter(filterDescription, "xml");
         fc.setFileFilter(filter);
+        fc.setAcceptAllFileFilterUsed(false);
         fc.setMultiSelectionEnabled(false);
         if (fc.showOpenDialog(parentComponent) == JFileChooser.APPROVE_OPTION) {
             File file = fc.getSelectedFile();

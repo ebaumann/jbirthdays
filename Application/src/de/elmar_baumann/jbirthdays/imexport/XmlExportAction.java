@@ -70,6 +70,7 @@ public final class XmlExportAction extends AbstractAction {
         String filterDescription = Bundle.getString(XmlImportAction.class, "XmlExportAction.FileFilterDescription");
         FileNameExtensionFilter filter = new FileNameExtensionFilter(filterDescription, "xml");
         fc.setFileFilter(filter);
+        fc.setAcceptAllFileFilterUsed(false);
         fc.setMultiSelectionEnabled(false);
         if (fc.showOpenDialog(parentComponent) == JFileChooser.APPROVE_OPTION) {
             File file = ensureXmlSuffix(fc.getSelectedFile());
