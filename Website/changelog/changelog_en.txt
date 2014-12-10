@@ -3,6 +3,12 @@ Character encoding of this file: UTF-8
 Changelog JBirthdays http://elmar-baumann.de/JBirthdays
 =======================================================
 
+0.4.8 2014-12-10
+----------------
+
+* Prior importing data from a JBirthdays file, it's syntax will be verified
+* Only files with the suffix ".xml" can be choosen for importing persons
+
 0.4.7 2014-08-16
 ----------------
 

@@ -3,6 +3,7 @@ package de.elmar_baumann.jbirthdays.xmlrepo;
 import de.elmar_baumann.jbirthdays.api.Person;
 import de.elmar_baumann.jbirthdays.api.Persons;
 import de.elmar_baumann.jbirthdays.api.RepositoryChangedEvent;
+import de.elmar_baumann.jbirthdays.util.Bundle;
 import de.elmar_baumann.jbirthdays.util.XmlUtil;
 import java.io.File;
 import java.io.FileInputStream;
@@ -14,6 +15,7 @@ import java.util.Date;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import java.util.prefs.Preferences;
+import javax.swing.JOptionPane;
 import org.bushe.swing.event.EventBus;
 
 /**
@@ -24,7 +26,7 @@ public final class XmlFilePersonRepository {
     private static final String KEY_FILENAME = "XmlFilePersonRepository.Filename";
     private static final String DEFAULT_FILENAME = System.getProperty("user.home")
             + File.separator + ".de.elmar_baumann" + File.separator
-            + "JBirthdays" + File.separator + "Persons.xml";
+            + "JBirthdays" + File.separator + "JBirthdays-Persons.xml";
     private File xmlFile;
     public static final XmlFilePersonRepository INSTANCE = new XmlFilePersonRepository();
 
@@ -89,12 +91,30 @@ public final class XmlFilePersonRepository {
         if (file == null) {
             throw new NullPointerException("file == null");
         }
-        synchronized (this) {
+        if (!checkFileUi(file)) {
+            return;
+        }
             Logger.getLogger(XmlFilePersonRepository.class.getName()).log(Level.INFO, "Switching from database file ''{0}'' to database file ''{1}''", new Object[]{xmlFile, file});
+        synchronized (this) {
             xmlFile = file;
             persistFilename(file);
         }
         EventBus.publish(new RepositoryChangedEvent(RepositoryChangedEvent.Type.LOCATION, this));
+    }
+
+    public boolean checkFileUi(File file) {
+        if (file == null) {
+            throw new NullPointerException("file == null");
+        }
+        try (FileInputStream fis = new FileInputStream(file)) {
+            XmlUtil.unmarshal(fis, Persons.class);
+            return true;
+        } catch (Throwable t) {
+            String message = Bundle.getString(XmlFilePersonRepository.class, "XmlFilePersonRepository.CheckFile.Thrown", file.getName());
+            String title = Bundle.getString(XmlFilePersonRepository.class, "XmlFilePersonRepository.CheckFile.Thrown.Title");
+            JOptionPane.showMessageDialog(null, message, title, JOptionPane.ERROR_MESSAGE);
+            return false;
+        }
     }
 
     static String getUuid() {

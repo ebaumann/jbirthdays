@@ -35,6 +35,7 @@ class XmlFilePersonRepositorySettingsPanel extends javax.swing.JPanel {
         String filterDescription = Bundle.getString(XmlFilePersonRepositorySettingsPanel.class, "XmlFilePersonRepositorySettingsPanel.FileFilterDescription");
         FileNameExtensionFilter filter = new FileNameExtensionFilter(filterDescription, "xml");
         fc.setFileFilter(filter);
+        fc.setAcceptAllFileFilterUsed(false);
         if (fc.showOpenDialog(this) == JFileChooser.APPROVE_OPTION) {
             XmlFilePersonRepository.INSTANCE.setFile(fc.getSelectedFile());
         }

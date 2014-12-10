@@ -1,7 +1,15 @@
-ï»¿Zeichenkodierung dieser Datei: UTF-8
+Zeichenkodierung dieser Datei: UTF-8
 
 Changelog JBirthdays http://elmar-baumann.de/JBirthdays
 =======================================================
+
+0.4.8 2014-12-10
+----------------
+
+* Beim Import von Daten aus einer JBirthdays-Datei wird vorher geprüft,
+  ob diese gültig ist
+* Es können nur Dateien mit der Endung ".xml" ausgewählt werden für den
+  Import von Personen
 
 0.4.7 2014-08-16
 ----------------
