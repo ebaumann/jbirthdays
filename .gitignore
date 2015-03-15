@@ -1,0 +1,10 @@
+**/omegat/project_stats.txt
+/Application/nbproject/private/
+/Localization/nbproject/private/
+/OmegaT/**/source/
+/OmegaT/**/target/
+/OmegaT/**\.zip$
+/OmegaT/.*\.bak$
+/scripts/conf/innosetup.properties
+/scripts/conf/sourceforge.properties
+/scripts/conf/website.properties
