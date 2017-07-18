@@ -3,22 +3,28 @@ Zeichenkodierung dieser Datei: UTF-8
 Changelog JBirthdays http://elmar-baumann.de/JBirthdays
 =======================================================
 
+0.4.9 2017-07-17
+----------------
+
+* Ist die BildschirmauflÃ¶sung grÃ¶ÃŸer als Wide QHD QHD (2560 x 1440 Pixel),
+  werden die Schriftarten um das 1,5-fache vergrÃ¶ÃŸert. Ab Ultra High Definition "4K" (3840 x 2160 Pixel) werden die Schriftarten um das 2-fache vergrÃ¶ÃŸert.
+
 0.4.8 2014-12-10
 ----------------
 
-* Beim Import von Daten aus einer JBirthdays-Datei wird vorher geprüft,
-  ob diese gültig ist
-* Es können nur Dateien mit der Endung ".xml" ausgewählt werden für den
+* Beim Import von Daten aus einer JBirthdays-Datei wird vorher geprÃ¼ft,
+  ob diese gÃ¼ltig ist
+* Es kÃ¶nnen nur Dateien mit der Endung ".xml" ausgewÃ¤hlt werden fÃ¼r den
   Import von Personen
 
 0.4.7 2014-08-16
 ----------------
 
 * Bugfix: Laden von Personen nach dem Speichern geschieht im gleichen Thread.
-  Vorher war es möglich, dass nach dem Speichern nicht der richtige Zustand
-  angezeigt wurde. Wurde beispielsweise eine neue Person hinzugefügt, erschien
-  diese möglicherweise nicht in der Personenliste. Das gleiche war möglich
-  nach dem Ändern von Personendaten oder Löschen von Personen.
+  Vorher war es mÃ¶glich, dass nach dem Speichern nicht der richtige Zustand
+  angezeigt wurde. Wurde beispielsweise eine neue Person hinzugefÃ¼gt, erschien
+  diese mÃ¶glicherweise nicht in der Personenliste. Das gleiche war mÃ¶glich
+  nach dem Ã„ndern von Personendaten oder LÃ¶schen von Personen.
 
 0.4.6 2014-03-01
 ----------------

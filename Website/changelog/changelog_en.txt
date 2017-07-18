@@ -3,6 +3,12 @@ Character encoding of this file: UTF-8
 Changelog JBirthdays http://elmar-baumann.de/JBirthdays
 =======================================================
 
+0.4.9 2017-07-17
+----------------
+
+* If the screen resolution is larger than Wide QHD QHD (2560 x 1440 pixels),
+  the fonts will be enlarged 1.5 times. At Ultra High Definition "4K" (3840 x 2160 pixels) the fonts will be scaled up 2 times.
+
 0.4.8 2014-12-10
 ----------------
 

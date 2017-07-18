@@ -110,10 +110,12 @@
         <echo message="Uploading new/updated website files to JBirthdays website"/>
         <property file="${private.confdir}/website.properties"/><!-- contains server, user and pass -->
         <ftp server="${server}"
+             port="${port}"
              userid="${user}"
              password="${pass}"
              remotedir="html/JBirthdays"
              depends="yes"
+             passive="true"
              verbose="yes">
             <fileset dir="${repo.root}/Website"/>
         </ftp>

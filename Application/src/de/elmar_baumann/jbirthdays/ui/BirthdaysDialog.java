@@ -11,6 +11,7 @@ import de.elmar_baumann.jbirthdays.util.Mnemonics;
 import de.elmar_baumann.jbirthdays.util.TableUtil;
 import java.awt.Component;
 import java.awt.Dimension;
+import java.awt.Font;
 import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
 import java.awt.Insets;
@@ -43,6 +44,7 @@ import javax.swing.JTabbedPane;
 import javax.swing.JTable;
 import javax.swing.JTextField;
 import javax.swing.SwingWorker;
+import javax.swing.UIManager;
 import javax.swing.WindowConstants;
 import javax.swing.border.TitledBorder;
 import javax.swing.event.ListSelectionEvent;
@@ -100,7 +102,19 @@ public class BirthdaysDialog extends Dialog {
         tableBirthdayToday.setDefaultRenderer(Object.class, TABLE_CELL_RENDERER);
         tableBirthdayBefore.setDefaultRenderer(Object.class, TABLE_CELL_RENDERER);
         tableBirthdayAfter.setDefaultRenderer(Object.class, TABLE_CELL_RENDERER);
+        adjustRowHeights();
         AnnotationProcessor.process(this);
+    }
+
+    private void adjustRowHeights() {
+        Font font = UIManager.getFont("Label.font");
+        int rowHeight = font == null
+                ? tableAllPersons.getRowHeight() + 6
+                : font.getSize() + 6;
+        tableAllPersons.setRowHeight(rowHeight);
+        tableBirthdayAfter.setRowHeight(rowHeight);
+        tableBirthdayBefore.setRowHeight(rowHeight);
+        tableBirthdayToday.setRowHeight(rowHeight);
     }
 
     private void persistColumnWidths() {

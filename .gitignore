@@ -8,3 +8,7 @@
 /scripts/conf/innosetup.properties
 /scripts/conf/sourceforge.properties
 /scripts/conf/website.properties
+/Localization/dist/
+/Localization/build/
+/Application/dist/
+/Application/build/

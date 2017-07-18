@@ -1,6 +1,7 @@
 package de.elmar_baumann.jbirthdays;
 
 import de.elmar_baumann.jbirthdays.ui.BirthdaysDialog;
+import de.elmar_baumann.jbirthdays.ui.LookAndFeel;
 import de.elmar_baumann.jbirthdays.update.UpdateDownload;
 import java.awt.EventQueue;
 import java.util.logging.Level;
@@ -27,6 +28,7 @@ public class Main {
             private void setLookAndFeel() {
                 try {
                     UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
+                    LookAndFeel.scaleFonts();
                 } catch (ClassNotFoundException | InstantiationException | IllegalAccessException | UnsupportedLookAndFeelException ex) {
                     Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
                 }
