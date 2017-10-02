@@ -59,7 +59,7 @@ public class ChoosePersonsDialog extends Dialog {
         if (persons == null) {
             throw new NullPointerException("persons == null");
         }
-        List<Person> sortedPersons = new LinkedList<>(persons);
+        List<Person> sortedPersons = new LinkedList<Person>(persons);
         Collections.sort(sortedPersons, Person.CMP_ASC_BY_LAST_NAME);
         allPersonsTablemodel.setPersons(sortedPersons);
     }

@@ -63,7 +63,7 @@ public class PersonTableModel implements TableModel {
         if (persons == null) {
             throw new NullPointerException("persons == null");
         }
-        this.persons = new ArrayList<>(persons);
+        this.persons = new ArrayList<Person>(persons);
         this.withBirthdayColumn = withBirthdayColumn;
         this.birthdayColumnForFutureBirthdays = birthdayColumnForFutureBirthdays;
         listeners = new CopyOnWriteArrayList<>();

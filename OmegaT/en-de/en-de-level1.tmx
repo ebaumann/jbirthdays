@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE tmx SYSTEM "tmx11.dtd">
 <tmx version="1.1">
-  <header creationtool="OmegaT" o-tmf="OmegaT TMX" adminlang="EN-US" datatype="plaintext" creationtoolversion="2.6.3_3" segtype="sentence" srclang="EN"/>
+  <header creationtool="OmegaT" o-tmf="OmegaT TMX" adminlang="EN-US" datatype="plaintext" creationtoolversion="3.1.9_4" segtype="sentence" srclang="EN"/>
   <body>
 <!-- Default translations -->
     <tu>
@@ -142,18 +142,18 @@
     </tu>
     <tu>
       <tuv lang="EN">
-        <seg>&lt;html&gt;At least a person must have&lt;ul&gt;&lt;li&gt;A last name&lt;/li&gt;&lt;li&gt;A valid day and month of the birthday&lt;/li&gt;&lt;/ul&gt;&lt;/html&gt;</seg>
+        <seg>&lt;html&gt;A new version of JBirthdays exists ({0} &amp;rarr; {1}).&lt;p&gt;You can download it on {2}.&lt;p&gt;Open download page?</seg>
       </tuv>
-      <tuv lang="DE" changeid="elmar" changedate="20140112T123553Z">
-        <seg>&lt;html&gt;Eine Person muss auf jeden Fall haben&lt;ul&gt;&lt;li&gt;Einen Nachnamen&lt;/li&gt;&lt;li&gt;Einen gültigen Tag und Monat für den Geburtstag&lt;/li&gt;&lt;/ul&gt;&lt;/html&gt;</seg>
+      <tuv lang="DE" changeid="elmar" changedate="20171002T145326Z" creationid="elmar" creationdate="20171002T145326Z">
+        <seg>&lt;html&gt;Es gibt eine neue Version von JBirthdays ({0} &amp;rarr; {1}).&lt;p&gt;Sie können diese herunterladen von {2}.&lt;p&gt;Download-Seite öffnen?</seg>
       </tuv>
     </tu>
     <tu>
       <tuv lang="EN">
-        <seg>&lt;html&gt;Downloaded a new version ({0}) of JBirthdays: {1}&lt;p&gt;Install new JBirthdays version after quitting JBirthdays?&lt;/html&gt;</seg>
+        <seg>&lt;html&gt;At least a person must have&lt;ul&gt;&lt;li&gt;A last name&lt;/li&gt;&lt;li&gt;A valid day and month of the birthday&lt;/li&gt;&lt;/ul&gt;&lt;/html&gt;</seg>
       </tuv>
-      <tuv lang="DE" changeid="elmar" changedate="20140201T153627Z">
-        <seg>&lt;html&gt;Eine neue Version ({0}) von JBirthdays wurde heruntergeladen: {1}&lt;p&gt;Neue JBirthdays Version installieren nach dem Beenden von JBirthdays?&lt;/html&gt;</seg>
+      <tuv lang="DE" changeid="elmar" changedate="20140112T123553Z">
+        <seg>&lt;html&gt;Eine Person muss auf jeden Fall haben&lt;ul&gt;&lt;li&gt;Einen Nachnamen&lt;/li&gt;&lt;li&gt;Einen gültigen Tag und Monat für den Geburtstag&lt;/li&gt;&lt;/ul&gt;&lt;/html&gt;</seg>
       </tuv>
     </tu>
     <tu>
@@ -194,6 +194,14 @@
       </tuv>
       <tuv lang="DE" changeid="ebaumann" changedate="20140116T082732Z">
         <seg>&lt;html&gt;Java unterstützt nicht das Öffnen von Dateien für diese Betriebssystem-Umgebung.&lt;p&gt;Versuchen Sie, die Datei mit einem Texteditor zu öffnen:&lt;p&gt;{0}&lt;/html&gt;</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="EN">
+        <seg>A new version of JBirthdays exists</seg>
+      </tuv>
+      <tuv lang="DE" changeid="elmar" changedate="20171002T145344Z" creationid="elmar" creationdate="20171002T145344Z">
+        <seg>Es gibt eine neue Version von JBirthdays</seg>
       </tuv>
     </tu>
     <tu>
@@ -354,22 +362,6 @@
       </tuv>
       <tuv lang="DE" changeid="elmar" changedate="20140112T123342Z">
         <seg>Termine</seg>
-      </tuv>
-    </tu>
-    <tu>
-      <tuv lang="EN">
-        <seg>Download successful</seg>
-      </tuv>
-      <tuv lang="DE" changeid="ebaumann" changedate="20140114T090505Z">
-        <seg>Download war erfolgreich</seg>
-      </tuv>
-    </tu>
-    <tu>
-      <tuv lang="EN">
-        <seg>Downloaded a new version ({0}) of JBirthdays: {1}</seg>
-      </tuv>
-      <tuv lang="DE" changeid="elmar" changedate="20140201T170025Z">
-        <seg>Neue Version ({0}) von JBirthdays heruntergeladen#: {1}</seg>
       </tuv>
     </tu>
     <tu>

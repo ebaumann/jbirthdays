@@ -28,7 +28,7 @@ public final class XmlImExport {
             throw new NullPointerException("file == null");
         }
         Persons p = new Persons();
-        p.setPersons(new ArrayList<>(persons));
+        p.setPersons(new ArrayList<Person>(persons));
         try (FileOutputStream fos = new FileOutputStream(file)) {
             XmlUtil.marshal(p, fos);
         }

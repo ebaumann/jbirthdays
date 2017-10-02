@@ -38,7 +38,7 @@ public final class QtBirthdaysDbImport {
         File db = null;
         try {
             PersonRepository repo = BirthdaysUtil.findPreferredRepository();
-            Collection<Person> existingPersons = new ArrayList<>(repo.findAll());
+            Collection<Person> existingPersons = new ArrayList<Person>(repo.findAll());
             db = chooseQtDb(parent);
             if (db != null) {
                 Logger.getLogger(QtBirthdaysDbImport.class.getName()).log(Level.INFO, "Importing QT Birtday''s database file {0}", db);

@@ -3,6 +3,12 @@ Character encoding of this file: UTF-8
 Changelog JBirthdays http://elmar-baumann.de/JBirthdays
 =======================================================
 
+0.4.10 2017-10-02
+-----------------
+
+* Check for newer versions does not try to download. Instead it offers to
+  open the download page.
+
 0.4.9 2017-07-17
 ----------------
 

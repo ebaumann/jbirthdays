@@ -25,7 +25,7 @@ public final class XmlFilePersonRepositoryImpl implements PersonRepository {
     @Override
     public void save(Collection<? extends Person> persons) {
         Persons ps = new Persons();
-        ps.setPersons(new LinkedList<>(persons));
+        ps.setPersons(new LinkedList<Person>(persons));
         XmlFilePersonRepository.INSTANCE.save(ps);
     }
 

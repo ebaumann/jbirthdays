@@ -230,14 +230,6 @@
     </tu>
     <tu>
       <tuv lang="EN">
-        <seg>A new version of JBirthdays exists</seg>
-      </tuv>
-      <tuv lang="DE" changeid="elmar" changedate="20171002T145344Z" creationid="elmar" creationdate="20171002T145344Z">
-        <seg>Es gibt eine neue Version von JBirthdays</seg>
-      </tuv>
-    </tu>
-    <tu>
-      <tuv lang="EN">
         <seg>About</seg>
       </tuv>
       <tuv lang="DE" changeid="elmar" changedate="20140112T123055Z">

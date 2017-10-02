@@ -50,7 +50,7 @@ public final class XmlImportAction extends AbstractAction {
                 return;
             }
             PersonRepository repo = BirthdaysUtil.findPreferredRepository();
-            Collection<Person> currentPersons = new ArrayList<>(repo.findAll());
+            Collection<Person> currentPersons = new ArrayList<Person>(repo.findAll());
             int countAdded = BirthdaysUtil.addNotContainedPersons(persons, currentPersons);
             repo.save(currentPersons);
             firePropertyChange(PROPERTY_IMPORTED, false, true);

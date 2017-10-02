@@ -3,7 +3,13 @@ Zeichenkodierung dieser Datei: UTF-8
 Changelog JBirthdays http://elmar-baumann.de/JBirthdays
 =======================================================
 
-0.4.9 2017-07-17
+0.4.10 2017-10-02
+-----------------
+
+* Die Prüfung auf die neueste Version versucht nicht mehr, diese herunterzuladen.
+  Statt dessen bietet sie an, die Download-Seite zu öffnen.
+
+* 0.4.9 2017-07-17
 ----------------
 
 * Ist die Bildschirmauflösung größer als Wide QHD QHD (2560 x 1440 Pixel),
