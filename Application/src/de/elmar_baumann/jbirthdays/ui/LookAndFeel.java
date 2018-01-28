@@ -16,10 +16,10 @@ public final class LookAndFeel {
         Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
         double width = screenSize.getWidth();
         double height = screenSize.getHeight();
-        float scale = width > 2560 && height > 1440  // Wide QHD (QHD) 2560 x 1440 pixels
-                ? 1.5f
-                : width >= 3840 && height >= 2160 // Ultra High Definition "4K" 3840 x 2160 pixels
+        float scale = width >= 3840 && height >= 2160 // Ultra High Definition "4K" 3840 x 2160 pixels
                 ? 2
+                : width > 2560 && height > 1440  // Wide QHD (QHD) 2560 x 1440 pixels
+                ? 1.5f
                 : 1;
 
         scaleFonts(scale);

@@ -3,6 +3,11 @@ Zeichenkodierung dieser Datei: UTF-8
 Changelog JBirthdays http://elmar-baumann.de/JBirthdays
 =======================================================
 
+0.4.11 2018-01-28
+-----------------
+
+* Skalierung korrigiert für 4K-Bildschirme.
+
 0.4.10 2017-10-02
 -----------------
 
@@ -13,7 +18,8 @@ Changelog JBirthdays http://elmar-baumann.de/JBirthdays
 ----------------
 
 * Ist die Bildschirmauflösung größer als Wide QHD QHD (2560 x 1440 Pixel),
-  werden die Schriftarten um das 1,5-fache vergrößert. Ab Ultra High Definition "4K" (3840 x 2160 Pixel) werden die Schriftarten um das 2-fache vergrößert.
+  werden die Schriftarten um das 1,5-fache vergrößert. Ab Ultra High Definition
+  "4K" (3840 x 2160 Pixel) werden die Schriftarten um das 2-fache vergrößert.
 
 0.4.8 2014-12-10
 ----------------
