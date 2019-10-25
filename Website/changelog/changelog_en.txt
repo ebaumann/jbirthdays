@@ -3,6 +3,12 @@ Character encoding of this file: UTF-8
 Changelog JBirthdays http://elmar-baumann.de/JBirthdays
 =======================================================
 
+0.4.12 2019-10-25
+-----------------
+
+* Tab "About" displays current Java and operation system version.
+* Resolved probleme with Java versions obove 1.8.
+
 0.4.11 2018-01-28
 -----------------
 

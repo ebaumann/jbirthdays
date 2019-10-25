@@ -3,6 +3,12 @@ Zeichenkodierung dieser Datei: UTF-8
 Changelog JBirthdays http://elmar-baumann.de/JBirthdays
 =======================================================
 
+0.4.12 2019-10-25
+-----------------
+
+* Tab "Über" zeigt benutzte Java- und Betriebssystem-Version an.
+* Probleme mit neueren Java-Versionen als 1.8 behoben.
+
 0.4.11 2018-01-28
 -----------------
 

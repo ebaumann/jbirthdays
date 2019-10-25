@@ -381,6 +381,25 @@ public class BirthdaysDialog extends Dialog {
         loadPersons();
     }
 
+    private String getSystemInfo() {
+        StringBuilder sb = new StringBuilder();
+
+        sb.append("\n<h2>")
+                .append(Bundle.getString(BirthdaysDialog.class, "BirthdaysDialog.SystemInfo.Heading"))
+                .append("</h2>")
+                .append("\n<ul>")
+                .append("\n\t<li>")
+                .append(Bundle.getString(BirthdaysDialog.class, "BirthdaysDialog.SystemInfo.Java", System.getProperty("java.version")))
+                .append("</li>")
+                .append("\n\t<li>")
+                .append(Bundle.getString(BirthdaysDialog.class, "BirthdaysDialog.SystemInfo.Os", System.getProperty("os.name"), System.getProperty("os.version"), System.getProperty("os.arch")))
+                .append("</li>")
+                .append("\n</ul>")
+                ;
+
+        return sb.toString();
+    }
+
     /** This method is called from within the constructor to
      * initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is
@@ -576,7 +595,7 @@ public class BirthdaysDialog extends Dialog {
 
         panelAbout.setLayout(new GridBagLayout());
 
-        labelAbout.setText(Bundle.getString(BirthdaysDialog.class, "BirthdaysDialog.About.Text", AppVersion.VERSION, AppVersion.DATE));
+        labelAbout.setText(Bundle.getString(BirthdaysDialog.class, "BirthdaysDialog.About.Text", AppVersion.VERSION, AppVersion.DATE, getSystemInfo()));
         gridBagConstraints = new GridBagConstraints();
         gridBagConstraints.gridwidth = GridBagConstraints.REMAINDER;
         gridBagConstraints.anchor = GridBagConstraints.NORTHWEST;

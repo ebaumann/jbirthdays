@@ -134,10 +134,32 @@
     </tu>
     <tu>
       <tuv lang="EN">
-        <seg>&lt;html&gt;&lt;b&gt;JBirthdays&lt;/b&gt; Version {0}, {1}.&lt;p&gt;&lt;p&gt;Author: &lt;b&gt;Elmar Baumann&lt;/b&gt; &amp;lt;eb@elmar-baumann.de&amp;gt;&lt;p&gt;&lt;p&gt;Used libraries in alphbetical order:&lt;/p&gt;&lt;ul&gt;&lt;li&gt;Parts of the NetBeans platform&lt;/li&gt;&lt;/ul&gt;&lt;/html&gt;</seg>
+        <seg>&lt;b&gt;Operating system&lt;/b&gt;: {0} ({1}, {2})</seg>
       </tuv>
-      <tuv lang="DE" changeid="elmar" changedate="20140112T125749Z">
-        <seg>&lt;html&gt;&lt;b&gt;JBirthdays&lt;/b&gt; Version {0}, {1}.&lt;p&gt;&lt;p&gt;Author: &lt;b&gt;Elmar Baumann&lt;/b&gt; &amp;lt;eb@elmar-baumann.de&amp;gt;&lt;p&gt;&lt;p&gt;Benutzte Bibliotheken in alphabetischer Reihenfolge:&lt;/p&gt;&lt;ul&gt;&lt;li&gt;Teile der NetBeans-Platform&lt;/li&gt;&lt;/ul&gt;&lt;/html&gt;</seg>
+      <tuv lang="DE" changeid="elmar" changedate="20191025T165432Z" creationid="elmar" creationdate="20191025T165432Z">
+        <seg>&lt;b&gt;Betriebssystem&lt;/b&gt;: {0} ({1}, {2})</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="EN">
+        <seg>&lt;html&gt;&lt;h1&gt;JBirthdays Version {0}, {1}&lt;/h1&gt;
+&lt;p&gt;&lt;b&gt;Author:&lt;/b&gt; Elmar Baumann &amp;lt;eb@elmar-baumann.de&amp;gt;&lt;/p&gt;
+&lt;h2&gt;Used libraries in alphbetical order&lt;/h2&gt;
+&lt;ul&gt;
+	&lt;li&gt;EventBus&lt;/li&gt;
+	&lt;li&gt;JAXB&lt;/li&gt;
+	&lt;li&gt;NetBeans platform (parts)&lt;/li&gt;
+&lt;/ul&gt;{2}&lt;/html&gt;</seg>
+      </tuv>
+      <tuv lang="DE" changeid="elmar" changedate="20191025T165944Z" creationid="elmar" creationdate="20191025T165944Z">
+        <seg>&lt;html&gt;&lt;h1&gt;JBirthdays Version {0}, {1}&lt;/h1&gt;
+&lt;p&gt;&lt;b&gt;Autor:&lt;/b&gt; Elmar Baumann &amp;lt;eb@elmar-baumann.de&amp;gt;&lt;/p&gt;
+&lt;h2&gt;Benutzte Bibliotheken in alphabetischer Reihenfolge&lt;/h2&gt;
+&lt;ul&gt;
+	&lt;li&gt;EventBus&lt;/li&gt;
+	&lt;li&gt;JAXB&lt;/li&gt;
+	&lt;li&gt;NetBeans platform (Teile)&lt;/li&gt;
+&lt;/ul&gt;{2}&lt;/html&gt;</seg>
       </tuv>
     </tu>
     <tu>
@@ -678,6 +700,14 @@
     </tu>
     <tu>
       <tuv lang="EN">
+        <seg>Java {0}</seg>
+      </tuv>
+      <tuv lang="DE" changeid="elmar" changedate="20191025T163745Z" creationid="elmar" creationdate="20191025T163745Z">
+        <seg>Java {0}</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="EN">
         <seg>Local XML file</seg>
       </tuv>
       <tuv lang="DE" changeid="elmar" changedate="20140112T124347Z">
@@ -818,6 +848,14 @@
       </tuv>
       <tuv lang="DE" changeid="ebaumann" changedate="20140113T092318Z">
         <seg>Startet das E-Mail-Program für Personen, die heute Geburtstag haben (nur falls sie eine E-Mail-Adresse besitzen)</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="EN">
+        <seg>System Information</seg>
+      </tuv>
+      <tuv lang="DE" changeid="elmar" changedate="20191025T165423Z" creationid="elmar" creationdate="20191025T165423Z">
+        <seg>System-Informationen</seg>
       </tuv>
     </tu>
     <tu>

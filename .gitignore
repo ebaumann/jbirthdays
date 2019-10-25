@@ -1,4 +1,5 @@
 **/omegat/project_stats.txt
+*.bak
 /Application/build/
 /Application/dist/
 /Application/nbproject/private/
@@ -9,7 +10,7 @@
 /OmegaT/**/target/
 /OmegaT/**\.zip$
 /OmegaT/.*\.bak$
-/dist_files/upload/
+/dist_files/**
 /scripts/conf/innosetup.properties
 /scripts/conf/sourceforge.properties
 /scripts/conf/website.properties

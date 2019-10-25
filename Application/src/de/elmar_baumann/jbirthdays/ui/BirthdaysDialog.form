@@ -346,7 +346,7 @@
             <Component class="javax.swing.JLabel" name="labelAbout">
               <Properties>
                 <Property name="text" type="java.lang.String" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
-                  <Connection code="Bundle.getString(BirthdaysDialog.class, &quot;BirthdaysDialog.About.Text&quot;, AppVersion.VERSION, AppVersion.DATE)" type="code"/>
+                  <Connection code="Bundle.getString(BirthdaysDialog.class, &quot;BirthdaysDialog.About.Text&quot;, AppVersion.VERSION, AppVersion.DATE, getSystemInfo())" type="code"/>
                 </Property>
               </Properties>
               <Constraints>
