@@ -6,9 +6,9 @@
 /Localization/build/
 /Localization/dist/
 /Localization/nbproject/private/
+/OmegaT/en-de.zip
 /OmegaT/**/source/
 /OmegaT/**/target/
-/OmegaT/**\.zip$
 /OmegaT/.*\.bak$
 /dist_files/**
 /scripts/conf/innosetup.properties
