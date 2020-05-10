@@ -152,7 +152,7 @@ var
 begin
   DirectoryName := ExpandConstant('{app}');
   BatchFileName := DirectoryName + '\JBirthdays.bat';
-  CommandLine := 'start javaw -jar ' + UserLanguage + ' "' + DirectoryName + '\JBirthdays.jar"';
+  CommandLine := 'start javaw -Dsun.java2d.uiScale.enabled=false -jar ' + UserLanguage + ' "' + DirectoryName + '\JBirthdays.jar"';
   SaveStringToFile(BatchFileName, CommandLine, False);
 end;
 
