@@ -37,11 +37,19 @@ public final class BirthdayDate implements Comparable<BirthdayDate> {
         int todayDay = cal.get(Calendar.DAY_OF_MONTH);
         int birthdayMonth = person.getBirthdayMonth();
         int birthdayDay = person.getBirthdayDay();
-        boolean prevYear = dateInFuture
-                ? DateUtil.isBefore(birthdayMonth, birthdayDay, todayMonth, todayDay)
-                : DateUtil.isBefore(todayMonth, todayDay, birthdayMonth, birthdayDay);
-        if (prevYear) {
-            cal.set(Calendar.YEAR, cal.get(Calendar.YEAR) - 1);
+
+        boolean nextBirthdayIsInNextYear = todayMonth > birthdayMonth
+                || (todayMonth == birthdayMonth && todayDay > birthdayDay);
+
+        if (dateInFuture && nextBirthdayIsInNextYear) {
+            cal.set(Calendar.YEAR, cal.get(Calendar.YEAR) + 1);
+        } else {
+            boolean prevYear = dateInFuture
+                    ? DateUtil.isBefore(birthdayMonth, birthdayDay, todayMonth, todayDay)
+                    : DateUtil.isBefore(todayMonth, todayDay, birthdayMonth, birthdayDay);
+            if (prevYear) {
+                cal.set(Calendar.YEAR, cal.get(Calendar.YEAR) - 1);
+            }
         }
         cal.set(Calendar.MONTH, birthdayMonth - 1);
         cal.set(Calendar.DAY_OF_MONTH, birthdayDay);
