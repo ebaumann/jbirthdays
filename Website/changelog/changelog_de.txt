@@ -3,6 +3,12 @@ Zeichenkodierung dieser Datei: UTF-8
 Changelog JBirthdays http://elmar-baumann.de/JBirthdays
 =======================================================
 
+0.4.20 2021-08-19
+-----------------
+
+* Neue Einstellung: Skalier-Faktor für größere oder kleinere
+  Schrift.
+
 0.4.13 2020-12-30
 -----------------
 

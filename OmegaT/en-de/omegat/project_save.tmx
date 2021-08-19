@@ -1,171 +1,179 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE tmx SYSTEM "tmx11.dtd">
 <tmx version="1.1">
-  <header creationtool="OmegaT" o-tmf="OmegaT TMX" adminlang="EN-US" datatype="plaintext" creationtoolversion="3.1.9_4" segtype="sentence" srclang="EN"/>
+  <header creationtool="OmegaT" o-tmf="OmegaT TMX" adminlang="EN-US" datatype="plaintext" creationtoolversion="5.6.0_0_b317a756" segtype="sentence" srclang="en"/>
   <body>
 <!-- Default translations -->
     <tu>
-      <tuv lang="EN">
+      <tuv lang="en">
         <seg>&amp;Add</seg>
       </tuv>
-      <tuv lang="DE" changeid="elmar" changedate="20140112T123225Z">
+      <tuv lang="de" changeid="elmar" changedate="20140112T123225Z">
         <seg>&amp;Hinzufügen</seg>
       </tuv>
     </tu>
     <tu>
-      <tuv lang="EN">
+      <tuv lang="en">
         <seg>&amp;Cancel</seg>
       </tuv>
-      <tuv lang="DE" changeid="elmar" changedate="20140112T123355Z">
+      <tuv lang="de" changeid="elmar" changedate="20140112T123355Z">
         <seg>&amp;Abbrechen</seg>
       </tuv>
     </tu>
     <tu>
-      <tuv lang="EN">
+      <tuv lang="en">
         <seg>&amp;Day:</seg>
       </tuv>
-      <tuv lang="DE" changeid="elmar" changedate="20140112T123559Z">
+      <tuv lang="de" changeid="elmar" changedate="20140112T123559Z">
         <seg>&amp;Tag:</seg>
       </tuv>
     </tu>
     <tu>
-      <tuv lang="EN">
+      <tuv lang="en">
         <seg>&amp;Edit</seg>
       </tuv>
-      <tuv lang="DE" changeid="elmar" changedate="20140112T123229Z">
+      <tuv lang="de" changeid="elmar" changedate="20140112T123229Z">
         <seg>&amp;Bearbeiten</seg>
       </tuv>
     </tu>
     <tu>
-      <tuv lang="EN">
+      <tuv lang="en">
         <seg>&amp;Email</seg>
       </tuv>
-      <tuv lang="DE" changeid="ebaumann" changedate="20140113T092222Z">
+      <tuv lang="de" changeid="ebaumann" changedate="20140113T092222Z">
         <seg>&amp;E-Mail</seg>
       </tuv>
     </tu>
     <tu>
-      <tuv lang="EN">
+      <tuv lang="en">
         <seg>&amp;First Name:</seg>
       </tuv>
-      <tuv lang="DE" changeid="elmar" changedate="20140112T123612Z">
+      <tuv lang="de" changeid="elmar" changedate="20140112T123612Z">
         <seg>&amp;Vorname:</seg>
       </tuv>
     </tu>
     <tu>
-      <tuv lang="EN">
+      <tuv lang="en">
         <seg>&amp;Import...</seg>
       </tuv>
-      <tuv lang="DE" changeid="elmar" changedate="20140112T124132Z">
+      <tuv lang="de" changeid="elmar" changedate="20140112T124132Z">
         <seg>&amp;Importieren...</seg>
       </tuv>
     </tu>
     <tu>
-      <tuv lang="EN">
+      <tuv lang="en">
         <seg>&amp;Last Name:</seg>
       </tuv>
-      <tuv lang="DE" changeid="elmar" changedate="20140112T123618Z">
+      <tuv lang="de" changeid="elmar" changedate="20140112T123618Z">
         <seg>&amp;Nachname:</seg>
       </tuv>
     </tu>
     <tu>
-      <tuv lang="EN">
+      <tuv lang="en">
         <seg>&amp;Month:</seg>
       </tuv>
-      <tuv lang="DE" changeid="elmar" changedate="20140112T123602Z">
+      <tuv lang="de" changeid="elmar" changedate="20140112T123602Z">
         <seg>&amp;Monat:</seg>
       </tuv>
     </tu>
     <tu>
-      <tuv lang="EN">
+      <tuv lang="en">
         <seg>&amp;Notes:</seg>
       </tuv>
-      <tuv lang="DE" changeid="elmar" changedate="20140112T123629Z">
+      <tuv lang="de" changeid="elmar" changedate="20140112T123629Z">
         <seg>Noti&amp;zen:</seg>
       </tuv>
     </tu>
     <tu>
-      <tuv lang="EN">
+      <tuv lang="en">
         <seg>&amp;Ok</seg>
       </tuv>
-      <tuv lang="DE" changeid="elmar" changedate="20140112T123357Z">
+      <tuv lang="de" changeid="elmar" changedate="20140112T123357Z">
         <seg>&amp;Ok</seg>
       </tuv>
     </tu>
     <tu>
-      <tuv lang="EN">
+      <tuv lang="en">
         <seg>&amp;Remove</seg>
       </tuv>
-      <tuv lang="DE" changeid="elmar" changedate="20140112T123235Z">
+      <tuv lang="de" changeid="elmar" changedate="20140112T123235Z">
         <seg>&amp;Entfernen</seg>
       </tuv>
     </tu>
     <tu>
-      <tuv lang="EN">
+      <tuv lang="en">
+        <seg>&amp;Scale Fonts</seg>
+      </tuv>
+      <tuv lang="de" changeid="elmar" changedate="20210819T172725Z" creationid="elmar" creationdate="20210819T172725Z">
+        <seg>Schrift &amp;skalieren</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="en">
         <seg>&amp;Search Person:</seg>
       </tuv>
-      <tuv lang="DE" changeid="elmar" changedate="20140112T123253Z">
+      <tuv lang="de" changeid="elmar" changedate="20140112T123253Z">
         <seg>Person &amp;suchen:</seg>
       </tuv>
     </tu>
     <tu>
-      <tuv lang="EN">
+      <tuv lang="en">
         <seg>&amp;View Logfile</seg>
       </tuv>
-      <tuv lang="DE" changeid="ebaumann" changedate="20140116T082626Z">
+      <tuv lang="de" changeid="ebaumann" changedate="20140116T082626Z">
         <seg>&amp;Protokolldatei anzeigen</seg>
       </tuv>
     </tu>
     <tu>
-      <tuv lang="EN">
+      <tuv lang="en">
         <seg>&amp;Year:</seg>
       </tuv>
-      <tuv lang="DE" changeid="elmar" changedate="20140112T123607Z">
+      <tuv lang="de" changeid="elmar" changedate="20140112T123607Z">
         <seg>&amp;Jahr:</seg>
       </tuv>
     </tu>
     <tu>
-      <tuv lang="EN">
+      <tuv lang="en">
         <seg>(Born {0,date,medium})</seg>
       </tuv>
-      <tuv lang="DE" changeid="elmar" changedate="20140112T122435Z">
+      <tuv lang="de" changeid="elmar" changedate="20140112T122435Z">
         <seg>(Geboren {0,date,medium})</seg>
       </tuv>
     </tu>
     <tu>
-      <tuv lang="EN">
+      <tuv lang="en">
         <seg>&lt;b&gt;Operating system&lt;/b&gt;: {0} ({1}, {2})</seg>
       </tuv>
-      <tuv lang="DE" changeid="elmar" changedate="20191025T165432Z" creationid="elmar" creationdate="20191025T165432Z">
+      <tuv lang="de" changeid="elmar" changedate="20191025T165432Z" creationid="elmar" creationdate="20191025T165432Z">
         <seg>&lt;b&gt;Betriebssystem&lt;/b&gt;: {0} ({1}, {2})</seg>
       </tuv>
     </tu>
     <tu>
-      <tuv lang="EN">
+      <tuv lang="en">
         <seg>&lt;h2&gt;System Information&lt;/h2&gt;</seg>
       </tuv>
-      <tuv lang="DE" changeid="elmar" changedate="20191025T163730Z" creationid="elmar" creationdate="20191025T163730Z">
+      <tuv lang="de" changeid="elmar" changedate="20191025T163730Z" creationid="elmar" creationdate="20191025T163730Z">
         <seg>&lt;h2&gt;System-Informationen&lt;/h2&gt;</seg>
       </tuv>
     </tu>
     <tu>
-      <tuv lang="EN">
+      <tuv lang="en">
         <seg>&lt;html&gt;&lt;b&gt;JBirthdays&lt;/b&gt; Version {0}, {1}.&lt;p&gt;&lt;p&gt;Author: &lt;b&gt;Elmar Baumann&lt;/b&gt; &amp;lt;eb@elmar-baumann.de&amp;gt;&lt;p&gt;&lt;p&gt;Used libraries in alphbetical order:&lt;/p&gt;&lt;ul&gt;&lt;li&gt;EventBus&lt;/li&gt;&lt;li&gt;JAXB&lt;/li&gt;&lt;li&gt;Parts of the NetBeans platform&lt;/li&gt;&lt;/ul&gt;{2}&lt;/html&gt;</seg>
       </tuv>
-      <tuv lang="DE" changeid="elmar" changedate="20191025T163714Z" creationid="elmar" creationdate="20191025T163714Z">
+      <tuv lang="de" changeid="elmar" changedate="20191025T163714Z" creationid="elmar" creationdate="20191025T163714Z">
         <seg>&lt;html&gt;&lt;b&gt;JBirthdays&lt;/b&gt; Version {0}, {1}.&lt;p&gt;&lt;p&gt;Autor: &lt;b&gt;Elmar Baumann&lt;/b&gt; &amp;lt;eb@elmar-baumann.de&amp;gt;&lt;p&gt;&lt;p&gt;Benutzte Bibliotheken in alphabetischer Reihenfolge:&lt;/p&gt;&lt;ul&gt;&lt;li&gt;EventBus&lt;/li&gt;&lt;li&gt;JAXB&lt;/li&gt;&lt;li&gt;Teile der NetBeans-Platform&lt;/li&gt;&lt;/ul&gt;{2}&lt;/html&gt;</seg>
       </tuv>
     </tu>
     <tu>
-      <tuv lang="EN">
+      <tuv lang="en">
         <seg>&lt;html&gt;&lt;b&gt;JBirthdays&lt;/b&gt; Version {0}, {1}.&lt;p&gt;&lt;p&gt;Author: &lt;b&gt;Elmar Baumann&lt;/b&gt; &amp;lt;eb@elmar-baumann.de&amp;gt;&lt;p&gt;&lt;p&gt;Used libraries in alphbetical order:&lt;/p&gt;&lt;ul&gt;&lt;li&gt;Parts of the NetBeans platform&lt;/li&gt;&lt;/ul&gt;&lt;/html&gt;</seg>
       </tuv>
-      <tuv lang="DE" changeid="elmar" changedate="20140112T125749Z">
+      <tuv lang="de" changeid="elmar" changedate="20140112T125749Z">
         <seg>&lt;html&gt;&lt;b&gt;JBirthdays&lt;/b&gt; Version {0}, {1}.&lt;p&gt;&lt;p&gt;Author: &lt;b&gt;Elmar Baumann&lt;/b&gt; &amp;lt;eb@elmar-baumann.de&amp;gt;&lt;p&gt;&lt;p&gt;Benutzte Bibliotheken in alphabetischer Reihenfolge:&lt;/p&gt;&lt;ul&gt;&lt;li&gt;Teile der NetBeans-Platform&lt;/li&gt;&lt;/ul&gt;&lt;/html&gt;</seg>
       </tuv>
     </tu>
     <tu>
-      <tuv lang="EN">
+      <tuv lang="en">
         <seg>&lt;html&gt;&lt;h1&gt;JBirthdays Version {0}, {1}&lt;/h1&gt;
 &lt;p&gt;&lt;b&gt;Author:&lt;/b&gt; Elmar Baumann &amp;lt;eb@elmar-baumann.de&amp;gt;&lt;/p&gt;
 &lt;h2&gt;Used libraries in alphbetical order&lt;/h2&gt;
@@ -175,7 +183,7 @@
 	&lt;li&gt;NetBeans platform (parts)&lt;/li&gt;
 &lt;/ul&gt;{2}&lt;/html&gt;</seg>
       </tuv>
-      <tuv lang="DE" changeid="elmar" changedate="20191025T165944Z" creationid="elmar" creationdate="20191025T165944Z">
+      <tuv lang="de" changeid="elmar" changedate="20191025T165944Z" creationid="elmar" creationdate="20191025T165944Z">
         <seg>&lt;html&gt;&lt;h1&gt;JBirthdays Version {0}, {1}&lt;/h1&gt;
 &lt;p&gt;&lt;b&gt;Autor:&lt;/b&gt; Elmar Baumann &amp;lt;eb@elmar-baumann.de&amp;gt;&lt;/p&gt;
 &lt;h2&gt;Benutzte Bibliotheken in alphabetischer Reihenfolge&lt;/h2&gt;
@@ -187,7 +195,7 @@
       </tuv>
     </tu>
     <tu>
-      <tuv lang="EN">
+      <tuv lang="en">
         <seg>&lt;html&gt;&lt;h1&gt;JBirthdays Version {0}, {1}&lt;/h1&gt;
 &lt;p&gt;&lt;b&gt;Author:&lt;/b&gt; Elmar Baumann &amp;lt;eb@elmar-baumann.de&amp;gt;&lt;/p&gt;
 &lt;h2&gt;Used libraries in alphbetical order&lt;/h2&gt;
@@ -197,7 +205,7 @@
 	&lt;li&gt;Parts of the NetBeans platform&lt;/li&gt;
 &lt;/ul&gt;{2}&lt;/html&gt;</seg>
       </tuv>
-      <tuv lang="DE" changeid="elmar" changedate="20191025T165649Z" creationid="elmar" creationdate="20191025T165649Z">
+      <tuv lang="de" changeid="elmar" changedate="20191025T165649Z" creationid="elmar" creationdate="20191025T165649Z">
         <seg>&lt;html&gt;&lt;h1&gt;JBirthdays Version {0}, {1}&lt;/h1&gt;
 &lt;p&gt;&lt;b&gt;Author:&lt;/b&gt; Elmar Baumann &amp;lt;eb@elmar-baumann.de&amp;gt;&lt;/p&gt;
 &lt;h2&gt;Used libraries in alphbetical order&lt;/h2&gt;
@@ -209,7 +217,7 @@
       </tuv>
     </tu>
     <tu>
-      <tuv lang="EN">
+      <tuv lang="en">
         <seg>&lt;html&gt;&lt;h2&gt;JBirthdays Version {0}, {1}&lt;/h2&gt;
 &lt;p&gt;&lt;b&gt;Author:&lt;/b&gt; Elmar Baumann &amp;lt;eb@elmar-baumann.de&amp;gt;&lt;/p&gt;
 &lt;h2&gt;Used libraries in alphbetical order&lt;/h2&gt;
@@ -219,7 +227,7 @@
 	&lt;li&gt;Parts of the NetBeans platform&lt;/li&gt;
 &lt;/ul&gt;{2}&lt;/html&gt;</seg>
       </tuv>
-      <tuv lang="DE" changeid="elmar" changedate="20191025T165410Z" creationid="elmar" creationdate="20191025T165410Z">
+      <tuv lang="de" changeid="elmar" changedate="20191025T165410Z" creationid="elmar" creationdate="20191025T165410Z">
         <seg>&lt;html&gt;&lt;h2&gt;JBirthdays Version {0}, {1}&lt;/h2&gt;
 &lt;p&gt;&lt;b&gt;Autor:&lt;/b&gt; Elmar Baumann &amp;lt;eb@elmar-baumann.de&amp;gt;&lt;/p&gt;
 &lt;h2&gt;Benutzte Bibliotheken in alphabetischer Reihenfolge&lt;/h2&gt;
@@ -231,938 +239,946 @@
       </tuv>
     </tu>
     <tu>
-      <tuv lang="EN">
+      <tuv lang="en">
         <seg>&lt;html&gt;A new version ({0}) of JBirthdays had been downloaded: {1}&lt;p&gt;Install new JBirthdays version after quitting JBirthdays?&lt;/html&gt;</seg>
       </tuv>
-      <tuv lang="DE" changeid="elmar" changedate="20140201T153418Z">
+      <tuv lang="de" changeid="elmar" changedate="20140201T153418Z">
         <seg>&lt;html&gt;Eine neue Version ({0}) von JBirthdays wurde heruntergeladen: {1}&lt;p&gt;Neue JBirthdays Version installieren nach dem Beenden von JBirthdays?&lt;/html&gt;</seg>
       </tuv>
     </tu>
     <tu>
-      <tuv lang="EN">
+      <tuv lang="en">
         <seg>&lt;html&gt;A new version of JBirthdays exists ({0} &amp;rarr; {1}).&lt;p&gt;You can download it on {2}.&lt;p&gt;Open download page?</seg>
       </tuv>
-      <tuv lang="DE" changeid="elmar" changedate="20171002T145326Z" creationid="elmar" creationdate="20171002T145326Z">
+      <tuv lang="de" changeid="elmar" changedate="20171002T145326Z" creationid="elmar" creationdate="20171002T145326Z">
         <seg>&lt;html&gt;Es gibt eine neue Version von JBirthdays ({0} &amp;rarr; {1}).&lt;p&gt;Sie können diese herunterladen von {2}.&lt;p&gt;Download-Seite öffnen?</seg>
       </tuv>
     </tu>
     <tu>
-      <tuv lang="EN">
+      <tuv lang="en">
         <seg>&lt;html&gt;At least a person must have&lt;ul&gt;&lt;li&gt;A last name&lt;/li&gt;&lt;li&gt;A valid day and month of the birthday&lt;/li&gt;&lt;/ul&gt;&lt;/html&gt;</seg>
       </tuv>
-      <tuv lang="DE" changeid="elmar" changedate="20140112T123553Z">
+      <tuv lang="de" changeid="elmar" changedate="20140112T123553Z">
         <seg>&lt;html&gt;Eine Person muss auf jeden Fall haben&lt;ul&gt;&lt;li&gt;Einen Nachnamen&lt;/li&gt;&lt;li&gt;Einen gültigen Tag und Monat für den Geburtstag&lt;/li&gt;&lt;/ul&gt;&lt;/html&gt;</seg>
       </tuv>
     </tu>
     <tu>
-      <tuv lang="EN">
+      <tuv lang="en">
         <seg>&lt;html&gt;Downloaded a new version ({0}) of JBirthdays: {1}&lt;p&gt;Install new JBirthdays version after quitting JBirthdays?&lt;/html&gt;</seg>
       </tuv>
-      <tuv lang="DE" changeid="elmar" changedate="20140201T153627Z">
+      <tuv lang="de" changeid="elmar" changedate="20140201T153627Z">
         <seg>&lt;html&gt;Eine neue Version ({0}) von JBirthdays wurde heruntergeladen: {1}&lt;p&gt;Neue JBirthdays Version installieren nach dem Beenden von JBirthdays?&lt;/html&gt;</seg>
       </tuv>
     </tu>
     <tu>
-      <tuv lang="EN">
+      <tuv lang="en">
         <seg>&lt;html&gt;Error loading persons:&lt;p&gt;{0}&lt;/html&gt;</seg>
       </tuv>
-      <tuv lang="DE" changeid="elmar" changedate="20140112T123039Z">
+      <tuv lang="de" changeid="elmar" changedate="20140112T123039Z">
         <seg>&lt;html&gt;Fehler beim Laden der Personen:&lt;p&gt;{0}&lt;/html&gt;</seg>
       </tuv>
     </tu>
     <tu>
-      <tuv lang="EN">
+      <tuv lang="en">
         <seg>&lt;html&gt;Error opening the log file {0}:&lt;p&gt;{1}&lt;/html&gt;</seg>
       </tuv>
-      <tuv lang="DE" changeid="ebaumann" changedate="20140116T082613Z">
+      <tuv lang="de" changeid="ebaumann" changedate="20140116T082613Z">
         <seg>&lt;html&gt;Fehler beim Öffnen der Protokolldatei {0}:&lt;p&gt;{1}&lt;/html&gt;</seg>
       </tuv>
     </tu>
     <tu>
-      <tuv lang="EN">
+      <tuv lang="en">
         <seg>&lt;html&gt;Error saving persons:&lt;p&gt;{0}&lt;/html&gt;</seg>
       </tuv>
-      <tuv lang="DE" changeid="elmar" changedate="20140112T123050Z">
+      <tuv lang="de" changeid="elmar" changedate="20140112T123050Z">
         <seg>&lt;html&gt;Fehler beim Speichern der Personen:&lt;p&gt;{0}&lt;/html&gt;</seg>
       </tuv>
     </tu>
     <tu>
-      <tuv lang="EN">
+      <tuv lang="en">
         <seg>&lt;html&gt;Hint: If imported persons containing "weird" characters, delete that persons and re-import them with a different encoding.&lt;br/&gt;Under Windows the encoding usually is "&lt;b&gt;{0}&lt;/b&gt;" and under Linux "&lt;b&gt;{1}&lt;/b&gt;".&lt;/html&gt;</seg>
       </tuv>
-      <tuv lang="DE" changeid="elmar" changedate="20140112T124118Z">
+      <tuv lang="de" changeid="elmar" changedate="20140112T124118Z">
         <seg>&lt;html&gt;Hinweis: Falls die importierten Personen "merkwürdige" Zeichen enthalten, löschen Sie diese und importieren sie mit einer anderen Zeichenkodierung.&lt;br/&gt;Unter Windows ist die Zeichenkodierung gewöhnlich "&lt;b&gt;{0}&lt;/b&gt;" und unter Linux "&lt;b&gt;{1}&lt;/b&gt;".&lt;/html&gt;</seg>
       </tuv>
     </tu>
     <tu>
-      <tuv lang="EN">
+      <tuv lang="en">
         <seg>&lt;html&gt;Java does not support open files for this sytem environment.&lt;p&gt;Try to open the log file with a text editor:&lt;p&gt;{0}&lt;/html&gt;</seg>
       </tuv>
-      <tuv lang="DE" changeid="ebaumann" changedate="20140116T082732Z">
+      <tuv lang="de" changeid="ebaumann" changedate="20140116T082732Z">
         <seg>&lt;html&gt;Java unterstützt nicht das Öffnen von Dateien für diese Betriebssystem-Umgebung.&lt;p&gt;Versuchen Sie, die Datei mit einem Texteditor zu öffnen:&lt;p&gt;{0}&lt;/html&gt;</seg>
       </tuv>
     </tu>
     <tu>
-      <tuv lang="EN">
+      <tuv lang="en">
         <seg>&lt;html&gt;{0,choice,1#1 year|1&lt;{0} years} &lt;span style="font-weight:bold;font-size:150%;"&gt;&amp;rarr;&lt;/span&gt; {1,choice,1#1 year|1&lt;{1} years}&lt;/html&gt;</seg>
       </tuv>
-      <tuv lang="DE" changeid="elmar" changedate="20140301T142049Z">
+      <tuv lang="de" changeid="elmar" changedate="20140301T142049Z">
         <seg>&lt;html&gt;{0,choice,1#1 Jahr|1&lt;{0} Jahre} &lt;span style="font-weight:bold;font-size:150%;"&gt;&amp;rarr;&lt;/span&gt; {1,choice,1#1 Jahr|1&lt;{1} Jahre}&lt;/html&gt;</seg>
       </tuv>
     </tu>
     <tu>
-      <tuv lang="EN">
+      <tuv lang="en">
         <seg>A new version ({0}) of JBirthdays had been downloaded: {1}</seg>
       </tuv>
-      <tuv lang="DE" changeid="ebaumann" changedate="20140114T090527Z">
+      <tuv lang="de" changeid="ebaumann" changedate="20140114T090527Z">
         <seg>Eine neue Version ({0}) von JBirthdays wurde heruntergeladen: {1}</seg>
       </tuv>
     </tu>
     <tu>
-      <tuv lang="EN">
+      <tuv lang="en">
         <seg>A new version of JBirthdays exists</seg>
       </tuv>
-      <tuv lang="DE" changeid="elmar" changedate="20171002T145344Z" creationid="elmar" creationdate="20171002T145344Z">
+      <tuv lang="de" changeid="elmar" changedate="20171002T145344Z" creationid="elmar" creationdate="20171002T145344Z">
         <seg>Es gibt eine neue Version von JBirthdays</seg>
       </tuv>
     </tu>
     <tu>
-      <tuv lang="EN">
+      <tuv lang="en">
         <seg>About</seg>
       </tuv>
-      <tuv lang="DE" changeid="elmar" changedate="20140112T123055Z">
+      <tuv lang="de" changeid="elmar" changedate="20140112T123055Z">
         <seg>Über</seg>
       </tuv>
     </tu>
     <tu>
-      <tuv lang="EN">
+      <tuv lang="en">
         <seg>Age</seg>
       </tuv>
-      <tuv lang="DE" changeid="elmar" changedate="20140112T123708Z">
+      <tuv lang="de" changeid="elmar" changedate="20140112T123708Z">
         <seg>Alter</seg>
       </tuv>
     </tu>
     <tu>
-      <tuv lang="EN">
+      <tuv lang="en">
         <seg>Automatically check for and download &amp;Updates after starting JBirthdays</seg>
       </tuv>
-      <tuv lang="DE" changeid="ebaumann" changedate="20140113T083845Z">
+      <tuv lang="de" changeid="ebaumann" changedate="20140113T083845Z">
         <seg>Automatisch auf &amp;Updates prüfen und diese herunterladen nach Start von JBirthdays</seg>
       </tuv>
     </tu>
     <tu>
-      <tuv lang="EN">
+      <tuv lang="en">
         <seg>Available Database formats:</seg>
       </tuv>
-      <tuv lang="DE" changeid="elmar" changedate="20140114T182059Z">
+      <tuv lang="de" changeid="elmar" changedate="20140114T182059Z">
         <seg>Verfügbare Datenbankformate:</seg>
       </tuv>
     </tu>
     <tu>
-      <tuv lang="EN">
+      <tuv lang="en">
         <seg>Available Database types:</seg>
       </tuv>
-      <tuv lang="DE" changeid="elmar" changedate="20140114T181854Z">
+      <tuv lang="de" changeid="elmar" changedate="20140114T181854Z">
         <seg>Verfügbare Datenbankformate:</seg>
       </tuv>
     </tu>
     <tu>
-      <tuv lang="EN">
+      <tuv lang="en">
         <seg>Birthday</seg>
       </tuv>
-      <tuv lang="DE" changeid="elmar" changedate="20140112T123712Z">
+      <tuv lang="de" changeid="elmar" changedate="20140112T123712Z">
         <seg>Geburtstag</seg>
       </tuv>
     </tu>
     <tu>
-      <tuv lang="EN">
+      <tuv lang="en">
         <seg>Birthday today, {0,date,medium}</seg>
       </tuv>
-      <tuv lang="DE" changeid="elmar" changedate="20140112T123213Z">
+      <tuv lang="de" changeid="elmar" changedate="20140112T123213Z">
         <seg>Geburtstag heute, {0,date,medium}</seg>
       </tuv>
     </tu>
     <tu>
-      <tuv lang="EN">
+      <tuv lang="en">
         <seg>Birthday {0,choice,1#tomorrow|1&lt;within the next {0} days}</seg>
       </tuv>
-      <tuv lang="DE" changeid="elmar" changedate="20140112T123206Z">
+      <tuv lang="de" changeid="elmar" changedate="20140112T123206Z">
         <seg>Geburtstag {0,choice,1#morgen|1&lt;in den kommenden {0} Tagen}</seg>
       </tuv>
     </tu>
     <tu>
-      <tuv lang="EN">
+      <tuv lang="en">
         <seg>Birthday {0,choice,1#yesterday|1&lt;in the past {0} days}</seg>
       </tuv>
-      <tuv lang="DE" changeid="elmar" changedate="20140112T123144Z">
+      <tuv lang="de" changeid="elmar" changedate="20140112T123144Z">
         <seg>Geburtstag {0,choice,1#gestern|1&lt;während der vergangenen {0} Tage}</seg>
       </tuv>
     </tu>
     <tu>
-      <tuv lang="EN">
+      <tuv lang="en">
         <seg>Birthday {0} {1}{2}</seg>
       </tuv>
-      <tuv lang="DE" changeid="elmar" changedate="20140112T122424Z">
+      <tuv lang="de" changeid="elmar" changedate="20140112T122424Z">
         <seg>Geburtstag {0} {1}{2}</seg>
       </tuv>
     </tu>
     <tu>
-      <tuv lang="EN">
+      <tuv lang="en">
         <seg>Born</seg>
       </tuv>
-      <tuv lang="DE" changeid="elmar" changedate="20140112T123715Z">
+      <tuv lang="de" changeid="elmar" changedate="20140112T123715Z">
         <seg>Geboren</seg>
       </tuv>
     </tu>
     <tu>
-      <tuv lang="EN">
+      <tuv lang="en">
         <seg>Choose database</seg>
       </tuv>
-      <tuv lang="DE" changeid="elmar" changedate="20140114T181900Z">
+      <tuv lang="de" changeid="elmar" changedate="20140114T181900Z">
         <seg>Datenbank auswählen</seg>
       </tuv>
     </tu>
     <tu>
-      <tuv lang="EN">
+      <tuv lang="en">
         <seg>Choose database file of old Birthdays program database</seg>
       </tuv>
-      <tuv lang="DE" changeid="elmar" changedate="20140112T122841Z">
+      <tuv lang="de" changeid="elmar" changedate="20140112T122841Z">
         <seg>Datenbankdatei des alten Geburtstagsprogramms auswählen</seg>
       </tuv>
     </tu>
     <tu>
-      <tuv lang="EN">
+      <tuv lang="en">
         <seg>Choose databse file of old Birthdays program database</seg>
       </tuv>
-      <tuv lang="DE" changeid="elmar" changedate="20140112T122515Z">
+      <tuv lang="de" changeid="elmar" changedate="20140112T122515Z">
         <seg>Choose databse file of old Birthdays program database</seg>
       </tuv>
     </tu>
     <tu>
-      <tuv lang="EN">
+      <tuv lang="en">
         <seg>Choose existing JBirthdays database</seg>
       </tuv>
-      <tuv lang="DE" changeid="ebaumann" changedate="20140116T085703Z">
+      <tuv lang="de" changeid="ebaumann" changedate="20140116T085703Z">
         <seg>Existierende JBirthdays-Datenbank auswählen</seg>
       </tuv>
     </tu>
     <tu>
-      <tuv lang="EN">
+      <tuv lang="en">
         <seg>Choose export file</seg>
       </tuv>
-      <tuv lang="DE" changeid="ebaumann" changedate="20140114T090119Z">
+      <tuv lang="de" changeid="ebaumann" changedate="20140114T090119Z">
         <seg>Datei für den Export auswählen</seg>
       </tuv>
     </tu>
     <tu>
-      <tuv lang="EN">
+      <tuv lang="en">
         <seg>Choose file with exported persons</seg>
       </tuv>
-      <tuv lang="DE" changeid="ebaumann" changedate="20140114T090913Z">
+      <tuv lang="de" changeid="ebaumann" changedate="20140114T090913Z">
         <seg>Datei mit exportierten Personen auswählen</seg>
       </tuv>
     </tu>
     <tu>
-      <tuv lang="EN">
+      <tuv lang="en">
         <seg>Choose persons for export</seg>
       </tuv>
-      <tuv lang="DE" changeid="elmar" changedate="20140112T122229Z">
+      <tuv lang="de" changeid="elmar" changedate="20140112T122229Z">
         <seg>Personen für den Export auswählen</seg>
       </tuv>
     </tu>
     <tu>
-      <tuv lang="EN">
+      <tuv lang="en">
         <seg>Choose target folder for iCal file</seg>
       </tuv>
-      <tuv lang="DE" changeid="elmar" changedate="20140112T122256Z">
+      <tuv lang="de" changeid="elmar" changedate="20140112T122256Z">
         <seg>Zielordner für die iCal-Datei auswählen</seg>
       </tuv>
     </tu>
     <tu>
-      <tuv lang="EN">
+      <tuv lang="en">
         <seg>Database</seg>
       </tuv>
-      <tuv lang="DE" changeid="elmar" changedate="20140114T181809Z">
+      <tuv lang="de" changeid="elmar" changedate="20140114T181809Z">
         <seg>Datenbank</seg>
       </tuv>
     </tu>
     <tu>
-      <tuv lang="EN">
+      <tuv lang="en">
         <seg>Date of Birth</seg>
       </tuv>
-      <tuv lang="DE" changeid="elmar" changedate="20140112T123637Z">
+      <tuv lang="de" changeid="elmar" changedate="20140112T123637Z">
         <seg>Geburtstag</seg>
       </tuv>
     </tu>
     <tu>
-      <tuv lang="EN">
+      <tuv lang="en">
         <seg>Dates</seg>
       </tuv>
-      <tuv lang="DE" changeid="elmar" changedate="20140112T123342Z">
+      <tuv lang="de" changeid="elmar" changedate="20140112T123342Z">
         <seg>Termine</seg>
       </tuv>
     </tu>
     <tu>
-      <tuv lang="EN">
+      <tuv lang="en">
         <seg>Di&amp;splay birthday</seg>
       </tuv>
-      <tuv lang="DE" changeid="ebaumann" changedate="20140116T080845Z">
+      <tuv lang="de" changeid="ebaumann" changedate="20140116T080845Z">
         <seg>Geburtstag an&amp;zeigen</seg>
       </tuv>
     </tu>
     <tu>
-      <tuv lang="EN">
+      <tuv lang="en">
         <seg>Download successful</seg>
       </tuv>
-      <tuv lang="DE" changeid="ebaumann" changedate="20140114T090505Z">
+      <tuv lang="de" changeid="ebaumann" changedate="20140114T090505Z">
         <seg>Download war erfolgreich</seg>
       </tuv>
     </tu>
     <tu>
-      <tuv lang="EN">
+      <tuv lang="en">
         <seg>Downloaded a new version ({0}) of JBirthdays: {1}</seg>
       </tuv>
-      <tuv lang="DE" changeid="elmar" changedate="20140201T170025Z">
+      <tuv lang="de" changeid="elmar" changedate="20140201T170025Z">
         <seg>Neue Version ({0}) von JBirthdays heruntergeladen#: {1}</seg>
       </tuv>
     </tu>
     <tu>
-      <tuv lang="EN">
+      <tuv lang="en">
         <seg>E&amp;xit</seg>
       </tuv>
-      <tuv lang="DE" changeid="elmar" changedate="20140201T164850Z">
+      <tuv lang="de" changeid="elmar" changedate="20140201T164850Z">
         <seg>&amp;Beenden</seg>
       </tuv>
     </tu>
     <tu>
-      <tuv lang="EN">
+      <tuv lang="en">
         <seg>E&amp;xport...</seg>
       </tuv>
-      <tuv lang="DE" changeid="ebaumann" changedate="20140114T090324Z">
+      <tuv lang="de" changeid="ebaumann" changedate="20140114T090324Z">
         <seg>E&amp;xportieren...</seg>
       </tuv>
     </tu>
     <tu>
-      <tuv lang="EN">
+      <tuv lang="en">
         <seg>E-M&amp;ail:</seg>
       </tuv>
-      <tuv lang="DE" changeid="elmar" changedate="20140114T181811Z">
+      <tuv lang="de" changeid="elmar" changedate="20140114T181811Z">
         <seg>E-M&amp;ail:</seg>
       </tuv>
     </tu>
     <tu>
-      <tuv lang="EN">
+      <tuv lang="en">
         <seg>Edit Person</seg>
       </tuv>
-      <tuv lang="DE" changeid="elmar" changedate="20140112T123642Z">
+      <tuv lang="de" changeid="elmar" changedate="20140112T123642Z">
         <seg>Person bearbeiten</seg>
       </tuv>
     </tu>
     <tu>
-      <tuv lang="EN">
+      <tuv lang="en">
         <seg>Error</seg>
       </tuv>
-      <tuv lang="DE" changeid="elmar" changedate="20140112T122317Z">
+      <tuv lang="de" changeid="elmar" changedate="20140112T122317Z">
         <seg>Fehler</seg>
       </tuv>
     </tu>
     <tu>
-      <tuv lang="EN">
+      <tuv lang="en">
         <seg>Error calling mail client: {0}</seg>
       </tuv>
-      <tuv lang="DE" changeid="ebaumann" changedate="20140114T090545Z">
+      <tuv lang="de" changeid="ebaumann" changedate="20140114T090545Z">
         <seg>Fehler beim Aufruf des E-Mail-Programms: {0}</seg>
       </tuv>
     </tu>
     <tu>
-      <tuv lang="EN">
+      <tuv lang="en">
         <seg>Error exporting iCal file: {0}</seg>
       </tuv>
-      <tuv lang="DE" changeid="elmar" changedate="20140112T122804Z">
+      <tuv lang="de" changeid="elmar" changedate="20140112T122804Z">
         <seg>Fehler beim Exportieren der iCal-Datei: {0}</seg>
       </tuv>
     </tu>
     <tu>
-      <tuv lang="EN">
+      <tuv lang="en">
         <seg>Error exporting iCalFile: {0}</seg>
       </tuv>
-      <tuv lang="DE" changeid="elmar" changedate="20140112T122310Z">
+      <tuv lang="de" changeid="elmar" changedate="20140112T122310Z">
         <seg>Fehler beim Exportieren der iCal-Datei: {0}</seg>
       </tuv>
     </tu>
     <tu>
-      <tuv lang="EN">
+      <tuv lang="en">
         <seg>Error importing {0}</seg>
       </tuv>
-      <tuv lang="DE" changeid="elmar" changedate="20140112T122901Z">
+      <tuv lang="de" changeid="elmar" changedate="20140112T122901Z">
         <seg>Fehler beim importieren von {0}</seg>
       </tuv>
     </tu>
     <tu>
-      <tuv lang="EN">
+      <tuv lang="en">
         <seg>Error moving database: {0}</seg>
       </tuv>
-      <tuv lang="DE" changeid="ebaumann" changedate="20140116T085727Z">
+      <tuv lang="de" changeid="ebaumann" changedate="20140116T085727Z">
         <seg>Fehler beim Verschieben der Datenbank: {0}</seg>
       </tuv>
     </tu>
     <tu>
-      <tuv lang="EN">
+      <tuv lang="en">
         <seg>Export</seg>
       </tuv>
-      <tuv lang="DE" changeid="elmar" changedate="20140112T124219Z">
+      <tuv lang="de" changeid="elmar" changedate="20140112T124219Z">
         <seg>Exportieren</seg>
       </tuv>
     </tu>
     <tu>
-      <tuv lang="EN">
+      <tuv lang="en">
         <seg>Export completed</seg>
       </tuv>
-      <tuv lang="DE" changeid="ebaumann" changedate="20140114T090156Z">
+      <tuv lang="de" changeid="ebaumann" changedate="20140114T090156Z">
         <seg>Export beendet</seg>
       </tuv>
     </tu>
     <tu>
-      <tuv lang="EN">
+      <tuv lang="en">
         <seg>Export error: {0}</seg>
       </tuv>
-      <tuv lang="DE" changeid="ebaumann" changedate="20140114T090201Z">
+      <tuv lang="de" changeid="ebaumann" changedate="20140114T090201Z">
         <seg>Fehler beim Export: {0}</seg>
       </tuv>
     </tu>
     <tu>
-      <tuv lang="EN">
+      <tuv lang="en">
         <seg>Export finished</seg>
       </tuv>
-      <tuv lang="DE" changeid="elmar" changedate="20140112T122418Z">
+      <tuv lang="de" changeid="elmar" changedate="20140112T122418Z">
         <seg>Export beendet</seg>
       </tuv>
     </tu>
     <tu>
-      <tuv lang="EN">
+      <tuv lang="en">
         <seg>Export for importing with an other JBirthdays application or for a Backup</seg>
       </tuv>
-      <tuv lang="DE" changeid="ebaumann" changedate="20140114T090431Z">
+      <tuv lang="de" changeid="ebaumann" changedate="20140114T090431Z">
         <seg>Export für den Import mit einer anderen JBirthdays-Anwendung oder für ein Backup</seg>
       </tuv>
     </tu>
     <tu>
-      <tuv lang="EN">
+      <tuv lang="en">
         <seg>Export to i&amp;Cal...</seg>
       </tuv>
-      <tuv lang="DE" changeid="elmar" changedate="20140112T124128Z">
+      <tuv lang="de" changeid="elmar" changedate="20140112T124128Z">
         <seg>Nach i&amp;Cal exportieren...</seg>
       </tuv>
     </tu>
     <tu>
-      <tuv lang="EN">
+      <tuv lang="en">
         <seg>Exported {0,choice,0#no person|1#one person|1&lt;{0} persons} to iCal file {1}</seg>
       </tuv>
-      <tuv lang="DE" changeid="ebaumann" changedate="20140114T094907Z">
+      <tuv lang="de" changeid="ebaumann" changedate="20140114T094907Z">
         <seg>{0,choice,0#Keine Person|1#Eine Person|1&lt;{0} Personen} in iCal-Datei {1}  exportiert.</seg>
       </tuv>
     </tu>
     <tu>
-      <tuv lang="EN">
+      <tuv lang="en">
         <seg>File &amp;encoding:</seg>
       </tuv>
-      <tuv lang="DE" changeid="elmar" changedate="20140112T124212Z">
+      <tuv lang="de" changeid="elmar" changedate="20140112T124212Z">
         <seg>Zeichenk&amp;odierung der Datei:</seg>
       </tuv>
     </tu>
     <tu>
-      <tuv lang="EN">
+      <tuv lang="en">
         <seg>File ''{0}'' is not a valid JBirthdays'' file!</seg>
       </tuv>
-      <tuv lang="DE" changeid="elmar" changedate="20141210T163956Z">
+      <tuv lang="de" changeid="elmar" changedate="20141210T163956Z">
         <seg>Die Datei ''{0}'' ist keine gültige JBirthdays-Datei!</seg>
       </tuv>
     </tu>
     <tu>
-      <tuv lang="EN">
+      <tuv lang="en">
         <seg>File:</seg>
       </tuv>
-      <tuv lang="DE" changeid="elmar" changedate="20140114T181913Z">
+      <tuv lang="de" changeid="elmar" changedate="20140114T181913Z">
         <seg>Datei:</seg>
       </tuv>
     </tu>
     <tu>
-      <tuv lang="EN">
+      <tuv lang="en">
+        <seg>Font Scale Factor (requires restarting JBirthdays):</seg>
+      </tuv>
+      <tuv lang="de" changeid="elmar" changedate="20210819T172801Z" creationid="elmar" creationdate="20210819T172801Z">
+        <seg>Skalierfaktor für die Schrift (erfordert Neustart von JBirthdays):</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="en">
         <seg>Happy birthday</seg>
       </tuv>
-      <tuv lang="DE" changeid="ebaumann" changedate="20140113T092210Z">
+      <tuv lang="de" changeid="ebaumann" changedate="20140113T092210Z">
         <seg>Alles Gute zum Geburtstag</seg>
       </tuv>
     </tu>
     <tu>
-      <tuv lang="EN">
+      <tuv lang="en">
         <seg>Hint: Double click onto a person opens it's edit dialog and displays notes in a larger display area</seg>
       </tuv>
-      <tuv lang="DE" changeid="elmar" changedate="20140112T124652Z">
+      <tuv lang="de" changeid="elmar" changedate="20140112T124652Z">
         <seg>Hinweis: Doppelklick auf eine Person öffnet ihren Bearbeiten-Dialog und zeigt die Notizen auf einer größeren Fläche an.</seg>
       </tuv>
     </tu>
     <tu>
-      <tuv lang="EN">
+      <tuv lang="en">
         <seg>I&amp;mport...</seg>
       </tuv>
-      <tuv lang="DE" changeid="ebaumann" changedate="20140114T090314Z">
+      <tuv lang="de" changeid="ebaumann" changedate="20140114T090314Z">
         <seg>I&amp;mportieren...</seg>
       </tuv>
     </tu>
     <tu>
-      <tuv lang="EN">
+      <tuv lang="en">
         <seg>Import</seg>
       </tuv>
-      <tuv lang="DE" changeid="elmar" changedate="20140112T124216Z">
+      <tuv lang="de" changeid="elmar" changedate="20140112T124216Z">
         <seg>Importieren</seg>
       </tuv>
     </tu>
     <tu>
-      <tuv lang="EN">
+      <tuv lang="en">
         <seg>Import (skips existing persons)</seg>
       </tuv>
-      <tuv lang="DE" changeid="ebaumann" changedate="20140114T091710Z">
+      <tuv lang="de" changeid="ebaumann" changedate="20140114T091710Z">
         <seg>Import (ignoriert bereits existierende Personen)</seg>
       </tuv>
     </tu>
     <tu>
-      <tuv lang="EN">
+      <tuv lang="en">
         <seg>Import error: {0}</seg>
       </tuv>
-      <tuv lang="DE" changeid="elmar" changedate="20140112T122851Z">
+      <tuv lang="de" changeid="elmar" changedate="20140112T122851Z">
         <seg>Fehler beim Import: {0}</seg>
       </tuv>
     </tu>
     <tu>
-      <tuv lang="EN">
+      <tuv lang="en">
         <seg>Import finished</seg>
       </tuv>
-      <tuv lang="DE" changeid="ebaumann" changedate="20140114T094528Z">
+      <tuv lang="de" changeid="ebaumann" changedate="20140114T094528Z">
         <seg>Import beendet</seg>
       </tuv>
     </tu>
     <tu>
-      <tuv lang="EN">
+      <tuv lang="en">
         <seg>Import from QT Birthdays database</seg>
       </tuv>
-      <tuv lang="DE" changeid="elmar" changedate="20140112T123821Z">
+      <tuv lang="de" changeid="elmar" changedate="20140112T123821Z">
         <seg>Von einer alten QT-Geburtstagsdatenbank importieren</seg>
       </tuv>
     </tu>
     <tu>
-      <tuv lang="EN">
+      <tuv lang="en">
         <seg>Import from a file exported with JBirthdays</seg>
       </tuv>
-      <tuv lang="DE" changeid="ebaumann" changedate="20140114T090453Z">
+      <tuv lang="de" changeid="ebaumann" changedate="20140114T090453Z">
         <seg>Import einer Datei, die mit JBirthdays exportiert wurde</seg>
       </tuv>
     </tu>
     <tu>
-      <tuv lang="EN">
+      <tuv lang="en">
         <seg>Import from previous old Birthday application</seg>
       </tuv>
-      <tuv lang="DE" changeid="ebaumann" changedate="20140114T091838Z">
+      <tuv lang="de" changeid="ebaumann" changedate="20140114T091838Z">
         <seg>Von der vorherigen alten Geburtstags-Anwendung importieren</seg>
       </tuv>
     </tu>
     <tu>
-      <tuv lang="EN">
+      <tuv lang="en">
         <seg>Import from previous old Birthday application (written in C++ and with QT library)</seg>
       </tuv>
-      <tuv lang="DE" changeid="ebaumann" changedate="20140114T091726Z">
+      <tuv lang="de" changeid="ebaumann" changedate="20140114T091726Z">
         <seg>Von der vorherigen alten Geburtstags-Anwendung importieren</seg>
       </tuv>
     </tu>
     <tu>
-      <tuv lang="EN">
+      <tuv lang="en">
         <seg>Import from previous old Birthday application (written with C++ and QT)</seg>
       </tuv>
-      <tuv lang="DE" changeid="elmar" changedate="20140112T124334Z">
+      <tuv lang="de" changeid="elmar" changedate="20140112T124334Z">
         <seg>Von der vorherigen alten Geburtstags-Anwendung importieren (geschrieben mit C++ und QT)</seg>
       </tuv>
     </tu>
     <tu>
-      <tuv lang="EN">
+      <tuv lang="en">
         <seg>Imported {0,choice,0#no person|1#1 person|1&lt;{0} persons}</seg>
       </tuv>
-      <tuv lang="DE" changeid="elmar" changedate="20140112T123841Z">
+      <tuv lang="de" changeid="elmar" changedate="20140112T123841Z">
         <seg>{0,choice,0#Keine Person|1#1 Person|1&lt;{0} Personen} importiert</seg>
       </tuv>
     </tu>
     <tu>
-      <tuv lang="EN">
+      <tuv lang="en">
         <seg>Imported {0,choice,0#no person|1#1 person|1&lt;{0} persons}.</seg>
       </tuv>
-      <tuv lang="DE" changeid="ebaumann" changedate="20140114T094630Z">
+      <tuv lang="de" changeid="ebaumann" changedate="20140114T094630Z">
         <seg>{0,choice,0#Es wurde keine Person|1#Es wurde eine Person|1&lt;Es wurden {0} Personen} importiert.</seg>
       </tuv>
     </tu>
     <tu>
-      <tuv lang="EN">
+      <tuv lang="en">
         <seg>Imported {0,choice,0#no person|1#one person|1&lt;{0} persons}</seg>
       </tuv>
-      <tuv lang="DE" changeid="ebaumann" changedate="20140114T094204Z">
+      <tuv lang="de" changeid="ebaumann" changedate="20140114T094204Z">
         <seg>{0,choice,0#Es wurde keine Person|1#Es wurde eine Person|1&lt;Es wurden {0} Personen} importiert.</seg>
       </tuv>
     </tu>
     <tu>
-      <tuv lang="EN">
+      <tuv lang="en">
         <seg>Imported {0,choice,0#no person|1#one person|1&lt;{0} persons}.</seg>
       </tuv>
-      <tuv lang="DE" changeid="ebaumann" changedate="20140114T094454Z">
+      <tuv lang="de" changeid="ebaumann" changedate="20140114T094454Z">
         <seg>{0,choice,0#Es wurde keine Person|1#Es wurde eine Person|1&lt;Es wurden {0} Personen} importiert.</seg>
       </tuv>
     </tu>
     <tu>
-      <tuv lang="EN">
+      <tuv lang="en">
         <seg>Imported {0} persons</seg>
       </tuv>
-      <tuv lang="DE" changeid="ebaumann" changedate="20140114T090251Z">
+      <tuv lang="de" changeid="ebaumann" changedate="20140114T090251Z">
         <seg>Es wurden{0} Personen importiert</seg>
       </tuv>
     </tu>
     <tu>
-      <tuv lang="EN">
+      <tuv lang="en">
         <seg>Inform days &amp;after a birthday:</seg>
       </tuv>
-      <tuv lang="DE" changeid="elmar" changedate="20140112T125644Z">
+      <tuv lang="de" changeid="elmar" changedate="20140112T125644Z">
         <seg>Tage &amp;nach einem Geburtstag informieren:</seg>
       </tuv>
     </tu>
     <tu>
-      <tuv lang="EN">
+      <tuv lang="en">
         <seg>Inform days &amp;before Birthday:</seg>
       </tuv>
-      <tuv lang="DE" changeid="elmar" changedate="20140112T125650Z">
+      <tuv lang="de" changeid="elmar" changedate="20140112T125650Z">
         <seg>Tage &amp;vor einem Geburtstag informieren:</seg>
       </tuv>
     </tu>
     <tu>
-      <tuv lang="EN">
+      <tuv lang="en">
         <seg>Invalid Date for month = {0} and day = {1}</seg>
       </tuv>
-      <tuv lang="DE" changeid="elmar" changedate="20140112T122933Z">
+      <tuv lang="de" changeid="elmar" changedate="20140112T122933Z">
         <seg>Ungültiges Datum für Monat = {0} und Tag = {1}</seg>
       </tuv>
     </tu>
     <tu>
-      <tuv lang="EN">
+      <tuv lang="en">
         <seg>Invalid file</seg>
       </tuv>
-      <tuv lang="DE" changeid="elmar" changedate="20141210T163709Z">
+      <tuv lang="de" changeid="elmar" changedate="20141210T163709Z">
         <seg>Ungültige Datei</seg>
       </tuv>
     </tu>
     <tu>
-      <tuv lang="EN">
+      <tuv lang="en">
         <seg>Invalid number</seg>
       </tuv>
-      <tuv lang="DE" changeid="elmar" changedate="20140112T123648Z">
+      <tuv lang="de" changeid="elmar" changedate="20140112T123648Z">
         <seg>Ungültige Zahl</seg>
       </tuv>
     </tu>
     <tu>
-      <tuv lang="EN">
+      <tuv lang="en">
         <seg>JBirthdays Bug</seg>
       </tuv>
-      <tuv lang="DE" changeid="elmar" changedate="20140201T170411Z">
+      <tuv lang="de" changeid="elmar" changedate="20140201T170411Z">
         <seg>JBirthdays-Fehler</seg>
       </tuv>
     </tu>
     <tu>
-      <tuv lang="EN">
+      <tuv lang="en">
         <seg>JBirthdays XML files</seg>
       </tuv>
-      <tuv lang="DE" changeid="elmar" changedate="20140114T181758Z">
+      <tuv lang="de" changeid="elmar" changedate="20140114T181758Z">
         <seg>JBirthdays XML-Dateien</seg>
       </tuv>
     </tu>
     <tu>
-      <tuv lang="EN">
+      <tuv lang="en">
         <seg>JBirthdays {0}</seg>
       </tuv>
-      <tuv lang="DE" changeid="elmar" changedate="20140112T123217Z">
+      <tuv lang="de" changeid="elmar" changedate="20140112T123217Z">
         <seg>JBirthdays {0}</seg>
       </tuv>
     </tu>
     <tu>
-      <tuv lang="EN">
+      <tuv lang="en">
         <seg>Java does not support Email for this operating system</seg>
       </tuv>
-      <tuv lang="DE" changeid="ebaumann" changedate="20140114T090606Z">
+      <tuv lang="de" changeid="ebaumann" changedate="20140114T090606Z">
         <seg>Java unterstützt keine E-Mail für dieses Betriebssystem</seg>
       </tuv>
     </tu>
     <tu>
-      <tuv lang="EN">
+      <tuv lang="en">
         <seg>Java {0}</seg>
       </tuv>
-      <tuv lang="DE" changeid="elmar" changedate="20191025T163745Z" creationid="elmar" creationdate="20191025T163745Z">
+      <tuv lang="de" changeid="elmar" changedate="20191025T163745Z" creationid="elmar" creationdate="20191025T163745Z">
         <seg>Java {0}</seg>
       </tuv>
     </tu>
     <tu>
-      <tuv lang="EN">
+      <tuv lang="en">
         <seg>Local XML file</seg>
       </tuv>
-      <tuv lang="DE" changeid="elmar" changedate="20140112T124347Z">
+      <tuv lang="de" changeid="elmar" changedate="20140112T124347Z">
         <seg>Lokale XML-Datei</seg>
       </tuv>
     </tu>
     <tu>
-      <tuv lang="EN">
+      <tuv lang="en">
         <seg>Move to a different folder</seg>
       </tuv>
-      <tuv lang="DE" changeid="ebaumann" changedate="20140116T085713Z">
+      <tuv lang="de" changeid="ebaumann" changedate="20140116T085713Z">
         <seg>In einen anderen Ordner verschieben</seg>
       </tuv>
     </tu>
     <tu>
-      <tuv lang="EN">
+      <tuv lang="en">
         <seg>Name</seg>
       </tuv>
-      <tuv lang="DE" changeid="elmar" changedate="20140112T123717Z">
+      <tuv lang="de" changeid="elmar" changedate="20140112T123717Z">
         <seg>Name</seg>
       </tuv>
     </tu>
     <tu>
-      <tuv lang="EN">
+      <tuv lang="en">
         <seg>No&amp;tify for Birthday</seg>
       </tuv>
-      <tuv lang="DE" changeid="ebaumann" changedate="20140116T094621Z">
+      <tuv lang="de" changeid="ebaumann" changedate="20140116T094621Z">
         <seg>Über Geburtstage bena&amp;chrichtigen</seg>
       </tuv>
     </tu>
     <tu>
-      <tuv lang="EN">
+      <tuv lang="en">
         <seg>Notes</seg>
       </tuv>
-      <tuv lang="DE" changeid="elmar" changedate="20140112T123722Z">
+      <tuv lang="de" changeid="elmar" changedate="20140112T123722Z">
         <seg>Notizen</seg>
       </tuv>
     </tu>
     <tu>
-      <tuv lang="EN">
+      <tuv lang="en">
         <seg>Operating system: {0} ({1}, {2})</seg>
       </tuv>
-      <tuv lang="DE" changeid="elmar" changedate="20191025T163845Z" creationid="elmar" creationdate="20191025T163845Z">
+      <tuv lang="de" changeid="elmar" changedate="20191025T163845Z" creationid="elmar" creationdate="20191025T163845Z">
         <seg>Betriebssystem: {0} ({1}, {2})</seg>
       </tuv>
     </tu>
     <tu>
-      <tuv lang="EN">
+      <tuv lang="en">
         <seg>Overwrite existing file "{0}"?</seg>
       </tuv>
-      <tuv lang="DE" changeid="ebaumann" changedate="20140114T093126Z">
+      <tuv lang="de" changeid="ebaumann" changedate="20140114T093126Z">
         <seg>Existierende Datei "{0}" überschreiben?</seg>
       </tuv>
     </tu>
     <tu>
-      <tuv lang="EN">
+      <tuv lang="en">
         <seg>Person is not valid</seg>
       </tuv>
-      <tuv lang="DE" changeid="elmar" changedate="20140112T123446Z">
+      <tuv lang="de" changeid="elmar" changedate="20140112T123446Z">
         <seg>Person-Daten sind ungültig</seg>
       </tuv>
     </tu>
     <tu>
-      <tuv lang="EN">
+      <tuv lang="en">
         <seg>Persons</seg>
       </tuv>
-      <tuv lang="DE" changeid="elmar" changedate="20140112T123346Z">
+      <tuv lang="de" changeid="elmar" changedate="20140112T123346Z">
         <seg>Personen</seg>
       </tuv>
     </tu>
     <tu>
-      <tuv lang="EN">
+      <tuv lang="en">
         <seg>Please describe error and how it can be reproduced</seg>
       </tuv>
-      <tuv lang="DE" changeid="elmar" changedate="20140201T170651Z">
+      <tuv lang="de" changeid="elmar" changedate="20140201T170651Z">
         <seg>Bitte Fehler beschreiben und wie dieser reproduziert werden kann</seg>
       </tuv>
     </tu>
     <tu>
-      <tuv lang="EN">
+      <tuv lang="en">
         <seg>Please input a value between {0} and {1}</seg>
       </tuv>
-      <tuv lang="DE" changeid="elmar" changedate="20140112T123705Z">
+      <tuv lang="de" changeid="elmar" changedate="20140112T123705Z">
         <seg>Bitte geben Sie eine Zahl ein zwischen {0} und {1}</seg>
       </tuv>
     </tu>
     <tu>
-      <tuv lang="EN">
+      <tuv lang="en">
         <seg>Preferences</seg>
       </tuv>
-      <tuv lang="DE" changeid="elmar" changedate="20140112T123100Z">
+      <tuv lang="de" changeid="elmar" changedate="20140112T123100Z">
         <seg>Einstellungen</seg>
       </tuv>
     </tu>
     <tu>
-      <tuv lang="EN">
+      <tuv lang="en">
         <seg>Remove all selected persons?</seg>
       </tuv>
-      <tuv lang="DE" changeid="elmar" changedate="20140112T123023Z">
+      <tuv lang="de" changeid="elmar" changedate="20140112T123023Z">
         <seg>Alle ausgewählten Personen entfernen?</seg>
       </tuv>
     </tu>
     <tu>
-      <tuv lang="EN">
+      <tuv lang="en">
         <seg>Select &amp;all</seg>
       </tuv>
-      <tuv lang="DE" changeid="elmar" changedate="20140112T123407Z">
+      <tuv lang="de" changeid="elmar" changedate="20140112T123407Z">
         <seg>&amp;Alle auswählen</seg>
       </tuv>
     </tu>
     <tu>
-      <tuv lang="EN">
+      <tuv lang="en">
         <seg>Select &amp;none</seg>
       </tuv>
-      <tuv lang="DE" changeid="elmar" changedate="20140112T123417Z">
+      <tuv lang="de" changeid="elmar" changedate="20140112T123417Z">
         <seg>&amp;Keine auswählen</seg>
       </tuv>
     </tu>
     <tu>
-      <tuv lang="EN">
+      <tuv lang="en">
         <seg>Select Persons</seg>
       </tuv>
-      <tuv lang="DE" changeid="elmar" changedate="20140112T123427Z">
+      <tuv lang="de" changeid="elmar" changedate="20140112T123427Z">
         <seg>Personen auswählen</seg>
       </tuv>
     </tu>
     <tu>
-      <tuv lang="EN">
+      <tuv lang="en">
         <seg>Select new database folder</seg>
       </tuv>
-      <tuv lang="DE" changeid="ebaumann" changedate="20140116T085739Z">
+      <tuv lang="de" changeid="ebaumann" changedate="20140116T085739Z">
         <seg>Neuen Datenbank-Ordner auswählen</seg>
       </tuv>
     </tu>
     <tu>
-      <tuv lang="EN">
+      <tuv lang="en">
         <seg>Send &amp;Bug Report</seg>
       </tuv>
-      <tuv lang="DE" changeid="elmar" changedate="20140201T170345Z">
+      <tuv lang="de" changeid="elmar" changedate="20140201T170345Z">
         <seg>&amp;Fehler melden</seg>
       </tuv>
     </tu>
     <tu>
-      <tuv lang="EN">
+      <tuv lang="en">
         <seg>Skips already existing persons.</seg>
       </tuv>
-      <tuv lang="DE" changeid="elmar" changedate="20140112T124916Z">
+      <tuv lang="de" changeid="elmar" changedate="20140112T124916Z">
         <seg>Ignoriert bereits existierende Personen.</seg>
       </tuv>
     </tu>
     <tu>
-      <tuv lang="EN">
+      <tuv lang="en">
         <seg>Start Email program for persons having birthday today (only if they have an Email address)</seg>
       </tuv>
-      <tuv lang="DE" changeid="ebaumann" changedate="20140113T092318Z">
+      <tuv lang="de" changeid="ebaumann" changedate="20140113T092318Z">
         <seg>Startet das E-Mail-Program für Personen, die heute Geburtstag haben (nur falls sie eine E-Mail-Adresse besitzen)</seg>
       </tuv>
     </tu>
     <tu>
-      <tuv lang="EN">
+      <tuv lang="en">
         <seg>System Information</seg>
       </tuv>
-      <tuv lang="DE" changeid="elmar" changedate="20191025T165423Z" creationid="elmar" creationdate="20191025T165423Z">
+      <tuv lang="de" changeid="elmar" changedate="20191025T165423Z" creationid="elmar" creationdate="20191025T165423Z">
         <seg>System-Informationen</seg>
       </tuv>
     </tu>
     <tu>
-      <tuv lang="EN">
+      <tuv lang="en">
         <seg>Tools</seg>
       </tuv>
-      <tuv lang="DE" changeid="elmar" changedate="20140112T123104Z">
+      <tuv lang="de" changeid="elmar" changedate="20140112T123104Z">
         <seg>Werkzeuge</seg>
       </tuv>
     </tu>
     <tu>
-      <tuv lang="EN">
+      <tuv lang="en">
         <seg>Use this database</seg>
       </tuv>
-      <tuv lang="DE" changeid="elmar" changedate="20140114T181818Z">
+      <tuv lang="de" changeid="elmar" changedate="20140114T181818Z">
         <seg>Diese Datenbank benutzen</seg>
       </tuv>
     </tu>
     <tu>
-      <tuv lang="EN">
+      <tuv lang="en">
         <seg>Use this database format</seg>
       </tuv>
-      <tuv lang="DE" changeid="elmar" changedate="20140114T182507Z">
+      <tuv lang="de" changeid="elmar" changedate="20140114T182507Z">
         <seg>Dieses Datenbankformat benutzen</seg>
       </tuv>
     </tu>
     <tu>
-      <tuv lang="EN">
+      <tuv lang="en">
         <seg>XML files</seg>
       </tuv>
-      <tuv lang="DE" changeid="ebaumann" changedate="20140114T090235Z">
+      <tuv lang="de" changeid="ebaumann" changedate="20140114T090235Z">
         <seg>XML-Dateien</seg>
       </tuv>
     </tu>
     <tu>
-      <tuv lang="EN">
+      <tuv lang="en">
         <seg>iCal files can be read from many calendar applications such as Google Calendar or Lightning</seg>
       </tuv>
-      <tuv lang="DE" changeid="elmar" changedate="20140112T124253Z">
+      <tuv lang="de" changeid="elmar" changedate="20140112T124253Z">
         <seg>iCal-Dateien können von vielen Kalender-Anwendungen gelesen werden wie Google Calendar oder Lightning</seg>
       </tuv>
     </tu>
     <tu>
-      <tuv lang="EN">
+      <tuv lang="en">
         <seg>{0,choice,0#0 years|1#1 year|1&lt;{0} years}</seg>
       </tuv>
-      <tuv lang="DE" changeid="elmar" changedate="20140301T143000Z">
+      <tuv lang="de" changeid="elmar" changedate="20140301T143000Z">
         <seg>{0,choice,0#0 Jahre|1#1 Jahr|1&lt;{0} Jahre}</seg>
       </tuv>
     </tu>
     <tu>
-      <tuv lang="EN">
+      <tuv lang="en">
         <seg>{0,choice,0#0 years|1#1 year|1&lt;{0} years} → {1,choice,0#0 years|1#1 year|1&lt;{1} years}</seg>
       </tuv>
-      <tuv lang="DE" changeid="elmar" changedate="20140301T143019Z">
+      <tuv lang="de" changeid="elmar" changedate="20140301T143019Z">
         <seg>{0,choice,0#0 Jahre|1#1 Jahr|1&lt;{0} Jahre} → {1,choice,0#0 Jahre|1#1 Jahr|1&lt;{1} Jahre}</seg>
       </tuv>
     </tu>
     <tu>
-      <tuv lang="EN">
+      <tuv lang="en">
         <seg>{0,choice,0#No person|1#One person|1&lt;{0} persons} has been exported</seg>
       </tuv>
-      <tuv lang="DE" changeid="ebaumann" changedate="20140114T094125Z">
+      <tuv lang="de" changeid="ebaumann" changedate="20140114T094125Z">
         <seg>{0,choice,0#Es wurde keine Person|1#Es wurde eine Person|1&lt;Es wurden {0} Personen} exportiert</seg>
       </tuv>
     </tu>
     <tu>
-      <tuv lang="EN">
+      <tuv lang="en">
         <seg>{0,choice,0#No person|1#One person|1&lt;{0} persons} has been exported.</seg>
       </tuv>
-      <tuv lang="DE" changeid="ebaumann" changedate="20140114T094652Z">
+      <tuv lang="de" changeid="ebaumann" changedate="20140114T094652Z">
         <seg>{0,choice,0#Es wurde keine Person|1#Es wurde eine Person|1&lt;Es wurden {0} Personen} exportiert.</seg>
       </tuv>
     </tu>
     <tu>
-      <tuv lang="EN">
+      <tuv lang="en">
         <seg>{0,choice,1#1 year|1&lt;{0} years}</seg>
       </tuv>
-      <tuv lang="DE" changeid="elmar" changedate="20140112T122915Z">
+      <tuv lang="de" changeid="elmar" changedate="20140112T122915Z">
         <seg>{0,choice,1#1 Jahr|1&lt;{0} Jahre}</seg>
       </tuv>
     </tu>
     <tu>
-      <tuv lang="EN">
+      <tuv lang="en">
         <seg>{0,choice,1#1 year|1&lt;{0} years} → {1,choice,1#1 year|1&lt;{1} years}</seg>
       </tuv>
-      <tuv lang="DE" changeid="elmar" changedate="20140301T142643Z">
+      <tuv lang="de" changeid="elmar" changedate="20140301T142643Z">
         <seg>{0,choice,1#1 Jahr|1&lt;{0} Jahre} → {1,choice,1#1 Jahr|1&lt;{1} Jahre}</seg>
       </tuv>
     </tu>
     <tu>
-      <tuv lang="EN">
+      <tuv lang="en">
         <seg>{0} persons has been exported</seg>
       </tuv>
-      <tuv lang="DE" changeid="ebaumann" changedate="20140114T090148Z">
+      <tuv lang="de" changeid="ebaumann" changedate="20140114T090148Z">
         <seg>Es wurden {0} Personen exportiert</seg>
       </tuv>
     </tu>

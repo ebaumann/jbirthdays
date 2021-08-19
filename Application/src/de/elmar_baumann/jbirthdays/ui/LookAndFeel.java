@@ -13,6 +13,10 @@ import javax.swing.UIManager;
 public final class LookAndFeel {
 
     public static void scaleFonts() {
+        scaleFonts(PreferencesPanel.getFontScaleFactor());
+    }
+
+    public static float getDefaultFontScaleFactor() {
         Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
         double width = screenSize.getWidth();
         double height = screenSize.getHeight();
@@ -21,8 +25,7 @@ public final class LookAndFeel {
                 : width > 2560 && height > 1440  // Wide QHD (QHD) 2560 x 1440 pixels
                 ? 1.5f
                 : 1;
-
-        scaleFonts(scale);
+        return scale;
     }
 
     private static void scaleFonts(float scale) {
