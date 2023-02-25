@@ -8,12 +8,10 @@ import java.awt.Component;
 import java.io.File;
 import java.util.Collection;
 import java.util.LinkedList;
-import org.openide.util.lookup.ServiceProvider;
 
 /**
  * @author Elmar Baumann
  */
-@ServiceProvider(service = PersonRepository.class, position = 0)
 public final class XmlFilePersonRepositoryImpl implements PersonRepository {
 
     @Override

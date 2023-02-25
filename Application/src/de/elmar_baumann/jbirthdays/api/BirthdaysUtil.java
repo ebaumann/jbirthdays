@@ -8,7 +8,6 @@ import java.util.Date;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import java.util.prefs.Preferences;
-import org.openide.util.Lookup;
 
 /**
  * @author Elmar Baumann
@@ -102,7 +101,7 @@ public final class BirthdaysUtil {
         Preferences prefs = Preferences.userNodeForPackage(BirthdaysUtil.class);
         String prefValue = prefs.get(KEY_PREFERRED, null);
         PersonRepository defaultRepo = null;
-        for (PersonRepository repo : Lookup.getDefault().lookupAll(PersonRepository.class)) {
+        for (PersonRepository repo : PersonRepositoryLookup.allRepositories()) {
             defaultRepo = repo;
             if (repo.getUUid().equals(prefValue)) {
                 defaultRepo = repo;

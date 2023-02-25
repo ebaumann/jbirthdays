@@ -1,0 +1,1 @@
+start javaw --add-exports java.base/java.lang.ref=ALL-UNNAMED --add-opens java.base/java.lang.ref=ALL-UNNAMED -Dsun.java2d.uiScale.enabled=false -jar  "C:\Program Files\JBirthdays\JBirthdays.jar"

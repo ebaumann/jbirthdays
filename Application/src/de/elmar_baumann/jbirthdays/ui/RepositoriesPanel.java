@@ -2,6 +2,7 @@ package de.elmar_baumann.jbirthdays.ui;
 
 import de.elmar_baumann.jbirthdays.api.BirthdaysUtil;
 import de.elmar_baumann.jbirthdays.api.PersonRepository;
+import de.elmar_baumann.jbirthdays.api.PersonRepositoryLookup;
 import java.awt.Component;
 import java.awt.GridBagConstraints;
 import javax.swing.DefaultComboBoxModel;
@@ -9,7 +10,6 @@ import javax.swing.DefaultListCellRenderer;
 import javax.swing.JLabel;
 import javax.swing.JList;
 import javax.swing.ListCellRenderer;
-import org.openide.util.Lookup;
 
 /**
  * @author Elmar Baumann
@@ -57,8 +57,8 @@ public class RepositoriesPanel extends javax.swing.JPanel {
         }
 
         private void addRepositories() {
-            for (PersonRepository repo : Lookup.getDefault().lookupAll(PersonRepository.class)) {
-                addElement(repo);
+            for (PersonRepository repository : PersonRepositoryLookup.allRepositories()) {
+                addElement(repository);
             }
         }
     }

@@ -1,0 +1,10 @@
+Manifest-Version: 1.0
+Ant-Version: Apache Ant 1.10.8
+Created-By: 15.0.1+9-18 (Oracle Corporation)
+Class-Path: lib/Localization.jar lib/eventbus.jar lib/jaxb-activation.
+ jar lib/jaxb-api.jar lib/jaxb-core.jar lib/jaxb-impl.jar lib/org-open
+ ide-util-lookup.jar
+X-COMMENT: Main-Class will be added automatically by build
+Main-Class: de.elmar_baumann.jbirthdays.Main
+SplashScreen-Image: META-INF/Splash.png
+
